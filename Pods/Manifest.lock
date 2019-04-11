@@ -1,0 +1,61 @@
+PODS:
+  - Alamofire (4.8.1)
+  - Core (0.0.1):
+    - Alamofire
+    - GoogleMaps
+    - GooglePlaces
+    - SwiftWebSocket
+    - SwiftyJSON
+  - GoogleMaps (3.0.3):
+    - GoogleMaps/Maps (= 3.0.3)
+  - GoogleMaps/Base (3.0.3)
+  - GoogleMaps/Maps (3.0.3):
+    - GoogleMaps/Base
+  - GooglePlaces (3.0.3):
+    - GoogleMaps/Base (= 3.0.3)
+  - PromiseKit (6.8.3):
+    - PromiseKit/CorePromise (= 6.8.3)
+    - PromiseKit/Foundation (= 6.8.3)
+    - PromiseKit/UIKit (= 6.8.3)
+  - PromiseKit/CorePromise (6.8.3)
+  - PromiseKit/Foundation (6.8.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.3):
+    - PromiseKit/CorePromise
+  - SwiftWebSocket (2.7.0)
+  - SwiftyJSON (4.2.0)
+
+DEPENDENCIES:
+  - Core (from `https://github.com/CanOzcan93/Core.git`)
+  - PromiseKit (~> 6.8)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - GoogleMaps
+    - GooglePlaces
+    - PromiseKit
+    - SwiftWebSocket
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Core:
+    :git: https://github.com/CanOzcan93/Core.git
+
+CHECKOUT OPTIONS:
+  Core:
+    :commit: 8ca7679dddb52344a225eea2a90fa4ba3c289fa7
+    :git: https://github.com/CanOzcan93/Core.git
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Core: cbc35db3695ca0beeea5861e98402b001d563bdd
+  GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
+  GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
+  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
+  SwiftWebSocket: 612c9729fd503cb6b0b8b45390c788686dac306f
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+
+PODFILE CHECKSUM: a51d720dfdd1447999967b91b3f74795b292a0e5
+
+COCOAPODS: 1.5.3
