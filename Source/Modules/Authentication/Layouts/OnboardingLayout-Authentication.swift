@@ -83,21 +83,23 @@ extension Authentication {
             set.append(NSLayoutConstraint(item: v_bc, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: v_bc, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0))
             
-            set.append(NSLayoutConstraint(item: pageControl, attribute: .top, relatedBy: .equal, toItem: slider, attribute: .bottom, multiplier: 1, constant: 10))
-            
-            set.append(NSLayoutConstraint(item: slider, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: slider, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: slider, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: slider, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 430))
-            
             set.append(NSLayoutConstraint(item: iv_logo, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: iv_logo, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 10))
+            set.append(NSLayoutConstraint(item: iv_logo, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 20))
             set.append(NSLayoutConstraint(item: iv_logo, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 140))
             set.append(NSLayoutConstraint(item: iv_logo, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 70))
             
             set.append(NSLayoutConstraint(item: btn, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 20))
             set.append(NSLayoutConstraint(item: btn, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -20))
-            set.append(NSLayoutConstraint(item: btn, attribute: .top, relatedBy: .equal, toItem: pageControl, attribute: .bottom, multiplier: 1, constant: 10))
+            set.append(NSLayoutConstraint(item: btn, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 50))
+            set.append(NSLayoutConstraint(item: btn, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -10))
+            
+            set.append(NSLayoutConstraint(item: pageControl, attribute: .top, relatedBy: .equal, toItem: slider, attribute: .bottom, multiplier: 1, constant: 10))
+            set.append(NSLayoutConstraint(item: pageControl, attribute: .bottom, relatedBy: .equal, toItem: btn, attribute: .top, multiplier: 1, constant: -10))
+            
+            set.append(NSLayoutConstraint(item: slider, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
+//            set.append(NSLayoutConstraint(item: slider, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
+            set.append(NSLayoutConstraint(item: slider, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0))
+            set.append(NSLayoutConstraint(item: slider, attribute: .top, relatedBy: .equal, toItem: iv_logo, attribute: .bottom, multiplier: 1, constant: 10))
 
         }
         

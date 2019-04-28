@@ -39,6 +39,19 @@ extension Profile {
             
         }
         
+        public func toPhotoShootSheet() {
+            let photoSheet = sheetFactory.getPhotoShootSheet()
+            sheet = photoSheet
+            transition = transitionFactory.getFromRightToLeft()
+            
+            let photoLayout = photoSheet.view as! PhotoShootLayout
+            photoSheet.mediaManager.turnOnCaptureSessionAndCreatePreviewLayer(compound: photoLayout.v_camera)
+            
+            present()
+            
+        }
+        
+        
         public func goBack() {
             
             transition = transitionFactory.getFromLeftToRight()

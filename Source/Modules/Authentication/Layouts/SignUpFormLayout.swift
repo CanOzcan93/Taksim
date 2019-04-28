@@ -77,6 +77,7 @@ extension Authentication {
             
             ti_email = TextInput()
             ti_email.setPlaceholder(text: "E-Posta:")
+            ti_email.keyboardType = .emailAddress
             
             self.addSubview(ti_email)
             

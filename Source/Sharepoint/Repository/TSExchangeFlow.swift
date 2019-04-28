@@ -72,7 +72,7 @@ public class TSExchangeFlow: CoreExchangeFlow {
             user.homeAddrName = customJson["homeAddrName"].stringValue
             user.homeLocation = CoreCoordinate(latitude: customJson["homeLat"].doubleValue, longitude: customJson["homeLon"].doubleValue)
             user.level = customJson["level"].uIntValue
-            user.nickname = customJson["nickname"].stringValue
+            user.nickname = customJson["nickName"].stringValue
             user.occupation = customJson["occupation"].stringValue
             user.photo = customJson["photo"].stringValue
             user.trade = customJson["trade"].stringValue

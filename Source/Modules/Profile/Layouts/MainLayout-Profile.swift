@@ -12,18 +12,17 @@ extension Profile {
     
     public class MainLayout: PostLogin.WavyLayout {
 
-        
         // Fields
         
         private var iv_avatar: TSImageView!
-        private var iv_plus: TSImageView!
+        public var iv_plus: TSImageView!
         
-        private var ti_name: PostLogin.TextInput!
-        private var ti_surname: PostLogin.TextInput!
-        private var ti_phone: PostLogin.TextInput!
-        private var ti_email: PostLogin.TextInput!
+        public var ti_name: PostLogin.TextInput!
+        public var ti_surname: PostLogin.TextInput!
+        public var ti_phone: PostLogin.TextInput!
+        public var ti_email: PostLogin.TextInput!
         
-        private var btn_save: PostLogin.Button!
+        public var btn_save: PostLogin.Button!
 
         
         // Implementation
@@ -115,6 +114,7 @@ extension Profile {
         private func constructEmailTextInput() {
             
             self.ti_email = PostLogin.TextInput()
+            self.ti_email.keyboardType = .emailAddress
             self.ti_email.setPlaceholder(text: lexiconProvider.get("email"))
             
             self.addSubview(self.ti_email)

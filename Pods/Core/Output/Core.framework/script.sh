@@ -42,12 +42,12 @@ mkdir ${OUTPUT}
 
 
 ######################
-# Build RB Framework for device and simulator
+# Build Core Framework for device and simulator
 ######################
 
-xcodebuild -workspace ${PROJECT_DIR}/${WORKSPACE_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphonesimulator build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator -arch x86_64 -UseModernBuildSystem=0
+xcodebuild -workspace ${PROJECT_DIR}/${WORKSPACE_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphonesimulator build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator -arch x86_64 -UseModernBuildSystem=0 BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS="-fembed-bitcode"
 
-xcodebuild -workspace ${PROJECT_DIR}/${WORKSPACE_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphoneos build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos -xcconfig -UseModernBuildSystem=0
+xcodebuild -workspace ${PROJECT_DIR}/${WORKSPACE_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphoneos build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos -xcconfig -UseModernBuildSystem=0 BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS="-fembed-bitcode"
 
 ######################
 # Create directory for universal

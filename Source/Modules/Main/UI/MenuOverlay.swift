@@ -44,6 +44,7 @@ extension Main {
         public var onPromotionClick: Action?
         public var onHelpClick: Action?
         public var onFaqClick: Action?
+        public var onTripsClick: Action?
         
         
         // Internal Fields
@@ -153,6 +154,9 @@ extension Main {
             }
             
             self.mi_trips = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getList(), text: lexiconProvider.get("trips"))
+            self.mi_trips.v_ghost.onTap{
+                self.onTripsClick?()
+            }
             
             self.mi_help = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getHelp(), text: lexiconProvider.get("help"))
             self.mi_help.v_ghost.onTap {

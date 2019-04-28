@@ -23,7 +23,7 @@ extension Authentication {
                     let currentUser = self.exchangeFlow.grabCurrentUser()!
                     currentUser.nickname = "\(layout.ti_name.text ?? "") \(layout.ti_surname.text ?? "")"
                     currentUser.email = layout.ti_email.text ?? ""
-                    self.apiManager.updateCustomerInfo(mobilePhone: self.exchangeFlow.grabPhoneNumberForSignUpOrLogin()!, customerInfo: currentUser, token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String){ (json) in
+                    self.apiManager.updateCustomerInfo(mobilePhone: self.exchangeFlow.grabPhoneNumberForSignUpOrLogin()!, customerInfo: currentUser, token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String, photo: nil){ (json) in
                         if json["errCode"].uIntValue == 0 && json["errCode"].exists() {
                             self.exchangeFlow.letCurrentUser(customer: currentUser)
                             self.demonstrator.toMainModule()
@@ -32,12 +32,5 @@ extension Authentication {
                 }
             }
         }
-    }
-}
-
-extension String {
-    public var isValidEmail: Bool {
-        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: self)
     }
 }

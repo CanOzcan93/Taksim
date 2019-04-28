@@ -22,6 +22,7 @@ public class TSApiManager: CoreApiManager {
     private var networkManager: TSNetworkManager!
     
     private var dataStorage: TSDataStorage!
+    private var persistentStorage: TSPersistentStorage!
     
     public func injectDependencies() {
 
@@ -33,6 +34,7 @@ public class TSApiManager: CoreApiManager {
         networkManager = manager.networkManager!
         
         dataStorage = repository.dataStorage
+        persistentStorage = repository.persistentStorage
         
     }
     
@@ -129,13 +131,18 @@ public class TSApiManager: CoreApiManager {
         
     }
     
-    public func checkToken(token: String, completion: @escaping (JSON)->()) {
+    public func checkToken(token: String, completion: @escaping (JSON,String?)->()) {
         let url = "http://94.101.81.210:48080/AppService/CheckToken.do"
         let data = "jsonParam={}"
         let header = ["_token": token]
         
         TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
-            completion(json)
+            if let headerDefined = header {
+                completion(json, headerDefined["_token"] as? String)
+            }
+            else {
+                completion(json, nil)
+            }
         }
         
         
@@ -176,10 +183,15 @@ public class TSApiManager: CoreApiManager {
         }
     }
     
-    public func updateCustomerInfo(mobilePhone: String, customerInfo: CustomerInfo, token: String, completion: @escaping (JSON)->()) {
+    public func updateCustomerInfo(mobilePhone: String, customerInfo: CustomerInfo, token: String, photo: UIImage?, completion: @escaping (JSON)->()) {
         
         let url = "http://94.101.81.210:48080/AppService/UpdateCustomerInfo.do"
-        let customerInfoJson = "age:\(customerInfo.age), compAddrName: \"\(customerInfo.compAddrName)\", compLat: \(customerInfo.companyLocation.coordinate.latitude),  compLon:\(customerInfo.companyLocation.coordinate.longitude), compName: \"\(customerInfo.compName)\", email:\"\(customerInfo.email)\", gender: \(customerInfo.gender.rawValue), guarderPhone: \"\(customerInfo.guarderPhone)\", homeAddrName: \"\(customerInfo.homeAddrName)\", homeLat:\(customerInfo.homeLocation.coordinate.latitude), homeLon: \(customerInfo.homeLocation.coordinate.longitude),  level: \(customerInfo.level), nickname: \"\(customerInfo.nickname)\", occupation:\"\(customerInfo.occupation)\",photo: \"\(customerInfo.photo)\", trade: \"\(customerInfo.trade)\""
+        var customerInfoJson = "age:\"\(customerInfo.age)\", compAddrName: \"\(customerInfo.compAddrName)\", compLat: \(customerInfo.companyLocation.coordinate.latitude),  compLon:\(customerInfo.companyLocation.coordinate.longitude), compName: \"\(customerInfo.compName)\", email:\"\(customerInfo.email)\", gender: \(customerInfo.gender.rawValue), guarderPhone: \"\(customerInfo.guarderPhone)\", homeAddrName: \"\(customerInfo.homeAddrName)\", homeLat:\(customerInfo.homeLocation.coordinate.latitude), homeLon: \(customerInfo.homeLocation.coordinate.longitude), level: \(customerInfo.level), nickName: \"\(customerInfo.nickname)\", occupation:\"\(customerInfo.occupation)\", trade: \"\(customerInfo.trade)\""
+        if photo != nil {
+            let imageNSData : NSData = photo!.pngData()! as NSData
+            let strBase64: String = imageNSData.base64EncodedString(options: .lineLength64Characters)
+            customerInfoJson = customerInfoJson + ",photo: \"\(strBase64)\""
+        }
         let data = "jsonParam={mobile:\"\(mobilePhone)\", customerInfo:{\(customerInfoJson)}}"
         let header = ["_token": token]
 
@@ -191,7 +203,7 @@ public class TSApiManager: CoreApiManager {
     public func changeMobile(mobilePhone: String, newMobilePhone: String, completion: @escaping (JSON)->()) {
         let url = "http://94.101.81.210:48080/AppService/ChangeMobile.do"
         let data = "jsonParam={mobile:\"\(mobilePhone)\", new Mobile:\"\(newMobilePhone)\", debug:1}"
-        print(data)
+
         TSNetworkManager.post(url: url, body: data) { (json, header) in
             completion(json)
         }
@@ -206,30 +218,33 @@ public class TSApiManager: CoreApiManager {
         }
     }
     
-    public func getFeeStrategies(completion: @escaping (JSON)->()){
+    public func getFeeStrategies(token: String, completion: @escaping (JSON)->()){
         let url = "http://94.101.81.210:48080/AppService/GetFeeStrategies.do"
         let data = "jsonParam={}"
-    
-        TSNetworkManager.post(url: url, body: data) { (json, header) in
+        let header = ["_token": token]
+        
+        TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
             completion(json)
         }
     }
     
-    public func createOrder(mobilePhone: String, order:Order, completion: @escaping (JSON)->()){
+    public func createOrder(mobilePhone: String, token: String, order:Order, completion: @escaping (JSON)->()){
         let url = "http://94.101.81.210:48080/AppService/CreateOrder.do"
         let orderJson = "orderTime:\"\(order.orderTime)\", orderAddrName:\"\(order.orderAddrName)\", orderLon:\(order.orderCoordinate.coordinate.longitude), orderLat:\(order.orderCoordinate.coordinate.latitude), destAddrName:\"\(order.destAddrName)\", destLon:\(order.destinationCoordinate.coordinate.longitude), destLat:\(order.destinationCoordinate.coordinate.latitude), orderType:\(order.orderType), remarks:\"\(order.remarks)\", carType:\(order.carType), isShared:\(order.isShared)"
         let data = "jsonParam={mobile: \"\(mobilePhone)\", \(orderJson)}"
+        let header = ["_token": token]
         
-        TSNetworkManager.post(url: url, body: data) { (json, header) in
+        TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
             completion(json)
         }
     }
     
-    public func getOrderTracking(orderID: UInt, completion: @escaping (JSON)->()){
+    public func getOrderTracking(orderID: UInt, token: String, completion: @escaping (JSON)->()){
         let url = "http://94.101.81.210:48080/AppService/GetOrderTracking.do"
         let data = "jsonParam={orderId:\"\(orderID)\"}"
+        let header = ["_token": token]
         
-        TSNetworkManager.post(url: url, body: data) { (json, header) in
+        TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
             completion(json)
         }
         
@@ -260,7 +275,7 @@ public class TSApiManager: CoreApiManager {
     }
     private func trackOrder() {
         
-        getOrderTracking(orderID: dataStorage.grabOrderId()!) { res in
+        getOrderTracking(orderID: dataStorage.grabOrderId()!, token: persistentStorage.recall(key: persistentStorage.tokenKey) as! String ) { res in
             
             let status = res.dictionaryValue["orderStatus"]?.dictionaryValue["orderStatus"]?.intValue
             

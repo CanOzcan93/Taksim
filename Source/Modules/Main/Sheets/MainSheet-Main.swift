@@ -133,8 +133,6 @@ extension Main {
                     
                 }
                 
-//                self.startTrackingVehicles(layout: layout)
-                
             }
             
             eventManager.listen(key: "updateRouteLocation") {
@@ -206,6 +204,10 @@ extension Main {
                 self.demonstrator.toFaq()
             }
             
+            layout.o_menu.onTripsClick = {
+                self.demonstrator.toOrderHistory()
+            }
+            
             layout.i_route.onPickUpPointEditing = {
                 
                 self.stateMachine.isEditingPickUpPoint(state: true)
@@ -243,9 +245,18 @@ extension Main {
                 
                 layout.o_loading.show()
                 
-                self.apiManager.createOrder(mobilePhone: "05434103143", order: order) { res in
+                self.apiManager.createOrder(mobilePhone: self.persistentStorage.recall(key: self.persistentStorage.phoneNumberKey) as! String,
+                                            token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String,
+                                            order: order)
+                { res in
                     
+                    if res["orderId"].exists() {
+                        self.dataStorage.storeOrderId(id: res["orderId"].uIntValue)
+                    }
+                                                
                     self.apiManager.startTrackingOrder(onSuccess: {
+                        
+                        
                         
                         print("App: Order matched with a Taxi")
                         
@@ -292,8 +303,16 @@ extension Main {
                 
                 layout.o_loading.show()
                 
-                self.apiManager.createOrder(mobilePhone: "05434103143", order: order) { res in
+                self.apiManager.createOrder(mobilePhone: self.persistentStorage.recall(key: self.persistentStorage.phoneNumberKey) as! String,
+                                            token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String,
+                                            order: order)
+                { res in
+                                                
+                    if res["orderId"].exists() {
+                        self.dataStorage.storeOrderId(id: res["orderId"].uIntValue)
+                    }
                     
+                                                
                     self.apiManager.startTrackingOrder(onSuccess: {
                         
                         print("Order matched with a Taxi")
@@ -420,9 +439,10 @@ extension Main {
                     
                     if self.incomingVehicles.filter({ (v) -> Bool in v == vehicle }).count == 0 {
                         
-                        let marker = self.vehicleMarkers.filter({ (m) -> Bool in m.vehicle == vehicle }).first!
-                        layout.mv.removeMarker(marker: marker)
-                        
+                        let markers = self.vehicleMarkers.filter({ (m) -> Bool in m.vehicle == vehicle })
+                        for marker in markers {
+                            layout.mv.removeMarker(marker: marker)
+                        }
                         self.vehicles.removeAll { (v) -> Bool in v == vehicle }
                         
                     }

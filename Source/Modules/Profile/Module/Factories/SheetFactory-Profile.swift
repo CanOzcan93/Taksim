@@ -36,6 +36,26 @@ extension Profile {
             
         }
         
+        private var orderHistory: OrderHistorySheet?
+        public func getOrderHistorySheet() -> OrderHistorySheet {
+            guard orderHistory != nil else {
+                orderHistory = OrderHistorySheet()
+                return orderHistory!
+            }
+            
+            return orderHistory!
+        }
+        
+        private var photoShoot: PhotoShootSheet?
+        public func getPhotoShootSheet() -> PhotoShootSheet {
+            guard photoShoot != nil else {
+                photoShoot = PhotoShootSheet()
+                return photoShoot!
+            }
+            
+            return photoShoot!
+        }
+        
     }
     
 }

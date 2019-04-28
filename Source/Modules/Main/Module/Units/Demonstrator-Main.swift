@@ -69,6 +69,19 @@ extension Main {
             
         }
         
+        public func toOrderHistory() {
+            
+            let profileModule = Profile.Module.getInstance()
+            let profileFactory = profileModule.factory!
+            let profileSheetFactory = profileFactory.sheetFactory!
+            
+            sheet = profileSheetFactory.getOrderHistorySheet()
+            transition = transitionFactory.getFromRightToLeft()
+            
+            present()
+            
+        }
+        
         public func toPromotion() {
             
             let postLoginModule = PostLogin.Module.getInstance()

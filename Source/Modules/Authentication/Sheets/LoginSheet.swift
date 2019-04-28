@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 extension Authentication {
     
@@ -23,17 +24,12 @@ extension Authentication {
             layout.btn_next.onClick {
                 if let phoneNumber = layout.ti_phone.text {
                     if phoneNumber.isValidMobilePhoneNumber {
-                        let missingChars = 13 - phoneNumber.count
-                        var newPhone = phoneNumber
-                        if missingChars == 3 {
-                            newPhone = "+90\(phoneNumber)"
-                        }
-                        else if missingChars == 2 {
-                            newPhone = "+9\(phoneNumber)"
-                        }
+                        let newPhone = String(phoneNumber.suffix(10))
                         self.apiManager.getVerifyCode(mobilePhone: newPhone, completion: { (json) in
                             if json["errCode"].uIntValue == 0 && json["errCode"].exists() {
                                 print(json["verifyCode"].stringValue)
+                                let url = "http://otpurl.ttmesaj.com/SendSMS/SendSMSURL.aspx?un=mobilbil&pw=M4A7K9L1&msg=Sifreniz:\(json["verifyCode"].stringValue)&orgn=Mobilbil&list=\(newPhone)&sd=0"
+                                Alamofire.request(url)
                                 self.exchangeFlow.letPhoneNumberForSignUpOrLogin(phoneNumber: newPhone)
                                 self.demonstrator.toLoginVerificationSheet()
                             }

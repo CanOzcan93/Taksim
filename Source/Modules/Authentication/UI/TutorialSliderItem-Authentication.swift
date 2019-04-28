@@ -31,6 +31,7 @@ extension Authentication {
             bodyTextView.text = body
             bodyTextView.numberOfLines = 0
             bodyTextView.textAlignment = .center
+            bodyTextView.sizeToFit()
             
             super.init()
         }
@@ -76,19 +77,19 @@ extension Authentication {
             super.onConstrain()
             
             self.constrain(constraint: NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-            self.constrain(constraint: NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 60))
-            self.constrain(constraint: NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 175))
-            self.constrain(constraint: NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 150))
+            self.constrain(constraint: NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: -80))
+            self.constrain(constraint: NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 0.5, constant: 0))
+            self.constrain(constraint: NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .equal, toItem: imageView, attribute: .width, multiplier: 1, constant: 0))
             
             self.constrain(constraint: NSLayoutConstraint(item: titleTextView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-            self.constrain(constraint: NSLayoutConstraint(item: titleTextView, attribute: .top, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1, constant: 20))
+            self.constrain(constraint: NSLayoutConstraint(item: titleTextView, attribute: .top, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1, constant: 10))
             self.constrain(constraint: NSLayoutConstraint(item: titleTextView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: -20))
             self.constrain(constraint: NSLayoutConstraint(item: titleTextView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 50))
             
             self.constrain(constraint: NSLayoutConstraint(item: bodyTextView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
             self.constrain(constraint: NSLayoutConstraint(item: bodyTextView, attribute: .top, relatedBy: .equal, toItem: titleTextView, attribute: .bottom, multiplier: 1, constant: 15))
             self.constrain(constraint: NSLayoutConstraint(item: bodyTextView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: -20))
-            self.constrain(constraint: NSLayoutConstraint(item: bodyTextView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 80))
+            self.constrain(constraint: NSLayoutConstraint(item: bodyTextView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -27))
             
         }
         

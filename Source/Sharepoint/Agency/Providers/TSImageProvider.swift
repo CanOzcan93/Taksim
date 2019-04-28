@@ -316,11 +316,35 @@ public class TSImageProvider: CoreImageProvider {
     public func getBackGrayIcon() -> UIImage {
         
         guard backGrayIcon != nil else {
-            backGrayIcon = UIImage(named: "ic_back_grey")
+            backGrayIcon = UIImage(named: "ic_back")
             return backGrayIcon!
         }
         
         return backGrayIcon!
+        
+    }
+    
+    private var cameraIcon: UIImage?
+    public func getCameraIcon() -> UIImage {
+        
+        guard cameraIcon != nil else {
+            cameraIcon = UIImage(named: "ic_camera")
+            return cameraIcon!
+        }
+        
+        return cameraIcon!
+        
+    }
+    
+    private var turnCameraIcon: UIImage?
+    public func getTurnCameraIcon() -> UIImage {
+        
+        guard turnCameraIcon != nil else {
+            turnCameraIcon = UIImage(named: "ic_turn_camera")
+            return turnCameraIcon!
+        }
+        
+        return turnCameraIcon!
         
     }
     

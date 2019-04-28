@@ -20,7 +20,7 @@ extension Authentication {
                 if i == 0 {
                     self.constrain(constraint: NSLayoutConstraint(item: self.items[i], attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
                     self.constrain(constraint: NSLayoutConstraint(item: self.items[i], attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
-                    self.constrain(constraint: NSLayoutConstraint(item: self.items[i], attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 300))
+                    self.constrain(constraint: NSLayoutConstraint(item: self.items[i], attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: -20))
                     self.constrain(constraint: NSLayoutConstraint(item: self.items[i], attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0))
                 }
                 else {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7FF221E8F0EDD4CEAE40FC99 /* Pods_Taksim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D9BAC941790868533E6702 /* Pods_Taksim.framework */; };
+		74CA62D7E9B781286FE958C3 /* Pods_Taksim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E654C56FEF49CFD24E270BB2 /* Pods_Taksim.framework */; };
 		E60EC53422378B4A00D79221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60EC53322378B4A00D79221 /* Assets.xcassets */; };
 		E60EC60D22378C6100D79221 /* TSPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EC54022378C6100D79221 /* TSPage.swift */; };
 		E60EC60E22378C6100D79221 /* TSSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EC54122378C6100D79221 /* TSSheet.swift */; };
@@ -310,6 +310,18 @@
 		E60EC7D82237A1CD00D79221 /* ic_plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EC7642237A1CC00D79221 /* ic_plus@3x.png */; };
 		E60EC7D92237A1CD00D79221 /* ic_speech_bubble@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EC7652237A1CC00D79221 /* ic_speech_bubble@3x.png */; };
 		E60EC7DA2237A1CD00D79221 /* ic-taxi-black.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EC7662237A1CC00D79221 /* ic-taxi-black.png */; };
+		E6C7E4612268AF2000168D7C /* OrderHistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7E4602268AF2000168D7C /* OrderHistorySheet.swift */; };
+		E6C7E4632268AF2F00168D7C /* OrderHistoryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7E4622268AF2F00168D7C /* OrderHistoryLayout.swift */; };
+		E6C7E4652268BE4400168D7C /* OrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7E4642268BE4400168D7C /* OrderList.swift */; };
+		E6C7E4672268BE5700168D7C /* OrderListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7E4662268BE5700168D7C /* OrderListItem.swift */; };
+		E6C7E4692269B47F00168D7C /* PhotoShootLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7E4682269B47F00168D7C /* PhotoShootLayout.swift */; };
+		E6C7E46B2269B49D00168D7C /* PhotoShootSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7E46A2269B49D00168D7C /* PhotoShootSheet.swift */; };
+		E6C7E46F226A062800168D7C /* ic_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E6C7E46C226A062700168D7C /* ic_camera.png */; };
+		E6C7E470226A062800168D7C /* ic_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6C7E46D226A062700168D7C /* ic_camera@2x.png */; };
+		E6C7E471226A062800168D7C /* ic_camera@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6C7E46E226A062800168D7C /* ic_camera@3x.png */; };
+		E6C7E475226A065E00168D7C /* ic_turn_camera@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6C7E472226A065C00168D7C /* ic_turn_camera@3x.png */; };
+		E6C7E476226A065E00168D7C /* ic_turn_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E6C7E473226A065D00168D7C /* ic_turn_camera.png */; };
+		E6C7E477226A065E00168D7C /* ic_turn_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6C7E474226A065D00168D7C /* ic_turn_camera@2x.png */; };
 		E6D1BF9322579DAF00586767 /* TripToDestinationPointLayout-Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF9222579DAF00586767 /* TripToDestinationPointLayout-Main.swift */; };
 		E6D1BF952257A05500586767 /* QuickOrderOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF942257A05500586767 /* QuickOrderOverlay.swift */; };
 		E6D1BF972257A9C500586767 /* TripToDestinationPointSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF962257A9C500586767 /* TripToDestinationPointSheet.swift */; };
@@ -317,9 +329,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DC05759AAA1226F62904075 /* Pods-Taksim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.release.xcconfig"; sourceTree = "<group>"; };
-		72D9BAC941790868533E6702 /* Pods_Taksim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taksim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D02E2393A9E6011FA69C35C0 /* Pods-Taksim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.debug.xcconfig"; sourceTree = "<group>"; };
+		78882DFB888FEC44E4A3EC03 /* Pods-Taksim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.debug.xcconfig"; sourceTree = "<group>"; };
+		9502795CDDC97C736C55F09B /* Pods-Taksim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.release.xcconfig"; sourceTree = "<group>"; };
 		E60EC52922378B4900D79221 /* Taksim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taksim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60EC53322378B4A00D79221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60EC53822378B4A00D79221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -625,6 +636,19 @@
 		E60EC7642237A1CC00D79221 /* ic_plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_plus@3x.png"; sourceTree = "<group>"; };
 		E60EC7652237A1CC00D79221 /* ic_speech_bubble@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_speech_bubble@3x.png"; sourceTree = "<group>"; };
 		E60EC7662237A1CC00D79221 /* ic-taxi-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-taxi-black.png"; sourceTree = "<group>"; };
+		E654C56FEF49CFD24E270BB2 /* Pods_Taksim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taksim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6C7E4602268AF2000168D7C /* OrderHistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistorySheet.swift; sourceTree = "<group>"; };
+		E6C7E4622268AF2F00168D7C /* OrderHistoryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryLayout.swift; sourceTree = "<group>"; };
+		E6C7E4642268BE4400168D7C /* OrderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderList.swift; sourceTree = "<group>"; };
+		E6C7E4662268BE5700168D7C /* OrderListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListItem.swift; sourceTree = "<group>"; };
+		E6C7E4682269B47F00168D7C /* PhotoShootLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShootLayout.swift; sourceTree = "<group>"; };
+		E6C7E46A2269B49D00168D7C /* PhotoShootSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShootSheet.swift; sourceTree = "<group>"; };
+		E6C7E46C226A062700168D7C /* ic_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_camera.png; sourceTree = "<group>"; };
+		E6C7E46D226A062700168D7C /* ic_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_camera@2x.png"; sourceTree = "<group>"; };
+		E6C7E46E226A062800168D7C /* ic_camera@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_camera@3x.png"; sourceTree = "<group>"; };
+		E6C7E472226A065C00168D7C /* ic_turn_camera@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_turn_camera@3x.png"; sourceTree = "<group>"; };
+		E6C7E473226A065D00168D7C /* ic_turn_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_turn_camera.png; sourceTree = "<group>"; };
+		E6C7E474226A065D00168D7C /* ic_turn_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_turn_camera@2x.png"; sourceTree = "<group>"; };
 		E6D1BF9222579DAF00586767 /* TripToDestinationPointLayout-Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TripToDestinationPointLayout-Main.swift"; sourceTree = "<group>"; };
 		E6D1BF942257A05500586767 /* QuickOrderOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOrderOverlay.swift; sourceTree = "<group>"; };
 		E6D1BF962257A9C500586767 /* TripToDestinationPointSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripToDestinationPointSheet.swift; sourceTree = "<group>"; };
@@ -636,26 +660,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FF221E8F0EDD4CEAE40FC99 /* Pods_Taksim.framework in Frameworks */,
+				74CA62D7E9B781286FE958C3 /* Pods_Taksim.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6820310DB8420CEDD99207F4 /* Frameworks */ = {
+		B79BD45EF9DED1396C88781B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				72D9BAC941790868533E6702 /* Pods_Taksim.framework */,
+				E654C56FEF49CFD24E270BB2 /* Pods_Taksim.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DEBF22648E2F98198DB34B4D /* Pods */ = {
+		DFB94DACEED70D5AD85BC64B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D02E2393A9E6011FA69C35C0 /* Pods-Taksim.debug.xcconfig */,
-				2DC05759AAA1226F62904075 /* Pods-Taksim.release.xcconfig */,
+				78882DFB888FEC44E4A3EC03 /* Pods-Taksim.debug.xcconfig */,
+				9502795CDDC97C736C55F09B /* Pods-Taksim.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -668,8 +692,8 @@
 				E60EC53E22378B5500D79221 /* Source */,
 				E60EC52B22378B4900D79221 /* Meta */,
 				E60EC52A22378B4900D79221 /* Products */,
-				DEBF22648E2F98198DB34B4D /* Pods */,
-				6820310DB8420CEDD99207F4 /* Frameworks */,
+				DFB94DACEED70D5AD85BC64B /* Pods */,
+				B79BD45EF9DED1396C88781B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -840,6 +864,8 @@
 			children = (
 				E60EC56122378C6100D79221 /* NotificationListItem.swift */,
 				E60EC56222378C6100D79221 /* NotificationList.swift */,
+				E6C7E4642268BE4400168D7C /* OrderList.swift */,
+				E6C7E4662268BE5700168D7C /* OrderListItem.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -849,6 +875,8 @@
 			children = (
 				E60EC56422378C6100D79221 /* MainSheet-Profile.swift */,
 				E60EC56522378C6100D79221 /* NotificationsSheet.swift */,
+				E6C7E4602268AF2000168D7C /* OrderHistorySheet.swift */,
+				E6C7E46A2269B49D00168D7C /* PhotoShootSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -897,6 +925,8 @@
 			children = (
 				E60EC57422378C6100D79221 /* MainLayout-Profile.swift */,
 				E60EC57522378C6100D79221 /* NotificationsLayout.swift */,
+				E6C7E4622268AF2F00168D7C /* OrderHistoryLayout.swift */,
+				E6C7E4682269B47F00168D7C /* PhotoShootLayout.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -1307,12 +1337,33 @@
 		E60EC6B222379F4400D79221 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E60EC6BB22379F4400D79221 /* background_2.png */,
+				E60EC6C122379F4400D79221 /* background_2@2x.png */,
+				E60EC6BC22379F4400D79221 /* background_2@3x.png */,
+				E60EC6B322379F4400D79221 /* background.png */,
+				E60EC6BE22379F4400D79221 /* background@2x.png */,
+				E60EC6BF22379F4400D79221 /* background@3x.png */,
+				E60EC6B922379F4400D79221 /* cover.png */,
+				E60EC6B422379F4400D79221 /* cover@2x.png */,
+				E60EC6BA22379F4400D79221 /* cover@3x.png */,
+				E60EC6EE2237A1B900D79221 /* ic_avatar.png */,
+				E60EC6EC2237A1B900D79221 /* ic_avatar@2x.png */,
+				E60EC6ED2237A1B900D79221 /* ic_avatar@3x.png */,
+				E60EC6B822379F4400D79221 /* ic_back.png */,
+				E60EC6BD22379F4400D79221 /* ic_back@2x.png */,
+				E60EC6C022379F4400D79221 /* ic_back@3x.png */,
 				E60EC7222237A1C800D79221 /* ic_bell.png */,
 				E60EC7132237A1C700D79221 /* ic_bell@2x.png */,
 				E60EC72B2237A1C900D79221 /* ic_bell@3x.png */,
 				E60EC74B2237A1CC00D79221 /* ic_bulls_eye.png */,
 				E60EC70B2237A1C600D79221 /* ic_bulls_eye@2x.png */,
 				E60EC7422237A1CB00D79221 /* ic_bulls_eye@3x.png */,
+				E6C7E46C226A062700168D7C /* ic_camera.png */,
+				E6C7E46D226A062700168D7C /* ic_camera@2x.png */,
+				E6C7E46E226A062800168D7C /* ic_camera@3x.png */,
+				E6C7E473226A065D00168D7C /* ic_turn_camera.png */,
+				E6C7E474226A065D00168D7C /* ic_turn_camera@2x.png */,
+				E6C7E472226A065C00168D7C /* ic_turn_camera@3x.png */,
 				E60EC6F42237A1C400D79221 /* ic_credit_card.png */,
 				E60EC71E2237A1C800D79221 /* ic_credit_card@2x.png */,
 				E60EC7452237A1CB00D79221 /* ic_credit_card@3x.png */,
@@ -1404,9 +1455,9 @@
 				E60EC6F72237A1C500D79221 /* ic-taxi@2x.png */,
 				E60EC7182237A1C700D79221 /* ic-taxi@3x.png */,
 				E60EC74D2237A1CC00D79221 /* Loading */,
-				E60EC6EE2237A1B900D79221 /* ic_avatar.png */,
-				E60EC6EC2237A1B900D79221 /* ic_avatar@2x.png */,
-				E60EC6ED2237A1B900D79221 /* ic_avatar@3x.png */,
+				E60EC6B622379F4400D79221 /* logo.png */,
+				E60EC6B722379F4400D79221 /* logo@2x.png */,
+				E60EC6B522379F4400D79221 /* logo@3x.png */,
 				E60EC6E12237A1B100D79221 /* menu_background.png */,
 				E60EC6DB2237A1B100D79221 /* menu_background@2x.png */,
 				E60EC6E02237A1B100D79221 /* menu_background@3x.png */,
@@ -1416,21 +1467,6 @@
 				E60EC6E22237A1B100D79221 /* waves_light.png */,
 				E60EC6DF2237A1B100D79221 /* waves_light@2x.png */,
 				E60EC6DA2237A1B100D79221 /* waves_light@3x.png */,
-				E60EC6B322379F4400D79221 /* background.png */,
-				E60EC6B422379F4400D79221 /* cover@2x.png */,
-				E60EC6B522379F4400D79221 /* logo@3x.png */,
-				E60EC6B622379F4400D79221 /* logo.png */,
-				E60EC6B722379F4400D79221 /* logo@2x.png */,
-				E60EC6B822379F4400D79221 /* ic_back.png */,
-				E60EC6B922379F4400D79221 /* cover.png */,
-				E60EC6BA22379F4400D79221 /* cover@3x.png */,
-				E60EC6BB22379F4400D79221 /* background_2.png */,
-				E60EC6BC22379F4400D79221 /* background_2@3x.png */,
-				E60EC6BD22379F4400D79221 /* ic_back@2x.png */,
-				E60EC6BE22379F4400D79221 /* background@2x.png */,
-				E60EC6BF22379F4400D79221 /* background@3x.png */,
-				E60EC6C022379F4400D79221 /* ic_back@3x.png */,
-				E60EC6C122379F4400D79221 /* background_2@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1480,12 +1516,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E60EC53B22378B4A00D79221 /* Build configuration list for PBXNativeTarget "Taksim" */;
 			buildPhases = (
-				A76D5C4DE62F395FB673BB6B /* [CP] Check Pods Manifest.lock */,
+				E4E1E0CF87416F59F319D90D /* [CP] Check Pods Manifest.lock */,
 				E60EC52522378B4900D79221 /* Sources */,
 				E60EC52622378B4900D79221 /* Frameworks */,
 				E60EC52722378B4900D79221 /* Resources */,
-				04F025BD8E700D0EC4FC9C75 /* [CP] Embed Pods Frameworks */,
-				3B7703B9BB038E887894B12E /* [CP] Copy Pods Resources */,
+				BB53E8F3B02B66DE94AE2FD9 /* [CP] Embed Pods Frameworks */,
+				CF02FD0C35D3C544DAA95FA3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1541,6 +1577,7 @@
 				E60EC6E42237A1B100D79221 /* menu_background@2x.png in Resources */,
 				E60EC7D62237A1CD00D79221 /* ic_vertical_dots.png in Resources */,
 				E60EC7D02237A1CD00D79221 /* loading_4.png in Resources */,
+				E6C7E475226A065E00168D7C /* ic_turn_camera@3x.png in Resources */,
 				E60EC7AF2237A1CD00D79221 /* ic_profile@3x.png in Resources */,
 				E60EC6D522379F4400D79221 /* background_2@2x.png in Resources */,
 				E60EC6CC22379F4400D79221 /* ic_back.png in Resources */,
@@ -1564,6 +1601,7 @@
 				E60EC7B72237A1CD00D79221 /* ic_bulls_eye@3x.png in Resources */,
 				E60EC77D2237A1CD00D79221 /* ic_safety_tutorial@3x.png in Resources */,
 				E60EC7DA2237A1CD00D79221 /* ic-taxi-black.png in Resources */,
+				E6C7E471226A062800168D7C /* ic_camera@3x.png in Resources */,
 				E60EC7BE2237A1CD00D79221 /* ic_cross_filled@2x.png in Resources */,
 				E60EC7882237A1CD00D79221 /* ic_bell@2x.png in Resources */,
 				E60EC6D122379F4400D79221 /* ic_back@2x.png in Resources */,
@@ -1597,6 +1635,7 @@
 				E60EC7702237A1CC00D79221 /* ic_map_tutorial@2x.png in Resources */,
 				E60EC79A2237A1CD00D79221 /* ic_plus@2x.png in Resources */,
 				E60EC76D2237A1CC00D79221 /* ic_hang_up@3x.png in Resources */,
+				E6C7E470226A062800168D7C /* ic_camera@2x.png in Resources */,
 				E60EC7772237A1CC00D79221 /* ic_down_arrow.png in Resources */,
 				E60EC6E72237A1B100D79221 /* rounded_shadow.png in Resources */,
 				E60EC77A2237A1CD00D79221 /* ic_phone@2x.png in Resources */,
@@ -1605,6 +1644,7 @@
 				E60EC7992237A1CD00D79221 /* ic_plus.png in Resources */,
 				E60EC7A92237A1CD00D79221 /* ic_facebook.png in Resources */,
 				E60EC7B62237A1CD00D79221 /* ic_home.png in Resources */,
+				E6C7E477226A065E00168D7C /* ic_turn_camera@2x.png in Resources */,
 				E60EC7722237A1CC00D79221 /* ic_help.png in Resources */,
 				E60EC7AA2237A1CD00D79221 /* ic_home@2x.png in Resources */,
 				E60EC6CD22379F4400D79221 /* cover.png in Resources */,
@@ -1617,6 +1657,7 @@
 				E60EC6CE22379F4400D79221 /* cover@3x.png in Resources */,
 				E60EC7842237A1CD00D79221 /* ic_left_arrow_white@2x.png in Resources */,
 				E60EC7A42237A1CD00D79221 /* ic_izmir_tutorial@2x.png in Resources */,
+				E6C7E46F226A062800168D7C /* ic_camera.png in Resources */,
 				E60EC6E82237A1B100D79221 /* waves_light@2x.png in Resources */,
 				E60EC76B2237A1CC00D79221 /* ic_cross_filled@3x.png in Resources */,
 				E60EC7A22237A1CD00D79221 /* ic_instagram@3x.png in Resources */,
@@ -1674,6 +1715,7 @@
 				E60EC7C72237A1CD00D79221 /* loading_17.png in Resources */,
 				E60EC76C2237A1CC00D79221 /* ic-taxi@2x.png in Resources */,
 				E60EC7942237A1CD00D79221 /* ic_star_filled@3x.png in Resources */,
+				E6C7E476226A065E00168D7C /* ic_turn_camera.png in Resources */,
 				E60EC7742237A1CC00D79221 /* ic_marker@3x.png in Resources */,
 				E60EC7A52237A1CD00D79221 /* ic_left_arrow.png in Resources */,
 				E60EC7BC2237A1CD00D79221 /* ic_instagram@2x.png in Resources */,
@@ -1688,7 +1730,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04F025BD8E700D0EC4FC9C75 /* [CP] Embed Pods Frameworks */ = {
+		BB53E8F3B02B66DE94AE2FD9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1699,7 +1741,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${PODS_ROOT}/Core/Output/Core.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -1709,7 +1750,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Core.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -1718,7 +1758,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3B7703B9BB038E887894B12E /* [CP] Copy Pods Resources */ = {
+		CF02FD0C35D3C544DAA95FA3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1742,7 +1782,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A76D5C4DE62F395FB673BB6B /* [CP] Check Pods Manifest.lock */ = {
+		E4E1E0CF87416F59F319D90D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1783,6 +1823,7 @@
 				E60EC65B22378C6100D79221 /* TutorialSliderItem-Authentication.swift in Sources */,
 				E60EC62722378C6100D79221 /* Factory-Profile.swift in Sources */,
 				E60EC64622378C6100D79221 /* Navigator-Main.swift in Sources */,
+				E6C7E46B2269B49D00168D7C /* PhotoShootSheet.swift in Sources */,
 				E60EC62022378C6100D79221 /* Modules.swift in Sources */,
 				E60EC66E22378C6100D79221 /* Navigator-Authentication.swift in Sources */,
 				E60EC63522378C6100D79221 /* EstimationOverlay.swift in Sources */,
@@ -1809,6 +1850,7 @@
 				E60EC69F22378C6100D79221 /* TSRepository.swift in Sources */,
 				E60EC68E22378C6100D79221 /* TSSlider.swift in Sources */,
 				E60EC67F22378C6100D79221 /* TSLanguage.swift in Sources */,
+				E6C7E4612268AF2000168D7C /* OrderHistorySheet.swift in Sources */,
 				E60EC6A222378C6100D79221 /* Vehicle.swift in Sources */,
 				E60EC63D22378C6100D79221 /* CallSheet.swift in Sources */,
 				E60EC67722378C6100D79221 /* LoginLayout.swift in Sources */,
@@ -1818,6 +1860,7 @@
 				E60EC61D22378C6100D79221 /* Sheet-About.swift in Sources */,
 				E60EC66522378C6100D79221 /* LoginVerificationSheet.swift in Sources */,
 				E60EC68F22378C6100D79221 /* TSApplication.swift in Sources */,
+				E6C7E4692269B47F00168D7C /* PhotoShootLayout.swift in Sources */,
 				E60EC68022378C6100D79221 /* TSSliderItem.swift in Sources */,
 				E60EC66C22378C6100D79221 /* Factory-Authentication.swift in Sources */,
 				E60EC62C22378C6100D79221 /* Page-Profile.swift in Sources */,
@@ -1829,6 +1872,7 @@
 				E60EC62422378C6100D79221 /* NotificationsSheet.swift in Sources */,
 				E60EC65E22378C6100D79221 /* OutlinedButton-Authentication.swift in Sources */,
 				E60EC66222378C6100D79221 /* FunnelLayout-Authentication.swift in Sources */,
+				E6C7E4652268BE4400168D7C /* OrderList.swift in Sources */,
 				E60EC68122378C6100D79221 /* TSPageControl.swift in Sources */,
 				E60EC61022378C6100D79221 /* FaqList.swift in Sources */,
 				E60EC61F22378C6100D79221 /* HelpLayout.swift in Sources */,
@@ -1865,6 +1909,7 @@
 				E60EC68C22378C6100D79221 /* TSMapView.swift in Sources */,
 				E60EC66F22378C6100D79221 /* TransitionFactory-Authentication.swift in Sources */,
 				E60EC66122378C6100D79221 /* TutorialPageControl.swift in Sources */,
+				E6C7E4632268AF2F00168D7C /* OrderHistoryLayout.swift in Sources */,
 				E60EC63722378C6100D79221 /* MenuItem.swift in Sources */,
 				E60EC61822378C6100D79221 /* Factory-About.swift in Sources */,
 				E60EC66322378C6100D79221 /* LoginSheet.swift in Sources */,
@@ -1903,6 +1948,7 @@
 				E60EC63022378C6100D79221 /* DriverOverlay.swift in Sources */,
 				E60EC6A022378C6100D79221 /* TSAgency.swift in Sources */,
 				E60EC69E22378C6100D79221 /* TSManager.swift in Sources */,
+				E6C7E4672268BE5700168D7C /* OrderListItem.swift in Sources */,
 				E60EC66622378C6100D79221 /* SplashSheet.swift in Sources */,
 				E60EC61222378C6100D79221 /* HelpListItem.swift in Sources */,
 				E60EC62822378C6100D79221 /* Demonstrator-Profile.swift in Sources */,
@@ -1972,6 +2018,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2033,6 +2080,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2053,14 +2101,16 @@
 		};
 		E60EC53C22378B4A00D79221 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D02E2393A9E6011FA69C35C0 /* Pods-Taksim.debug.xcconfig */;
+			baseConfigurationReference = 78882DFB888FEC44E4A3EC03 /* Pods-Taksim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FFY4F4GZ24;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/Core/Output",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlaces/Frameworks\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Meta/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2068,23 +2118,26 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.redBlac.Taksim;
+				PRODUCT_BUNDLE_IDENTIFIER = net.redblac.taksim.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s armv6";
 			};
 			name = Debug;
 		};
 		E60EC53D22378B4A00D79221 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DC05759AAA1226F62904075 /* Pods-Taksim.release.xcconfig */;
+			baseConfigurationReference = 9502795CDDC97C736C55F09B /* Pods-Taksim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FFY4F4GZ24;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/Core/Output",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlaces/Frameworks\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Meta/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2092,10 +2145,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.redBlac.Taksim;
+				PRODUCT_BUNDLE_IDENTIFIER = net.redblac.taksim.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s armv6";
 			};
 			name = Release;
 		};
