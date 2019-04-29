@@ -12,7 +12,7 @@ extension Profile {
     
     public class OrderHistoryLayout: PostLogin.WavyLayout {
         
-        private var lv: OrderList!
+        public var lv: OrderList!
         
         public override func onHeading() -> String {
             return lexiconProvider.get("trips")
@@ -22,14 +22,8 @@ extension Profile {
             
             super.onConstruct()
             
-            let items = [
-                OrderListItem(),
-                OrderListItem(),
-                OrderListItem(),
-                OrderListItem()
-            ]
             
-            self.lv = OrderList(items: items)
+            self.lv = OrderList(items: [])
             
             self.addSubview(self.lv)
             
@@ -40,9 +34,10 @@ extension Profile {
             super.onConstrain(set: &set)
             
             set.append(NSLayoutConstraint(item: lv, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: lv, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: -95))
+            set.append(NSLayoutConstraint(item: lv, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: -105))
             set.append(NSLayoutConstraint(item: lv, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: lv, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
+            
             
         }
         

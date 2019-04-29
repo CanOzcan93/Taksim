@@ -10,6 +10,10 @@ extension Profile {
     
     public class OrderList: TSListView<OrderListItem> {
         
+        public override func onInit() {
+            self.backgroundColor = .clear
+        }
+        
     }
     
 }

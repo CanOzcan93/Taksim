@@ -14,157 +14,202 @@ extension Profile {
     public class OrderListItem: TSListItemView {
         
         
-        private var ti_pickUp: Main.TextInput!
-        private var v_line: TSView!
-        private var ti_destination: Main.TextInput!
-        private var iv_from: TSImageView!
-        private var iv_dots: TSImageView!
-        private var iv_to: TSImageView!
+        private var iv_driver: TSImageView!
+        
+        private var tv_name: TSTextView!
+        private var tv_no: TSTextView!
+        private var tv_date: TSTextView!
+        private var tv_km_price: TSTextView!
+        
+        private var iv_star: TSImageView!
+        
+        private var isInitialized: Bool = false
+        
+        
+        public override func onInit() {
+            self.item = TSView()
+            self.item.isOpaque = false
+            
+            self.item.onDraw = { rect in
+                
+                if !self.isInitialized {
+                    
+                    let path = UIBezierPath(roundedRect: rect, cornerRadius: rect.height*0.2).cgPath
+                    let shadowPath = UIBezierPath(roundedRect: rect.inset(by: UIEdgeInsets(top: -1, left: -1, bottom: -1, right: -1)), cornerRadius: 8).cgPath
+                    
+                    let layer = CAShapeLayer()
+                    layer.path = path
+                    layer.fillColor = self.colorProvider.getWhiteFull().cgColor
+                    
+                    layer.shadowColor = self.colorProvider.getBlackFull().cgColor
+                    layer.shadowPath = shadowPath
+                    layer.shadowOffset = .zero
+                    layer.shadowOpacity = 0.2
+                    layer.shadowRadius = 8
+                    
+                    self.item.layer.insertSublayer(layer, at: 0)
+                    
+                    self.isInitialized = true
+                }
+                
+            }
+            
+            contentView.addSubview(self.item)
+            
+        }
+        
+        public func changeLabels(name: String?, no: String?, date: String?, price: Double?) {
+            if name != nil {
+                tv_name.text = "Isim: \(name!)"
+            }
+            if no != nil {
+                tv_no.text = "Plaka: \(no!)"
+            }
+            if date != nil {
+                tv_date.text = "Tarih: \(date!)"
+            }
+            if price != nil {
+                tv_km_price.text = "\(price!) TL"
+            }
+        }
         
         public override func onConstruct(wrapper: UIView, item: CoreView) {
             
             super.onConstruct(wrapper: wrapper, item: item)
             
-            constructFromTextInput(item: item)
-            constructLineView(item: item)
-            constructToTextInput(item: item)
-            constructFromIcon(item: item)
-            constructDotsIcon(item: item)
-            constructToIcon(item: item)
-
+            constructImageDriver(item: item)
+            constructNameTextView(item: item)
+            constructNoTextView(item: item)
+            constructDateTextView(item: item)
+            constructKmPriceTextView(item: item)
+            
         }
-
-        private func constructFromTextInput(item: CoreView) {
-
-            self.ti_pickUp = Main.TextInput()
-            self.ti_pickUp.tag = 0
-            self.ti_pickUp.setPlaceholder(text: lexiconProvider.get("current_location"))
-            self.ti_pickUp.onTap {
-                self.ti_pickUp.endEditing(true)
-            }
-            item.addSubview(self.ti_pickUp)
-
+        
+        private func constructImageDriver(item: CoreView) {
+            
+            self.iv_driver = TSImageView()
+            self.iv_driver.backgroundColor = colorProvider.getGrayLightest()
+            self.iv_driver.image = imageProvider.getProfile()
+            
+            item.addSubview(self.iv_driver)
+            
         }
-
-        private func constructLineView(item: CoreView) {
-
-            self.v_line = TSView()
-            self.v_line.backgroundColor = colorProvider.getGrayLight()
-
-            item.addSubview(self.v_line)
-
+        
+        private func constructNameTextView(item: CoreView) {
+            
+            self.tv_name = TSTextView()
+            self.tv_name.text = "Isim: "
+            self.tv_name.font = fontProvider.getRegularSmall()
+            self.tv_name.textColor = colorProvider.getDarkGray()
+            
+            item.addSubview(self.tv_name)
+            
         }
-
-        private func constructToTextInput(item: CoreView) {
-
-            self.ti_destination = Main.TextInput()
-            self.ti_destination.tag = 1
-            self.ti_destination.setPlaceholder(text: lexiconProvider.get("destination_location"))
-            self.ti_destination.onTap {
-                self.ti_destination.endEditing(true)
-            }
-            item.addSubview(self.ti_destination)
-
+        
+        private func constructNoTextView(item: CoreView) {
+            
+            self.tv_no = TSTextView()
+            self.tv_no.text = "Plaka: "
+            self.tv_no.font = fontProvider.getRegularSmall()
+            self.tv_no.textColor = colorProvider.getDarkGray()
+            
+            item.addSubview(self.tv_no)
+            
         }
-
-
-        private func constructFromIcon(item: CoreView) {
-
-            self.iv_from = TSImageView()
-            self.iv_from.image = imageProvider.getBullsEye()
-
-            item.addSubview(self.iv_from)
-
+        
+        private func constructDateTextView(item: CoreView) {
+            
+            self.tv_date = TSTextView()
+            self.tv_date.text = "Tarih: "
+            self.tv_date.font = fontProvider.getRegularSmall()
+            self.tv_date.textColor = colorProvider.getDarkGray()
+            
+            item.addSubview(self.tv_date)
+            
         }
-
-        private func constructDotsIcon(item: CoreView) {
-
-            self.iv_dots = TSImageView()
-            self.iv_dots.image = imageProvider.getVerticalDots()
-
-            item.addSubview(self.iv_from)
-
+        
+        private func constructKmPriceTextView(item: CoreView) {
+            
+            self.tv_km_price = TSTextView()
+            self.tv_km_price.text = "50 TL"
+            self.tv_km_price.textAlignment = .right
+            self.tv_km_price.font = fontProvider.getRegularSmall()
+            self.tv_km_price.textColor = colorProvider.getDarkGray()
+            
+            item.addSubview(self.tv_km_price)
+            
         }
-
-        private func constructToIcon(item: CoreView) {
-
-            self.iv_to = TSImageView()
-            self.iv_to.image = imageProvider.getLocation()
-
-            item.addSubview(self.iv_from)
-
-        }
+        
+        
+        
         
         public override func onConstrain(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
             
             super.onConstrain(set: &set, wrapper: wrapper, item: item)
             
-            set.append(NSLayoutConstraint(item: item, attribute: .width, relatedBy: .equal, toItem: wrapper, attribute: .width, multiplier: 1, constant: 0))
+            set.append(NSLayoutConstraint(item: wrapper, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 100))
+            
+            set.append(NSLayoutConstraint(item: item, attribute: .width, relatedBy: .equal, toItem: wrapper, attribute: .width, multiplier: 1, constant: -10))
             set.append(NSLayoutConstraint(item: item, attribute: .centerX, relatedBy: .equal, toItem: wrapper, attribute: .centerX, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: item, attribute: .top, relatedBy: .equal, toItem: wrapper, attribute: .top, multiplier: 1, constant: 10))
             set.append(NSLayoutConstraint(item: item, attribute: .bottom, relatedBy: .equal, toItem: wrapper, attribute: .bottom, multiplier: 1, constant: -10))
             
-            
-            constrainFromTextInput(set: &set, wrapper: wrapper, item: item)
-            constrainLineView(set: &set, wrapper: wrapper, item: item)
-            constrainToTextInput(set: &set, wrapper: wrapper, item: item)
-            constrainFromIcon(set: &set, wrapper: wrapper, item: item)
-            constrainDotsIcon(set: &set, wrapper: wrapper, item: item)
-            constrainToIcon(set: &set, wrapper: wrapper, item: item)
+            constrainImageDriver(set: &set, wrapper: wrapper, item: item)
+            constrainNoTextView(set: &set, wrapper: wrapper, item: item)
+            constrainNameTextView(set: &set, wrapper: wrapper, item: item)
+            constrainDateTextView(set: &set, wrapper: wrapper, item: item)
+            constrainKmPriceTextView(set: &set, wrapper: wrapper, item: item)
             
         }
         
-        private func constrainFromTextInput(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
-
-            set.append(NSLayoutConstraint(item: ti_pickUp, attribute: .top, relatedBy: .equal, toItem: item, attribute: .top, multiplier: 1, constant: 12.5))
-            set.append(NSLayoutConstraint(item: ti_pickUp, attribute: .right, relatedBy: .equal, toItem: item, attribute: .right, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: ti_pickUp, attribute: .left, relatedBy: .equal, toItem: item, attribute: .left, multiplier: 1, constant: 40))
-
+        private func constrainImageDriver(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
+            
+            set.append(NSLayoutConstraint(item: iv_driver, attribute: .left, relatedBy: .equal, toItem: item, attribute: .left, multiplier: 1, constant: 7.5))
+            set.append(NSLayoutConstraint(item: iv_driver, attribute: .top, relatedBy: .equal, toItem: item, attribute: .top, multiplier: 1, constant: 5))
+            set.append(NSLayoutConstraint(item: iv_driver, attribute: .bottom, relatedBy: .equal, toItem: item, attribute: .bottom, multiplier: 1, constant: -5))
+            set.append(NSLayoutConstraint(item: iv_driver, attribute: .width, relatedBy: .equal, toItem: iv_driver, attribute: .height, multiplier: 1, constant: 0))
+            
         }
-
-        private func constrainLineView(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
-
-            set.append(NSLayoutConstraint(item: v_line, attribute: .right, relatedBy: .equal, toItem: item, attribute: .right, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: v_line, attribute: .centerY, relatedBy: .equal, toItem: item, attribute: .centerY, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: v_line, attribute: .width, relatedBy: .equal, toItem: item, attribute: .width, multiplier: 1, constant: -35))
-            set.append(NSLayoutConstraint(item: v_line, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 1))
-
+        
+        private func constrainNoTextView(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
+            
+            set.append(NSLayoutConstraint(item: tv_no, attribute: .top, relatedBy: .equal, toItem: item, attribute: .top, multiplier: 1, constant: 4))
+            set.append(NSLayoutConstraint(item: tv_no, attribute: .left, relatedBy: .equal, toItem: iv_driver, attribute: .right, multiplier: 1, constant: 5))
+            set.append(NSLayoutConstraint(item: tv_no, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 150))
+            set.append(NSLayoutConstraint(item: tv_no, attribute: .height, relatedBy: .equal, toItem: item, attribute: .height, multiplier: 0.2, constant: 0))
+            
         }
-
-        private func constrainToTextInput(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
-
-            set.append(NSLayoutConstraint(item: ti_destination, attribute: .bottom, relatedBy: .equal, toItem: item, attribute: .bottom, multiplier: 1, constant: -10))
-            set.append(NSLayoutConstraint(item: ti_destination, attribute: .right, relatedBy: .equal, toItem: item, attribute: .right, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: ti_destination, attribute: .left, relatedBy: .equal, toItem: item, attribute: .left, multiplier: 1, constant: 40))
-
+        
+        private func constrainNameTextView(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
+            
+            set.append(NSLayoutConstraint(item: tv_name, attribute: .top, relatedBy: .equal, toItem: tv_no, attribute: .bottom, multiplier: 1, constant: 4))
+            set.append(NSLayoutConstraint(item: tv_name, attribute: .left, relatedBy: .equal, toItem: iv_driver, attribute: .right, multiplier: 1, constant: 5))
+            set.append(NSLayoutConstraint(item: tv_name, attribute: .right, relatedBy: .equal, toItem: item, attribute: .right, multiplier: 1, constant: 5))
+            set.append(NSLayoutConstraint(item: tv_name, attribute: .height, relatedBy: .equal, toItem: item, attribute: .height, multiplier: 0.2, constant: 0))
+            
+            
         }
-
-        private func constrainFromIcon(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
-
-            set.append(NSLayoutConstraint(item: iv_from, attribute: .left, relatedBy: .equal, toItem: item, attribute: .left, multiplier: 1, constant: 12.5))
-            set.append(NSLayoutConstraint(item: iv_from, attribute: .top, relatedBy: .equal, toItem: item, attribute: .top, multiplier: 1, constant: 12.5))
-            set.append(NSLayoutConstraint(item: iv_from, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 12))
-            set.append(NSLayoutConstraint(item: iv_from, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 12))
-
+        
+        private func constrainDateTextView(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
+            
+            set.append(NSLayoutConstraint(item: tv_date, attribute: .top, relatedBy: .equal, toItem: tv_name, attribute: .bottom, multiplier: 1, constant: 4))
+            set.append(NSLayoutConstraint(item: tv_date, attribute: .left, relatedBy: .equal, toItem: iv_driver, attribute: .right, multiplier: 1, constant: 5))
+            set.append(NSLayoutConstraint(item: tv_date, attribute: .right, relatedBy: .equal, toItem: item, attribute: .right, multiplier: 1, constant: 5))
+            set.append(NSLayoutConstraint(item: tv_date, attribute: .height, relatedBy: .equal, toItem: item, attribute: .height, multiplier: 0.2, constant: 0))
+            
         }
-
-        private func constrainDotsIcon(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
-
-            set.append(NSLayoutConstraint(item: iv_dots, attribute: .centerX, relatedBy: .equal, toItem: iv_from, attribute: .centerX, multiplier: 1, constant: 17.5))
-            set.append(NSLayoutConstraint(item: iv_dots, attribute: .centerY, relatedBy: .equal, toItem: item, attribute: .centerY, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: iv_dots, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 2))
-            set.append(NSLayoutConstraint(item: iv_dots, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 14))
-
+        
+        private func constrainKmPriceTextView(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
+            
+            set.append(NSLayoutConstraint(item: tv_km_price, attribute: .top, relatedBy: .equal, toItem: item, attribute: .top, multiplier: 1, constant: 4))
+            set.append(NSLayoutConstraint(item: tv_km_price, attribute: .right, relatedBy: .equal, toItem: item, attribute: .right, multiplier: 1, constant: -5))
+            set.append(NSLayoutConstraint(item: tv_km_price, attribute: .left, relatedBy: .equal, toItem: tv_no, attribute: .right, multiplier: 1, constant: 5))
+            set.append(NSLayoutConstraint(item: tv_km_price, attribute: .height, relatedBy: .equal, toItem: item, attribute: .height, multiplier: 0.2, constant: 0))
+            
         }
-
-        private func constrainToIcon(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
-
-            set.append(NSLayoutConstraint(item: iv_to, attribute: .left, relatedBy: .equal, toItem: item, attribute: .left, multiplier: 1, constant: 12.5))
-            set.append(NSLayoutConstraint(item: iv_to, attribute: .top, relatedBy: .equal, toItem: iv_dots, attribute: .bottom, multiplier: 1, constant: 2))
-            set.append(NSLayoutConstraint(item: iv_to, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 12))
-            set.append(NSLayoutConstraint(item: iv_to, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 16.5))
-
-        }
+        
+        
+        
         
     }
     

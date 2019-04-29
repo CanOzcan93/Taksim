@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		74CA62D7E9B781286FE958C3 /* Pods_Taksim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E654C56FEF49CFD24E270BB2 /* Pods_Taksim.framework */; };
+		88928F0BC69F6AD504FA706F /* Pods_Taksim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A58F933C695BDDCD6AA7ABD6 /* Pods_Taksim.framework */; };
 		E60EC53422378B4A00D79221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60EC53322378B4A00D79221 /* Assets.xcassets */; };
 		E60EC60D22378C6100D79221 /* TSPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EC54022378C6100D79221 /* TSPage.swift */; };
 		E60EC60E22378C6100D79221 /* TSSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EC54122378C6100D79221 /* TSSheet.swift */; };
@@ -329,8 +329,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		78882DFB888FEC44E4A3EC03 /* Pods-Taksim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.debug.xcconfig"; sourceTree = "<group>"; };
-		9502795CDDC97C736C55F09B /* Pods-Taksim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.release.xcconfig"; sourceTree = "<group>"; };
+		0F92F4E17C8AFEEFE7A4FB34 /* Pods-Taksim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.debug.xcconfig"; sourceTree = "<group>"; };
+		A58F933C695BDDCD6AA7ABD6 /* Pods_Taksim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taksim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60EC52922378B4900D79221 /* Taksim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taksim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60EC53322378B4A00D79221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60EC53822378B4A00D79221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -636,7 +636,6 @@
 		E60EC7642237A1CC00D79221 /* ic_plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_plus@3x.png"; sourceTree = "<group>"; };
 		E60EC7652237A1CC00D79221 /* ic_speech_bubble@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_speech_bubble@3x.png"; sourceTree = "<group>"; };
 		E60EC7662237A1CC00D79221 /* ic-taxi-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-taxi-black.png"; sourceTree = "<group>"; };
-		E654C56FEF49CFD24E270BB2 /* Pods_Taksim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taksim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C7E4602268AF2000168D7C /* OrderHistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistorySheet.swift; sourceTree = "<group>"; };
 		E6C7E4622268AF2F00168D7C /* OrderHistoryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryLayout.swift; sourceTree = "<group>"; };
 		E6C7E4642268BE4400168D7C /* OrderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderList.swift; sourceTree = "<group>"; };
@@ -653,6 +652,7 @@
 		E6D1BF942257A05500586767 /* QuickOrderOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOrderOverlay.swift; sourceTree = "<group>"; };
 		E6D1BF962257A9C500586767 /* TripToDestinationPointSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripToDestinationPointSheet.swift; sourceTree = "<group>"; };
 		E6D1BF982257B16800586767 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		EA5FDECD8233B94960DB755D /* Pods-Taksim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -660,28 +660,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74CA62D7E9B781286FE958C3 /* Pods_Taksim.framework in Frameworks */,
+				88928F0BC69F6AD504FA706F /* Pods_Taksim.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B79BD45EF9DED1396C88781B /* Frameworks */ = {
+		418B7F8F65DCE2214373B2A3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E654C56FEF49CFD24E270BB2 /* Pods_Taksim.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DFB94DACEED70D5AD85BC64B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				78882DFB888FEC44E4A3EC03 /* Pods-Taksim.debug.xcconfig */,
-				9502795CDDC97C736C55F09B /* Pods-Taksim.release.xcconfig */,
+				0F92F4E17C8AFEEFE7A4FB34 /* Pods-Taksim.debug.xcconfig */,
+				EA5FDECD8233B94960DB755D /* Pods-Taksim.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E3157087445A1467632BED59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A58F933C695BDDCD6AA7ABD6 /* Pods_Taksim.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E60EC52022378B4900D79221 = {
@@ -692,8 +692,8 @@
 				E60EC53E22378B5500D79221 /* Source */,
 				E60EC52B22378B4900D79221 /* Meta */,
 				E60EC52A22378B4900D79221 /* Products */,
-				DFB94DACEED70D5AD85BC64B /* Pods */,
-				B79BD45EF9DED1396C88781B /* Frameworks */,
+				418B7F8F65DCE2214373B2A3 /* Pods */,
+				E3157087445A1467632BED59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1516,12 +1516,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E60EC53B22378B4A00D79221 /* Build configuration list for PBXNativeTarget "Taksim" */;
 			buildPhases = (
-				E4E1E0CF87416F59F319D90D /* [CP] Check Pods Manifest.lock */,
+				CB09FA87995C3E624BC16A47 /* [CP] Check Pods Manifest.lock */,
 				E60EC52522378B4900D79221 /* Sources */,
 				E60EC52622378B4900D79221 /* Frameworks */,
 				E60EC52722378B4900D79221 /* Resources */,
-				BB53E8F3B02B66DE94AE2FD9 /* [CP] Embed Pods Frameworks */,
-				CF02FD0C35D3C544DAA95FA3 /* [CP] Copy Pods Resources */,
+				A0FA2767FD912E3583ED5F9F /* [CP] Embed Pods Frameworks */,
+				57776A21B402908E32BE0D72 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1730,7 +1730,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BB53E8F3B02B66DE94AE2FD9 /* [CP] Embed Pods Frameworks */ = {
+		57776A21B402908E32BE0D72 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0FA2767FD912E3583ED5F9F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1758,31 +1782,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF02FD0C35D3C544DAA95FA3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E4E1E0CF87416F59F319D90D /* [CP] Check Pods Manifest.lock */ = {
+		CB09FA87995C3E624BC16A47 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2101,7 +2101,7 @@
 		};
 		E60EC53C22378B4A00D79221 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78882DFB888FEC44E4A3EC03 /* Pods-Taksim.debug.xcconfig */;
+			baseConfigurationReference = 0F92F4E17C8AFEEFE7A4FB34 /* Pods-Taksim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -2128,7 +2128,7 @@
 		};
 		E60EC53D22378B4A00D79221 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9502795CDDC97C736C55F09B /* Pods-Taksim.release.xcconfig */;
+			baseConfigurationReference = EA5FDECD8233B94960DB755D /* Pods-Taksim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

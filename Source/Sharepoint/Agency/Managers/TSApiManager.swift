@@ -387,6 +387,16 @@ public class TSApiManager: CoreApiManager {
             completion(json)
         }
     }
-
+    
+    public func customerHistoryOrders(mobile: String, page: UInt, num: UInt,token: String,completion: @escaping (JSON)->()) {
+        let url = "http://94.101.81.210:48080/AppService/GetCustomerHistoryOrders.do"
+        let data = "jsonParam={mobile:\"\(mobile)\", page:\(page), num:\(num)}"
+        let header = ["_token": token]
+        
+        TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
+            completion(json)
+        }
+    }
+    
     
 }
