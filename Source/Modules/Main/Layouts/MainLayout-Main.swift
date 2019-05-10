@@ -15,7 +15,7 @@ extension Main {
         // Fields
         
         public var mv: TSMapView!
-        private var iv_menu: TSImageView!
+        public var iv_menu: TSImageView!
         public var i_route: RouteInput!
         
         public var o_menu: MenuOverlay!
@@ -43,9 +43,7 @@ extension Main {
             
             self.iv_menu = TSImageView()
             self.iv_menu.image = imageProvider.getHamburgerMenu()
-            self.iv_menu.onTap {
-                self.o_menu.show()
-            }
+            
             self.addSubview(iv_menu)
             
             self.o_estimation = EstimationOverlay(layout: self)

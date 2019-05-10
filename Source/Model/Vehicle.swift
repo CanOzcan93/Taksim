@@ -12,6 +12,7 @@ public class Vehicle: Equatable {
     
     public var no: String!
     public var type: UInt!
+    public var model: String?
     
     public var coordinate: CoreCoordinate!
     public var direction: UInt!

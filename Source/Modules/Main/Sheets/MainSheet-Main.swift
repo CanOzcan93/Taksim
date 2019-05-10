@@ -42,6 +42,7 @@ extension Main {
                 layout.mv.dragTo(coordinate: self.locationManager.getLastLocation(), zoom: 14)
                 layout.o_quickorder.show()
                 stateMachine.shouldMainSheetBeReset(state: false)
+                self.eventManager.shout(key: "resetMainSheet")
             }
             
             if (stateMachine.mainSheetShouldShowReview()) {
@@ -49,17 +50,26 @@ extension Main {
                 stateMachine.shouldMainSheetShowReview(state: false)
             }
             
+            if let profilePicture = self.dataStorage.grabCurrentUser()!.profilePicture {
+                let scaledImage = profilePicture.scaleImageToFitSize(size: CGSize(width: 60, height: 60))
+                layout.o_menu.iv_avatar.image = scaledImage.roundedImage
+            }
+            
         }
         
         public override func onLayoutReady(layout: Main.MainLayout) {
 
             layout.mv.trackDeviceLocation()
-            
-//            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-//                layout.mv.dragTo(coordinate: self.locationManager.getLastLocation())
-//            }
       
             startTrackingVehicles(layout: layout)
+            
+            layout.iv_menu.onTap {
+                layout.o_menu.show()
+                if let profilePicture = self.dataStorage.grabCurrentUser()!.profilePicture {
+                    let scaledImage = profilePicture.scaleImageToFitSize(size: CGSize(width: 60, height: 60))
+                    layout.o_menu.iv_avatar.image = scaledImage.roundedImage
+                }
+            }
             
             locationManager.onLocationUpdated = {
                 
@@ -89,6 +99,8 @@ extension Main {
             
             eventManager.listen(key: "resetMainSheet") {
                 
+                self.eventManager.resetEventManager()
+                
                 self.vehicles = [Vehicle]()
                 self.incomingVehicles = [Vehicle]()
                 
@@ -105,7 +117,6 @@ extension Main {
                 self.exchangeFlow.letDestinationAddress(address: nil)
                 self.exchangeFlow.letDestinationCoordinate(coordinate: nil)
                 
-//                self.exchangeFlow.letSelectedVehicleNo(no: nil)
                 self.exchangeFlow.letSelectedPlace(place: nil)
                 
                 layout.i_route.setPickUpAddress(address: "")
@@ -114,7 +125,6 @@ extension Main {
                 layout.mv.clearRoute()
                 layout.mv.clearMarkers()
                 
-                layout.o_quickorder.hide()
                 layout.o_estimation.hide()
                 
                 let coordinate = self.locationManager.getLastLocation()
@@ -177,6 +187,7 @@ extension Main {
                         layout.mv.focus(on: [path])
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+
                             layout.o_estimation.show()
                         })
                         
@@ -208,6 +219,41 @@ extension Main {
                 self.demonstrator.toOrderHistory()
             }
             
+            layout.o_menu.onExitClick = {
+                self.vehicles = []
+                self.incomingVehicles = []
+                self.stateMachine.isEditingPickUpPoint(state: false)
+                self.stateMachine.isEditingDestinationPoint(state: false)
+                
+                self.stateMachine.isPickUpPointSelected(state: false)
+                self.stateMachine.isDestinationPointSelected(state: false)
+                
+                self.exchangeFlow.letPickUpPointAddress(address: nil)
+                self.exchangeFlow.letPickUpPointCoordinate(coordinate: nil)
+                self.exchangeFlow.letDestinationAddress(address: nil)
+                self.exchangeFlow.letDestinationCoordinate(coordinate: nil)
+                
+                self.exchangeFlow.letSelectedPlace(place: nil)
+                self.dataStorage.resetCurrentUser()
+                
+                layout.i_route.setPickUpAddress(address: "")
+                layout.i_route.setDestinationAddress(address: "")
+                
+                layout.mv.clearRoute()
+                layout.mv.clearMarkers()
+                
+                self.persistentStorage.remove(key: self.persistentStorage.tokenKey)
+                
+                self.demonstrator.dismissViewControllers {
+                    
+                    Main.Module.resetInstance()
+                    Profile.Module.resetInstance()
+                    About.Module.resetInstance()
+                    PostLogin.Module.resetInstance()
+                    TSSharepoint.resetSharepoint()
+                }
+            }
+            
             layout.i_route.onPickUpPointEditing = {
                 
                 self.stateMachine.isEditingPickUpPoint(state: true)
@@ -231,6 +277,8 @@ extension Main {
             }
             
             layout.o_quickorder.onOrder = {
+                
+                self.stateMachine.isQuickOrder(state: true)
                 
                 let order = Order()
                 order.orderTime = Date()
@@ -256,8 +304,6 @@ extension Main {
                                                 
                     self.apiManager.startTrackingOrder(onSuccess: {
                         
-                        
-                        
                         print("App: Order matched with a Taxi")
                         
                         layout.o_loading.hide()
@@ -276,11 +322,15 @@ extension Main {
                         
                     }, onTripStarted: {
                         
+                        self.eventManager.shout(key: "tripStarted")
+                        
                         print("App: Trip started")
                         
                     }, onPayment: {
                         
                         print("App: Trip ended and paid")
+                        
+                        self.eventManager.shout(key: "tripEnded")
                         
                     })
                     
@@ -289,6 +339,8 @@ extension Main {
             }
             
             layout.o_estimation.onOrder = {
+                
+                self.stateMachine.isQuickOrder(state: false)
                 
                 let order = Order()
                 order.orderTime = Date()
@@ -349,57 +401,6 @@ extension Main {
                 
             }
         }
-    
-//        public override func onDismiss() {
-//            eventManager.forget(key: "updateRouteLocation")
-//        }
-//        
-//        private func startTrackingVehicles(layout: Main.MainLayout) {
-//            
-//            apiManager.startTrackingVehicles(coordinate: layout.mv.pickCenter, radius: 10000) {
-//                
-//                self.incomingVehicles = self.dataStorage.grabAvailableVehicles()
-//                
-//                for vehicle in self.incomingVehicles {
-//                    
-//                    if let existingVehicle = self.vehicles.filter({ (v) -> Bool in v == vehicle }).first {
-//                        
-//                        existingVehicle.coordinate = vehicle.coordinate
-//                        existingVehicle.direction = vehicle.direction
-//                        
-//                        let marker = self.vehicleMarkers.filter({ (m) -> Bool in m.vehicle == existingVehicle }).first
-//                        marker?.dragTo(coordinate: existingVehicle.coordinate)
-//                        
-//                    } else {
-//                        
-//                        let marker = VehicleMapMarker(image: self.imageProvider.getTaxiIcon(), on: vehicle.coordinate, size: layout.mv.lastScaledSize())
-//                        marker.vehicle = vehicle
-//                        self.vehicleMarkers.append(marker)
-//                        
-//                        layout.mv.drawMarker(marker: marker)
-//                        
-//                        self.vehicles.append(vehicle)
-//                        
-//                    }
-//                    
-//                }
-//                
-//                for vehicle in self.vehicles {
-//                    
-//                    if self.incomingVehicles.filter({ (v) -> Bool in v == vehicle }).count == 0 {
-//                        
-//                        let marker = self.vehicleMarkers.filter({ (m) -> Bool in m.vehicle == vehicle }).first!
-//                        layout.mv.removeMarker(marker: marker)
-//                        
-//                        self.vehicles.removeAll { (v) -> Bool in v == vehicle }
-//                        
-//                    }
-//                    
-//                }
-//                
-//            }
-//            
-//        }
         
         public override func onDismiss() {
             eventManager.forget(key: "updateRouteLocation")

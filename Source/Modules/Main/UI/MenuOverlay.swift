@@ -18,7 +18,7 @@ extension Main {
         private var v_shade: TSView!
         private var iv_overlay: TSImageView!
         
-        private var iv_avatar: TSImageView!
+        public var iv_avatar: TSImageView!
         
         private var mi_profile: MenuItem!
         private var mi_cards: MenuItem!
@@ -36,6 +36,11 @@ extension Main {
         
         private var mi_social: SocialMenuItem!
         
+        private var v_line_3: TSView!
+        
+        private var mi_exit: MenuItem!
+        
+        
         
         // API
         
@@ -45,6 +50,7 @@ extension Main {
         public var onHelpClick: Action?
         public var onFaqClick: Action?
         public var onTripsClick: Action?
+        public var onExitClick: Action?
         
         
         // Internal Fields
@@ -69,6 +75,9 @@ extension Main {
             constructSecondMenuStack(layout: layout)
             constructSecondLine()
             constructSocialStack(layout: layout)
+            constructThirdLine()
+            constructExitItem(layout: layout)
+            
             
         }
         
@@ -84,6 +93,8 @@ extension Main {
             constrainSecondMenuStack(set: &set)
             constrainSecondLine(set: &set)
             constrainSocialStack(set: &set)
+            constrainThirdLine(set: &set)
+            constrainExitItem(set: &set)
             
         }
         
@@ -185,6 +196,24 @@ extension Main {
             
         }
         
+        private func constructThirdLine() {
+            
+            self.v_line_3 = TSView()
+            self.v_line_3.backgroundColor = colorProvider.getWhiteSoft()
+            
+            self.packView(self.v_line_3)
+            
+        }
+        
+        private func constructExitItem(layout: CoreLayout) {
+            
+            self.mi_exit = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getExit(), text: lexiconProvider.get("exit"))
+            self.mi_exit.v_ghost.onTap {
+                self.onExitClick?()
+            }
+            
+        }
+        
         private func constrainShadeView(set: inout [NSLayoutConstraint], layout: CoreLayout) {
             
             self.hiddenShadeConstraint = NSLayoutConstraint(item: v_shade, attribute: .right, relatedBy: .equal, toItem: layout, attribute: .left, multiplier: 1, constant: 0)
@@ -260,6 +289,20 @@ extension Main {
             
         }
         
+        private func constrainThirdLine(set: inout [NSLayoutConstraint]) {
+            
+            set.append(NSLayoutConstraint(item: v_line_3, attribute: .centerX, relatedBy: .equal, toItem: iv_overlay, attribute: .centerX, multiplier: 1, constant: 0))
+            set.append(NSLayoutConstraint(item: v_line_3, attribute: .top, relatedBy: .equal, toItem: mi_social.v_ghost, attribute: .bottom, multiplier: 1, constant: 10))
+            set.append(NSLayoutConstraint(item: v_line_3, attribute: .width, relatedBy: .equal, toItem: iv_overlay, attribute: .width, multiplier: 1, constant: -70))
+            set.append(NSLayoutConstraint(item: v_line_3, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 1))
+            
+        }
+        
+        private func constrainExitItem(set: inout [NSLayoutConstraint]) {
+            
+            set.append(NSLayoutConstraint(item: mi_exit.v_ghost, attribute: .top, relatedBy: .equal, toItem: v_line_3, attribute: .bottom, multiplier: 1, constant: 10))
+            
+        }
         
         // Methods
         

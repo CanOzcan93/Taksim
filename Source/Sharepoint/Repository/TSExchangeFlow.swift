@@ -8,7 +8,6 @@
 
 import Core
 import GooglePlaces
-import SwiftyJSON
 
 public class TSExchangeFlow: CoreExchangeFlow {
     
@@ -52,47 +51,23 @@ public class TSExchangeFlow: CoreExchangeFlow {
         return self.destinationPointAddress
     }
     
-    private var currentUser: CustomerInfo?
-    public func letCurrentUser(json: JSON){
-        if json["customerInfo"].exists() {
-            let customJson = json["customerInfo"]
-            let user = CustomerInfo()
-            user.age = customJson["age"].stringValue
-            user.compAddrName = customJson["compAddrName"].stringValue
-            user.companyLocation = CoreCoordinate(latitude: customJson["compLat"].doubleValue, longitude: customJson["compLon"].doubleValue)
-            user.compName = customJson["compName"].stringValue
-            user.email = customJson["email"].stringValue
-            if customJson["gender"].intValue == 0 {
-                user.gender = .female
-            }
-            else {
-                user.gender = .male
-            }
-            user.guarderPhone = customJson["guarderPhone"].stringValue
-            user.homeAddrName = customJson["homeAddrName"].stringValue
-            user.homeLocation = CoreCoordinate(latitude: customJson["homeLat"].doubleValue, longitude: customJson["homeLon"].doubleValue)
-            user.level = customJson["level"].uIntValue
-            user.nickname = customJson["nickName"].stringValue
-            user.occupation = customJson["occupation"].stringValue
-            user.photo = customJson["photo"].stringValue
-            user.trade = customJson["trade"].stringValue
-            user.userId = customJson["userId"].uIntValue
-            self.currentUser = user
-        }
-    }
-    public func letCurrentUser(customer: CustomerInfo) {
-        self.currentUser = customer
-    }
-    public func grabCurrentUser() -> CustomerInfo? {
-        return self.currentUser
-    }
-    
     private var phoneNumberForSignUpOrLogin: String?
     public func letPhoneNumberForSignUpOrLogin(phoneNumber: String) {
         self.phoneNumberForSignUpOrLogin = phoneNumber
     }
     public func grabPhoneNumberForSignUpOrLogin() -> String? {
         return self.phoneNumberForSignUpOrLogin
+    }
+    
+    private var profilePhotoChanged: UIImage?
+    public func letProfilePhotoChanged(photo: UIImage) {
+        self.profilePhotoChanged = photo
+    }
+    public func grabProfilePhotoChanged() -> UIImage? {
+        return self.profilePhotoChanged
+    }
+    public func resetProfilePhotoChanged() {
+        self.profilePhotoChanged = nil
     }
     
 

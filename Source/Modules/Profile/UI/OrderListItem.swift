@@ -31,27 +31,27 @@ extension Profile {
             self.item.isOpaque = false
             
             self.item.onDraw = { rect in
-                
+
                 if !self.isInitialized {
-                    
+
                     let path = UIBezierPath(roundedRect: rect, cornerRadius: rect.height*0.2).cgPath
                     let shadowPath = UIBezierPath(roundedRect: rect.inset(by: UIEdgeInsets(top: -1, left: -1, bottom: -1, right: -1)), cornerRadius: 8).cgPath
-                    
+
                     let layer = CAShapeLayer()
                     layer.path = path
                     layer.fillColor = self.colorProvider.getWhiteFull().cgColor
-                    
+
                     layer.shadowColor = self.colorProvider.getBlackFull().cgColor
                     layer.shadowPath = shadowPath
                     layer.shadowOffset = .zero
                     layer.shadowOpacity = 0.2
                     layer.shadowRadius = 8
-                    
+
                     self.item.layer.insertSublayer(layer, at: 0)
-                    
+
                     self.isInitialized = true
                 }
-                
+
             }
             
             contentView.addSubview(self.item)
@@ -82,7 +82,7 @@ extension Profile {
             constructNoTextView(item: item)
             constructDateTextView(item: item)
             constructKmPriceTextView(item: item)
-            
+
         }
         
         private func constructImageDriver(item: CoreView) {
@@ -94,18 +94,18 @@ extension Profile {
             item.addSubview(self.iv_driver)
             
         }
-        
+
         private func constructNameTextView(item: CoreView) {
-            
+
             self.tv_name = TSTextView()
             self.tv_name.text = "Isim: "
             self.tv_name.font = fontProvider.getRegularSmall()
             self.tv_name.textColor = colorProvider.getDarkGray()
             
             item.addSubview(self.tv_name)
-            
+
         }
-        
+
         private func constructNoTextView(item: CoreView) {
             
             self.tv_no = TSTextView()
@@ -116,7 +116,7 @@ extension Profile {
             item.addSubview(self.tv_no)
             
         }
-        
+
         private func constructDateTextView(item: CoreView) {
             
             self.tv_date = TSTextView()
@@ -139,9 +139,9 @@ extension Profile {
             item.addSubview(self.tv_km_price)
             
         }
-        
-        
-        
+
+
+
         
         public override func onConstrain(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
             
@@ -172,31 +172,31 @@ extension Profile {
         }
         
         private func constrainNoTextView(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
-            
+
             set.append(NSLayoutConstraint(item: tv_no, attribute: .top, relatedBy: .equal, toItem: item, attribute: .top, multiplier: 1, constant: 4))
             set.append(NSLayoutConstraint(item: tv_no, attribute: .left, relatedBy: .equal, toItem: iv_driver, attribute: .right, multiplier: 1, constant: 5))
             set.append(NSLayoutConstraint(item: tv_no, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 150))
             set.append(NSLayoutConstraint(item: tv_no, attribute: .height, relatedBy: .equal, toItem: item, attribute: .height, multiplier: 0.2, constant: 0))
-            
+
         }
-        
+
         private func constrainNameTextView(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
-            
+
             set.append(NSLayoutConstraint(item: tv_name, attribute: .top, relatedBy: .equal, toItem: tv_no, attribute: .bottom, multiplier: 1, constant: 4))
             set.append(NSLayoutConstraint(item: tv_name, attribute: .left, relatedBy: .equal, toItem: iv_driver, attribute: .right, multiplier: 1, constant: 5))
             set.append(NSLayoutConstraint(item: tv_name, attribute: .right, relatedBy: .equal, toItem: item, attribute: .right, multiplier: 1, constant: 5))
             set.append(NSLayoutConstraint(item: tv_name, attribute: .height, relatedBy: .equal, toItem: item, attribute: .height, multiplier: 0.2, constant: 0))
             
-            
+
         }
-        
+
         private func constrainDateTextView(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
-            
+
             set.append(NSLayoutConstraint(item: tv_date, attribute: .top, relatedBy: .equal, toItem: tv_name, attribute: .bottom, multiplier: 1, constant: 4))
             set.append(NSLayoutConstraint(item: tv_date, attribute: .left, relatedBy: .equal, toItem: iv_driver, attribute: .right, multiplier: 1, constant: 5))
             set.append(NSLayoutConstraint(item: tv_date, attribute: .right, relatedBy: .equal, toItem: item, attribute: .right, multiplier: 1, constant: 5))
             set.append(NSLayoutConstraint(item: tv_date, attribute: .height, relatedBy: .equal, toItem: item, attribute: .height, multiplier: 0.2, constant: 0))
-            
+
         }
         
         private func constrainKmPriceTextView(set: inout [NSLayoutConstraint], wrapper: UIView, item: CoreView) {
@@ -207,9 +207,9 @@ extension Profile {
             set.append(NSLayoutConstraint(item: tv_km_price, attribute: .height, relatedBy: .equal, toItem: item, attribute: .height, multiplier: 0.2, constant: 0))
             
         }
+
         
-        
-        
+
         
     }
     

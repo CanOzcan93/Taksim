@@ -35,6 +35,12 @@ extension PostLogin {
             
         }
         
+        public static func resetInstance() {
+            
+            instance = nil
+            
+        }
+        
     }
     
 }

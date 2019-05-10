@@ -26,30 +26,52 @@ extension Main {
             
             dispatchedVehicle = dataStorage.grabDispatchedVehicle()
             
-            vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize())
-            layout.mv.drawMarker(marker: vehicleMarker)
-            
-            pickUpMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabPickUpPointCoordinate()!, size: layout.mv.lastScaledSize())
-            layout.mv.drawMarker(marker: pickUpMarker)
-            
-            destinationMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabDestinationCoordinate()!, size: layout.mv.lastScaledSize())
-            layout.mv.drawMarker(marker: destinationMarker)
-            
-            deviceLocation = locationManager.getLastLocation()
-            
-            layout.mv.drawRoute(apiManager: apiManager, from: exchangeFlow.grabPickUpPointCoordinate()!, to: exchangeFlow.grabDestinationCoordinate()!, color: colorProvider.getRouteBlue()) { response in
+            if self.stateMachine.notQuickOrderStarted() {
                 
-                self.path = GMSMutablePath(fromEncodedPath: response["routes"].arrayValue.first!["overview_polyline"].dictionaryValue["points"]!.stringValue)
+                vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize())
+                layout.mv.drawMarker(marker: vehicleMarker)
+                
+                pickUpMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabPickUpPointCoordinate()!, size: layout.mv.lastScaledSize())
+                layout.mv.drawMarker(marker: pickUpMarker)
+                
+                destinationMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabDestinationCoordinate()!, size: layout.mv.lastScaledSize())
+                layout.mv.drawMarker(marker: destinationMarker)
+                
+                deviceLocation = locationManager.getLastLocation()
+                
+                layout.mv.drawRoute(apiManager: apiManager, from: exchangeFlow.grabPickUpPointCoordinate()!, to: exchangeFlow.grabDestinationCoordinate()!, color: colorProvider.getRouteBlue()) { response in
+                    
+                    self.path = GMSMutablePath(fromEncodedPath: response["routes"].arrayValue.first!["overview_polyline"].dictionaryValue["points"]!.stringValue)
+                    
+                }
+                
+                eventManager.listen(key: "dispatchedVehicleUpdated") {
+                    
+                    self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
+                    
+                    self.vehicleMarker.dragTo(coordinate: self.dispatchedVehicle.coordinate)
+                    
+                    layout.mv.focus(coordinates: [self.dispatchedVehicle.coordinate, self.exchangeFlow.grabPickUpPointCoordinate()!, self.exchangeFlow.grabDestinationCoordinate()!, self.deviceLocation], paths: [self.path!])
+                    
+                }
+                
+                
                 
             }
             
-            eventManager.listen(key: "dispatchedVehicleUpdated") {
+            else {
                 
-                self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
+                vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize())
+                layout.mv.drawMarker(marker: vehicleMarker)
                 
-                self.vehicleMarker.dragTo(coordinate: self.dispatchedVehicle.coordinate)
+                eventManager.listen(key: "dispatchedVehicleUpdated") {
+                    self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
+                    
+                    layout.mv.dragTo(coordinate: self.dispatchedVehicle.coordinate, angle: Double(self.dispatchedVehicle.direction), zoom: 16)
+                    
+                }
                 
-                layout.mv.focus(coordinates: [self.dispatchedVehicle.coordinate, self.exchangeFlow.grabPickUpPointCoordinate()!, self.exchangeFlow.grabDestinationCoordinate()!, self.deviceLocation], paths: [self.path!])
+                
                 
             }
             
@@ -58,9 +80,10 @@ extension Main {
                 self.stateMachine.shouldMainSheetBeReset(state: true)
                 self.stateMachine.shouldMainSheetShowReview(state: true)
                 
-                self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet()
+                self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet(callSheetState: self.stateMachine.callSheetAppeared())
                 
             }
+            
             
             
             

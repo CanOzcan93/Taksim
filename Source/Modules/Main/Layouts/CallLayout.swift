@@ -23,6 +23,7 @@ extension Main {
         private var tv_status: TSTextView!
         
         private var iv_hang_up: TSImageView!
+        private var currentDriver: Driver!
         
         
         public var onHangUp: Action!
@@ -76,7 +77,7 @@ extension Main {
             self.addSubview(tv_plate)
             
             tv_status = TSTextView()
-            tv_status.text = "Bağlandı"
+            tv_status.text = "Bağlanıyor"
             tv_status.textAlignment = .center
             tv_status.textColor = UIColor.white
             tv_status.font = fontProvider.getRegularMedium()
@@ -127,6 +128,22 @@ extension Main {
             set.append(NSLayoutConstraint(item: iv_hang_up, attribute: .top, relatedBy: .equal, toItem: tv_status, attribute: .bottom, multiplier: 1, constant: 30))
             set.append(NSLayoutConstraint(item: iv_hang_up, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 60))
             set.append(NSLayoutConstraint(item: iv_hang_up, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 60))
+            
+        }
+        
+        public func addDriverInfo(driver: Driver, vehicle: Vehicle) {
+            currentDriver = driver
+            if driver.driverName != nil {
+                tv_name.text = driver.driverName
+            }
+            if driver.image != nil {
+                let scaledImage = driver.image!.scaledImage(withSize: CGSize(width: 130, height: 130))
+                iv_profile.image = scaledImage.roundedImage
+            }
+            if vehicle.no != nil {
+                tv_plate.text = vehicle.no
+            }
+            
             
         }
         

@@ -208,11 +208,17 @@ extension Main {
             
         }
         
-        public func goBackFromTripToDestinationPointSheetToMainSheet() {
+        public func goBackFromTripToDestinationPointSheetToMainSheet(callSheetState: Bool) {
             
             transition = transitionFactory.getFromLeftToRight()
-            
-            dismiss()
+            sheetFactory = SheetFactory()
+            dismiss {
+                self.dismiss {
+                    if callSheetState {
+                        self.dismiss()
+                    }
+                }
+            }
             
         }
         

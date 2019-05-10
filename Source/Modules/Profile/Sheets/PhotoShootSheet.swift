@@ -13,7 +13,7 @@ extension Profile {
         public override func onLayoutReady(layout: PhotoShootLayout) {
             
             layout.iv_back.onTap {
-                self.mediaManager.turnOffCaptureSession()
+//                self.mediaManager.turnOffCaptureSession()
                 self.demonstrator.goBack()
             }
             
@@ -22,7 +22,14 @@ extension Profile {
                 self.mediaManager.updateImageInput()
             }
             
-//            mediaManager.turnOnCaptureSessionAndCreatePreviewLayer(compound: layout.v_camera)
+            layout.iv_shoot.onTap {
+                self.mediaManager.shootPhoto(completition: { (image) in
+                    self.exchangeFlow.letProfilePhotoChanged(photo: image)
+                    self.demonstrator.goBack()
+                })
+            }
+            
+            mediaManager.turnOnCaptureSessionAndCreatePreviewLayer(compound: layout.v_camera)
             
         }
         

@@ -82,4 +82,28 @@ public class TSStateMachine: CoreStateMachine {
         return !self.loginState
     }
     
+    private var stateOfQuickOrder: Bool = true
+    public func isQuickOrder(state: Bool) {
+        self.stateOfQuickOrder = state
+    }
+    public func quickOrderStarted() -> Bool {
+        return self.stateOfQuickOrder
+    }
+    public func notQuickOrderStarted() -> Bool {
+        return !self.stateOfQuickOrder
+    }
+    
+    private var stateCallSheetAppeared: Bool = false
+    public func isCallSheetAppear(state: Bool) {
+        self.stateCallSheetAppeared = state
+    }
+    
+    public func callSheetAppeared() -> Bool {
+        return self.stateCallSheetAppeared
+    }
+    public func notCallSheetAppeared() -> Bool {
+        return !self.stateCallSheetAppeared
+    }
+    
+    
 }

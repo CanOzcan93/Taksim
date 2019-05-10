@@ -35,6 +35,12 @@ extension Authentication {
             
         }
         
+        public static func resetInstance() {
+            
+            instance = nil
+            
+        }
+        
     }
     
 }

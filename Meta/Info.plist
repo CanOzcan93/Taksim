@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>3</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -36,6 +36,8 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Kameralara Erişim Talebi</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Koordinat Bilgilerinize Erişim Talebi</string>
+	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Koordinat Bilgilerinize Erişim Talebi</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Koordinat Bilgilerinize Erişim Talebi</string>

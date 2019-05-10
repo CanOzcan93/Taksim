@@ -12,7 +12,8 @@ extension Main {
     
     public class Module: CoreModule<Factory, PageFactory, SheetFactory, TransitionFactory, Navigator, Demonstrator> {
         
-        private static var instance: Module?
+        public static var instance: Module?
+        
         public static func getInstance() -> Module {
             
             guard instance != nil else {
@@ -34,6 +35,13 @@ extension Main {
             return instance!
             
         }
+        
+        public static func resetInstance() {
+            
+            instance = nil
+            
+        }
+        
         
     }
     

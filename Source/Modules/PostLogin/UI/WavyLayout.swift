@@ -53,6 +53,10 @@ extension PostLogin {
             
         }
         
+        open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.endEditing(true)
+        }
+        
         public override func onConstrain(set: inout [NSLayoutConstraint]) {
         
             set.append(NSLayoutConstraint(item: iv_background, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))

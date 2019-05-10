@@ -16,11 +16,19 @@ extension Main {
         
         public override func onLayoutReady(layout: Main.CallLayout) {
             
+            self.stateMachine.isCallSheetAppear(state: true)
+            
+            layout.addDriverInfo(driver: self.dataStorage.grabDispatchedDriver()!, vehicle: self.dataStorage.grabDispatchedVehicle()!)
+            
             layout.onHangUp = {
                 self.demonstrator.goBackFromCallSheetToTripToPickUpPointSheet()
             }
             
             
+        }
+        
+        public override func onLayoutReappear(layout: Main.CallLayout) {
+            self.stateMachine.isCallSheetAppear(state: true)
         }
         
     }

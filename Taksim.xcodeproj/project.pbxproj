@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88928F0BC69F6AD504FA706F /* Pods_Taksim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A58F933C695BDDCD6AA7ABD6 /* Pods_Taksim.framework */; };
 		E60EC53422378B4A00D79221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60EC53322378B4A00D79221 /* Assets.xcassets */; };
 		E60EC60D22378C6100D79221 /* TSPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EC54022378C6100D79221 /* TSPage.swift */; };
 		E60EC60E22378C6100D79221 /* TSSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EC54122378C6100D79221 /* TSSheet.swift */; };
@@ -310,6 +309,7 @@
 		E60EC7D82237A1CD00D79221 /* ic_plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EC7642237A1CC00D79221 /* ic_plus@3x.png */; };
 		E60EC7D92237A1CD00D79221 /* ic_speech_bubble@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EC7652237A1CC00D79221 /* ic_speech_bubble@3x.png */; };
 		E60EC7DA2237A1CD00D79221 /* ic-taxi-black.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EC7662237A1CC00D79221 /* ic-taxi-black.png */; };
+		E69DDC9522803B8B004DF10B /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DDC9422803B8B004DF10B /* Driver.swift */; };
 		E6C7E4612268AF2000168D7C /* OrderHistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7E4602268AF2000168D7C /* OrderHistorySheet.swift */; };
 		E6C7E4632268AF2F00168D7C /* OrderHistoryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7E4622268AF2F00168D7C /* OrderHistoryLayout.swift */; };
 		E6C7E4652268BE4400168D7C /* OrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7E4642268BE4400168D7C /* OrderList.swift */; };
@@ -326,11 +326,12 @@
 		E6D1BF952257A05500586767 /* QuickOrderOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF942257A05500586767 /* QuickOrderOverlay.swift */; };
 		E6D1BF972257A9C500586767 /* TripToDestinationPointSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF962257A9C500586767 /* TripToDestinationPointSheet.swift */; };
 		E6D1BF992257B16800586767 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF982257B16800586767 /* LoadingOverlay.swift */; };
+		F1817173DD948AB92D0C49E3 /* Pods_Taksim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A26D4E9065F33B8B86A270 /* Pods_Taksim.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F92F4E17C8AFEEFE7A4FB34 /* Pods-Taksim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.debug.xcconfig"; sourceTree = "<group>"; };
-		A58F933C695BDDCD6AA7ABD6 /* Pods_Taksim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taksim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B55DC8DE2E6199F7564F405 /* Pods-Taksim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.debug.xcconfig"; sourceTree = "<group>"; };
+		C3A26D4E9065F33B8B86A270 /* Pods_Taksim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taksim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60EC52922378B4900D79221 /* Taksim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taksim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60EC53322378B4A00D79221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60EC53822378B4A00D79221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -636,6 +637,7 @@
 		E60EC7642237A1CC00D79221 /* ic_plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_plus@3x.png"; sourceTree = "<group>"; };
 		E60EC7652237A1CC00D79221 /* ic_speech_bubble@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_speech_bubble@3x.png"; sourceTree = "<group>"; };
 		E60EC7662237A1CC00D79221 /* ic-taxi-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-taxi-black.png"; sourceTree = "<group>"; };
+		E69DDC9422803B8B004DF10B /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		E6C7E4602268AF2000168D7C /* OrderHistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistorySheet.swift; sourceTree = "<group>"; };
 		E6C7E4622268AF2F00168D7C /* OrderHistoryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryLayout.swift; sourceTree = "<group>"; };
 		E6C7E4642268BE4400168D7C /* OrderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderList.swift; sourceTree = "<group>"; };
@@ -652,7 +654,7 @@
 		E6D1BF942257A05500586767 /* QuickOrderOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOrderOverlay.swift; sourceTree = "<group>"; };
 		E6D1BF962257A9C500586767 /* TripToDestinationPointSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripToDestinationPointSheet.swift; sourceTree = "<group>"; };
 		E6D1BF982257B16800586767 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
-		EA5FDECD8233B94960DB755D /* Pods-Taksim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.release.xcconfig"; sourceTree = "<group>"; };
+		E834909DB8F0767EB4565B71 /* Pods-Taksim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -660,28 +662,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88928F0BC69F6AD504FA706F /* Pods_Taksim.framework in Frameworks */,
+				F1817173DD948AB92D0C49E3 /* Pods_Taksim.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		418B7F8F65DCE2214373B2A3 /* Pods */ = {
+		8EB940E63BE5187982ED5C26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0F92F4E17C8AFEEFE7A4FB34 /* Pods-Taksim.debug.xcconfig */,
-				EA5FDECD8233B94960DB755D /* Pods-Taksim.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E3157087445A1467632BED59 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A58F933C695BDDCD6AA7ABD6 /* Pods_Taksim.framework */,
+				C3A26D4E9065F33B8B86A270 /* Pods_Taksim.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A3CE8F356B97440644CB9B87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B55DC8DE2E6199F7564F405 /* Pods-Taksim.debug.xcconfig */,
+				E834909DB8F0767EB4565B71 /* Pods-Taksim.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		E60EC52022378B4900D79221 = {
@@ -692,8 +694,8 @@
 				E60EC53E22378B5500D79221 /* Source */,
 				E60EC52B22378B4900D79221 /* Meta */,
 				E60EC52A22378B4900D79221 /* Products */,
-				418B7F8F65DCE2214373B2A3 /* Pods */,
-				E3157087445A1467632BED59 /* Frameworks */,
+				A3CE8F356B97440644CB9B87 /* Pods */,
+				8EB940E63BE5187982ED5C26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1313,6 +1315,7 @@
 				E60EC60A22378C6100D79221 /* Vehicle.swift */,
 				E60EC60B22378C6100D79221 /* Order.swift */,
 				E60EC60C22378C6100D79221 /* CustomerInfo.swift */,
+				E69DDC9422803B8B004DF10B /* Driver.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1516,12 +1519,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E60EC53B22378B4A00D79221 /* Build configuration list for PBXNativeTarget "Taksim" */;
 			buildPhases = (
-				CB09FA87995C3E624BC16A47 /* [CP] Check Pods Manifest.lock */,
+				A6CE32EF412AC7067648E199 /* [CP] Check Pods Manifest.lock */,
 				E60EC52522378B4900D79221 /* Sources */,
 				E60EC52622378B4900D79221 /* Frameworks */,
 				E60EC52722378B4900D79221 /* Resources */,
-				A0FA2767FD912E3583ED5F9F /* [CP] Embed Pods Frameworks */,
-				57776A21B402908E32BE0D72 /* [CP] Copy Pods Resources */,
+				8DEDE08B8BC0F56BE70439A0 /* [CP] Embed Pods Frameworks */,
+				AF54193B1B8A6AF9D5D055D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1730,7 +1733,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		57776A21B402908E32BE0D72 /* [CP] Copy Pods Resources */ = {
+		8DEDE08B8BC0F56BE70439A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${PODS_ROOT}/Core/Output/Core.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Core.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6CE32EF412AC7067648E199 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Taksim-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF54193B1B8A6AF9D5D055D7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1754,56 +1809,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A0FA2767FD912E3583ED5F9F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${PODS_ROOT}/Core/Output/Core.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Core.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebSocket.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CB09FA87995C3E624BC16A47 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Taksim-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1811,6 +1816,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69DDC9522803B8B004DF10B /* Driver.swift in Sources */,
 				E60EC62522378C6100D79221 /* Module-Profile.swift in Sources */,
 				E60EC62F22378C6100D79221 /* NotificationsLayout.swift in Sources */,
 				E60EC68A22378C6100D79221 /* TSButton.swift in Sources */,
@@ -2101,7 +2107,7 @@
 		};
 		E60EC53C22378B4A00D79221 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F92F4E17C8AFEEFE7A4FB34 /* Pods-Taksim.debug.xcconfig */;
+			baseConfigurationReference = 8B55DC8DE2E6199F7564F405 /* Pods-Taksim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -2128,7 +2134,7 @@
 		};
 		E60EC53D22378B4A00D79221 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA5FDECD8233B94960DB755D /* Pods-Taksim.release.xcconfig */;
+			baseConfigurationReference = E834909DB8F0767EB4565B71 /* Pods-Taksim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

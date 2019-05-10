@@ -8,6 +8,7 @@
 
 import Core
 import SwiftyJSON
+import Alamofire
 
 public class TSApiManager: CoreApiManager {
     
@@ -185,18 +186,38 @@ public class TSApiManager: CoreApiManager {
     
     public func updateCustomerInfo(mobilePhone: String, customerInfo: CustomerInfo, token: String, photo: UIImage?, completion: @escaping (JSON)->()) {
         
-        let url = "http://94.101.81.210:48080/AppService/UpdateCustomerInfo.do"
-        var customerInfoJson = "age:\"\(customerInfo.age)\", compAddrName: \"\(customerInfo.compAddrName)\", compLat: \(customerInfo.companyLocation.coordinate.latitude),  compLon:\(customerInfo.companyLocation.coordinate.longitude), compName: \"\(customerInfo.compName)\", email:\"\(customerInfo.email)\", gender: \(customerInfo.gender.rawValue), guarderPhone: \"\(customerInfo.guarderPhone)\", homeAddrName: \"\(customerInfo.homeAddrName)\", homeLat:\(customerInfo.homeLocation.coordinate.latitude), homeLon: \(customerInfo.homeLocation.coordinate.longitude), level: \(customerInfo.level), nickName: \"\(customerInfo.nickname)\", occupation:\"\(customerInfo.occupation)\", trade: \"\(customerInfo.trade)\""
-        if photo != nil {
-            let imageNSData : NSData = photo!.pngData()! as NSData
-            let strBase64: String = imageNSData.base64EncodedString(options: .lineLength64Characters)
-            customerInfoJson = customerInfoJson + ",photo: \"\(strBase64)\""
-        }
-        let data = "jsonParam={mobile:\"\(mobilePhone)\", customerInfo:{\(customerInfoJson)}}"
+        let url = "https://portal.taksimizmir.com/AppService/UpdateCustomerInfo.do"
         let header = ["_token": token]
-
-        TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
-            completion(json)
+        let parameters: Dictionary<String,Any> = [ "jsonParam" : [
+                "mobile": mobilePhone,
+                "customerInfo": [
+                    "age": customerInfo.age,
+                    "compAddrName": customerInfo.compAddrName,
+                    "compLat": customerInfo.companyLocation.coordinate.latitude,
+                    "compLon": customerInfo.companyLocation.coordinate.longitude,
+                    "compName": customerInfo.compName,
+                    "email": customerInfo.email,
+                    "gender": customerInfo.gender.rawValue,
+                    "guarderPhone": customerInfo.guarderPhone,
+                    "homeAddrName": customerInfo.homeAddrName,
+                    "homeLat": customerInfo.homeLocation.coordinate.latitude,
+                    "homeLon": customerInfo.homeLocation.coordinate.longitude,
+                    "level": customerInfo.level,
+                    "nickName": customerInfo.nickname,
+                    "occupation": customerInfo.occupation,
+                    "trade": customerInfo.trade
+                ]
+            ]
+        ]
+        
+        if photo != nil {
+            TSNetworkManager.multiPartPostWithImages(url: url, parameters: parameters, headers: header, photos: ["photo": photo!]) { (json, headers) in
+                completion(json)
+            }
+        } else {
+            TSNetworkManager.multiPartPostWithImages(url: url, parameters: parameters, headers: header, photos: nil) { (json, heades) in
+                completion(json)
+            }
         }
     }
     
@@ -253,7 +274,7 @@ public class TSApiManager: CoreApiManager {
     private var orderDispatched: Bool!
     private var tripStarted: Bool!
     
-    private var onOrderDispathed: Action!
+    private var onOrderDispatched: Action!
     private var onOrderFailedToDispatch: Action!
     private var onOrderCanceled: Action!
     private var onTripStarted: Action!
@@ -264,7 +285,7 @@ public class TSApiManager: CoreApiManager {
         self.orderDispatched = false
         self.tripStarted = false
         
-        self.onOrderDispathed = onSuccess
+        self.onOrderDispatched = onSuccess
         self.onOrderCanceled = onCancel
         self.onOrderFailedToDispatch = onFail
         self.onTripStarted = onTripStarted
@@ -301,14 +322,17 @@ public class TSApiManager: CoreApiManager {
                 
                 vehicle!.no = carInfo.dictionaryValue["carNo"]?.stringValue
                 vehicle!.type = 1
+                vehicle!.model = carInfo["carNo"].string
                 vehicle!.coordinate = CoreCoordinate(latitude: lat!, longitude: lon!)
                 vehicle!.direction = carInfo.dictionaryValue["direction"]?.uIntValue
                 
                 self.dataStorage.storeDispathedVehicle(vehicle: vehicle)
                 
                 if (!self.orderDispatched) {
-                    self.onOrderDispathed()
-                    self.orderDispatched = true
+                    self.dataStorage.storeDispatchedDriver(json: res) {
+                        self.orderDispatched = true
+                        self.onOrderDispatched()
+                    }
                 }
                 
                 self.eventManager.shout(key: "dispatchedVehicleUpdated")

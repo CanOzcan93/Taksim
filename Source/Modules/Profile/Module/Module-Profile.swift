@@ -35,6 +35,12 @@ extension Profile {
             
         }
         
+        public static func resetInstance() {
+            
+            instance = nil
+            
+        }
+        
     }
     
 }

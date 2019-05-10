@@ -284,6 +284,22 @@ extension Main {
             self.tv_duration.text = lexiconProvider.get("estimated_time") + ": \(duration/60) dk"
         }
         
+        public func setDriverInfo(driver: Driver, vehicle: Vehicle) {
+            if (driver.driverName != nil && driver.driverName! != "") {
+                self.tv_name.text = driver.driverName
+            }
+            if (vehicle.model != nil && vehicle.model! != "") {
+                self.tv_plate.text = vehicle.model
+            }
+            if (vehicle.no != "") {
+                self.tv_vehicle.text = vehicle.no
+            }
+            if (driver.image != nil) {
+                let imager = driver.image?.scaleImageToFitSize(size: CGSize(width: 60, height: 60))
+                self.iv_avatar.image  = imager?.roundedImage
+            }
+        }
+        
     }
 
 }

@@ -135,6 +135,7 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "Alamofire"
+  s.dependency "AlamofireImage"
   s.dependency "SwiftyJSON"
   s.dependency "GoogleMaps"
   s.dependency "GooglePlaces"

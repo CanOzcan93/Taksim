@@ -14,7 +14,7 @@ extension Profile {
 
         // Fields
         
-        private var iv_avatar: TSImageView!
+        public var iv_avatar: TSImageView!
         public var iv_plus: TSImageView!
         
         public var ti_name: PostLogin.TextInput!

@@ -14,6 +14,7 @@ extension Main {
     public class TripToPickUpPointSheet : Sheet<TripToPickUpPointLayout> {
         
         private var dispatchedVehicle: Vehicle!
+        private var dispatchedDriver: Driver!
         
         private var vehicleMarker: CoreMapMarker!
         private var pickUpMarker: CoreMapMarker!
@@ -24,6 +25,9 @@ extension Main {
         public override func onLayoutAppear(layout: Main.TripToPickUpPointLayout) {
             
             dispatchedVehicle = dataStorage.grabDispatchedVehicle()
+            dispatchedDriver = dataStorage.grabDispatchedDriver()
+            
+            layout.o_driver.setDriverInfo(driver: dispatchedDriver, vehicle: dispatchedVehicle)
             
             vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize())
             layout.mv.drawMarker(marker: vehicleMarker)
@@ -60,36 +64,6 @@ extension Main {
                 
             }
             
-//            layout.mv.focus(on: [selectedVehicle.coordinate, exchangeFlow.grabPickUpPointCoordinate()!, deviceLocation])
-            
-//            var trackingEnabled = true
-//            layout.mv.drawRoute(apiManager: apiManager, from: selectedVehicle.coordinate, to: exchangeFlow.grabPickUpPointCoordinate()!, color: colorProvider.getRouteBlue()) { response in
-//
-//                let route = response["routes"].arrayValue.first!["legs"].arrayValue.first!
-//                layout.o_driver.setDuration(duration: route["duration"].dictionaryValue["value"]!.intValue)
-//
-//                self.apiManager.startTrackingVehicles(coordinate: { return self.selectedVehicle.coordinate }, radius: 1000) {
-//
-//                    if (trackingEnabled) {
-//
-//                        let vehicles = self.dataStorage.grabAvailableVehicles()
-//
-//                        self.selectedVehicle = vehicles.filter({ (v) -> Bool in v.no == self.selectedVehicleNo }).first
-//
-//                        self.vehicleMarker.dragTo(coordinate: self.selectedVehicle.coordinate)
-//
-//                        if let ppc = self.exchangeFlow.grabPickUpPointCoordinate() {
-//
-//                            layout.mv.focus(on: [self.selectedVehicle.coordinate, ppc, self.deviceLocation])
-//
-//                        }
-//
-//                    }
-//
-//                }
-//
-//            }
-            
             layout.o_driver.onCall = {
                 self.demonstrator.toCallSheet()
             }
@@ -115,20 +89,6 @@ extension Main {
                         
                     }
                     
-//                    self.apiManager.stopTrackingVehicles()
-//                    trackingEnabled = false
-//
-//                    self.stateMachine.shouldMainSheetBeReset(state: true)
-//                    self.eventManager.shout(key: "resetMainSheet")
-//
-//                    self.demonstrator.goBackToMainSheet()
-//
-//                    layout.mv.clearRoute()
-//                    layout.mv.clearMarkers()
-//
-//                    layout.o_driver.hide()
-//                    popup.hide()
-                    
                 }
                 
                 popup.show()
@@ -136,6 +96,8 @@ extension Main {
             }
             
         }
+        
+        
         
     }
     

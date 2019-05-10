@@ -24,7 +24,7 @@ extension Authentication {
                         if let intCode = UInt(code) {
                             self.apiManager.customerLogin(mobilePhone: phone, verifyCode: intCode, completion: { (json, code) in
                                 if code != nil {
-                                    self.exchangeFlow.letCurrentUser(json: json)
+                                    self.dataStorage.letCurrentUser(json: json,completion: nil)
                                     self.persistentStorage.store(key: self.persistentStorage.phoneNumberKey, value: phone)
                                     self.persistentStorage.store(key: self.persistentStorage.tokenKey, value: code!)
                                     self.demonstrator.toMainModule()

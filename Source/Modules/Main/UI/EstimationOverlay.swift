@@ -226,6 +226,11 @@ extension Main {
         public func fillAttributes(distance: Int, duration: Int) {
             self.tv_left.text = "\(distance/1000) Km"
             self.tv_center.text = "\(duration/60) Dk"
+            var payment = Int(Double(distance/1000) * 2.5 + 4.0)
+            if payment < 10 {
+                payment = 10
+            }
+            self.tv_right.text = "\(payment) TL"
         }
     
         

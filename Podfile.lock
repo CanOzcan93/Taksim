@@ -1,7 +1,10 @@
 PODS:
   - Alamofire (4.8.1)
+  - AlamofireImage (3.5.0):
+    - Alamofire (~> 4.8)
   - Core (0.0.1):
     - Alamofire
+    - AlamofireImage
     - GoogleMaps
     - GooglePlaces
     - SwiftWebSocket
@@ -22,6 +25,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
     - GoogleMaps
     - GooglePlaces
     - SwiftWebSocket
@@ -33,12 +37,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Core:
-    :commit: 13d17aa21e66cabceeff9d6568c33a7c2cfc7f3b
+    :commit: 5b9b782cf90ef94f4b93064488ec2ed56d667a21
     :git: https://github.com/CanOzcan93/Core.git
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  Core: cbc35db3695ca0beeea5861e98402b001d563bdd
+  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  Core: da4c6571e0df7728992549ee24e52ba87917e202
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
   SwiftWebSocket: 612c9729fd503cb6b0b8b45390c788686dac306f

@@ -29,6 +29,7 @@ open class CustomerInfo: CustomStringConvertible {
     var companyLocation: CoreCoordinate = CoreCoordinate(latitude: 121.5678, longitude: 31.5678)
     var photo: String = ""
     var userId: UInt = 0
+    var profilePicture: UIImage?
     
     public var description: String {
         var description = ""

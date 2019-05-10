@@ -35,6 +35,12 @@ extension About {
             
         }
         
+        public static func resetInstance() {
+            
+            instance = nil
+            
+        }
+        
     }
     
 }

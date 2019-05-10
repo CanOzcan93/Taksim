@@ -40,12 +40,8 @@ extension Profile {
         }
         
         public func toPhotoShootSheet() {
-            let photoSheet = sheetFactory.getPhotoShootSheet()
-            sheet = photoSheet
+            sheet = sheetFactory.getPhotoShootSheet()
             transition = transitionFactory.getFromRightToLeft()
-            
-            let photoLayout = photoSheet.view as! PhotoShootLayout
-            photoSheet.mediaManager.turnOnCaptureSessionAndCreatePreviewLayer(compound: photoLayout.v_camera)
             
             present()
             

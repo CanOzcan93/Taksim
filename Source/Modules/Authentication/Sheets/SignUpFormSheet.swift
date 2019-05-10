@@ -20,12 +20,12 @@ extension Authentication {
             
             layout.btn_next.onClick {
                 if layout.ti_email.text != nil && layout.ti_email.text!.isValidEmail {
-                    let currentUser = self.exchangeFlow.grabCurrentUser()!
+                    let currentUser = self.dataStorage.grabCurrentUser()!
                     currentUser.nickname = "\(layout.ti_name.text ?? "") \(layout.ti_surname.text ?? "")"
                     currentUser.email = layout.ti_email.text ?? ""
                     self.apiManager.updateCustomerInfo(mobilePhone: self.exchangeFlow.grabPhoneNumberForSignUpOrLogin()!, customerInfo: currentUser, token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String, photo: nil){ (json) in
                         if json["errCode"].uIntValue == 0 && json["errCode"].exists() {
-                            self.exchangeFlow.letCurrentUser(customer: currentUser)
+                            self.dataStorage.letCurrentUser(customer: currentUser)
                             self.demonstrator.toMainModule()
                         }
                     }
