@@ -202,7 +202,7 @@ extension Main {
         }
         
         public func goBackToMainSheet() {
-            
+            sheetFactory.resetSheetsButMainSheet()
             transition = transitionFactory.getFromLeftToRight()
             dismiss()
             

@@ -13,7 +13,7 @@ extension PostLogin {
     public class TextInput: TSTextInput {
         
         private var drawn: Bool!
-        
+
         public override func onConstruct() {
             
             self.font = fontProvider.getRegularMedium()

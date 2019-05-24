@@ -12,6 +12,7 @@ public class LoadingOverlay: TSCompoundView {
     
     private var v_shade: TSView!
     private var iv: TSImageView!
+    public var iv_cancel: TSImageView!
     
     private var hiddenShadeConstraint: NSLayoutConstraint!
     private var visibleShadeConstraint: NSLayoutConstraint!
@@ -20,6 +21,7 @@ public class LoadingOverlay: TSCompoundView {
         
         constructShadeView()
         constructAnimatedImage()
+        constructCancelButton()
         
     }
     
@@ -27,6 +29,7 @@ public class LoadingOverlay: TSCompoundView {
         
         constrainShadeView(set: &set, layout: layout)
         constrainAnimatedImage(set: &set, layout: layout)
+        constrainCancelButton(set: &set, layout: layout)
         
     }
     
@@ -34,9 +37,6 @@ public class LoadingOverlay: TSCompoundView {
         
         self.v_shade = TSView()
         self.v_shade.backgroundColor = colorProvider.getBlackSoft()
-        self.v_shade.onTap {
-            self.hide()
-        }
         
         self.packView(self.v_shade)
         
@@ -58,6 +58,13 @@ public class LoadingOverlay: TSCompoundView {
         
     }
     
+    private func constructCancelButton() {
+        self.iv_cancel = TSImageView()
+        self.iv_cancel.image = self.imageProvider.getFilledCross()
+        
+        self.packView(self.iv_cancel)
+    }
+    
     private func constrainShadeView(set: inout [NSLayoutConstraint], layout: CoreLayout) {
         
         self.hiddenShadeConstraint = NSLayoutConstraint(item: v_shade, attribute: .right, relatedBy: .equal, toItem: layout, attribute: .left, multiplier: 1, constant: 0)
@@ -76,6 +83,15 @@ public class LoadingOverlay: TSCompoundView {
         set.append(NSLayoutConstraint(item: iv, attribute: .centerY, relatedBy: .equal, toItem: layout, attribute: .centerY, multiplier: 1, constant: 0))
         set.append(NSLayoutConstraint(item: iv, attribute: .width, relatedBy: .equal, toItem: layout, attribute: .width, multiplier: 0.2, constant: 0))
         set.append(NSLayoutConstraint(item: iv, attribute: .height, relatedBy: .equal, toItem: layout, attribute: .width, multiplier: 0.2, constant: 0))
+        
+    }
+    
+    private func constrainCancelButton(set: inout [NSLayoutConstraint], layout: CoreLayout) {
+        
+        set.append(NSLayoutConstraint(item: iv_cancel, attribute: .centerX, relatedBy: .equal, toItem: iv, attribute: .right, multiplier: 1, constant: 0))
+        set.append(NSLayoutConstraint(item: iv_cancel, attribute: .centerY, relatedBy: .equal, toItem: iv, attribute: .top, multiplier: 1, constant: -20))
+        set.append(NSLayoutConstraint(item: iv_cancel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 40))
+        set.append(NSLayoutConstraint(item: iv_cancel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 40))
         
     }
     

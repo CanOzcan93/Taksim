@@ -29,6 +29,7 @@ extension Profile {
         public override func onInit() {
             self.item = TSView()
             self.item.isOpaque = false
+            self.isUserInteractionEnabled = false
             
             self.item.onDraw = { rect in
 

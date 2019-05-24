@@ -15,9 +15,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.1.0</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -41,6 +41,8 @@
 	<string>Koordinat Bilgilerinize Erişim Talebi</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Koordinat Bilgilerinize Erişim Talebi</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Mikrofona Erişim Talebi</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Fotoğraflara Erişim Talebi</string>
 	<key>UIAppFonts</key>
@@ -61,8 +63,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

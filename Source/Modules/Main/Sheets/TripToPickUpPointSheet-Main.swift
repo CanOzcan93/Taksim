@@ -22,8 +22,9 @@ extension Main {
         private var deviceLocation: CoreCoordinate!
         private var path: GMSMutablePath!
         
-        public override func onLayoutAppear(layout: Main.TripToPickUpPointLayout) {
+        public override func onLayoutReady(layout: Main.TripToPickUpPointLayout) {
             
+            let orderId = self.dataStorage.grabOrderId()!
             dispatchedVehicle = dataStorage.grabDispatchedVehicle()
             dispatchedDriver = dataStorage.grabDispatchedDriver()
             
@@ -65,6 +66,8 @@ extension Main {
             }
             
             layout.o_driver.onCall = {
+                self.networkManager.callOut()
+                self.stateMachine.isCallConnected(state: false)
                 self.demonstrator.toCallSheet()
             }
             
@@ -74,7 +77,10 @@ extension Main {
                 
                 popup.onYes = {
                     
-                    self.apiManager.cancelOrder(orderID: self.dataStorage.grabOrderId()!, reason: 0) { res in
+                    self.apiManager.cancelOrder(orderID: self.dataStorage.grabOrderId()!, reason: 0, token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String) {
+                        res in
+                        
+                        print(res)
                         
                         self.stateMachine.shouldMainSheetBeReset(state: true)
                         self.eventManager.shout(key: "resetMainSheet")
@@ -95,10 +101,42 @@ extension Main {
                 
             }
             
+            self.networkManager.receiveMessageString = { message in
+                print("Right now you receive this message from websocket:\n \(message)")
+            }
+            
+            self.networkManager.open()
+            
+            self.networkManager.pongResult = {
+                print("Pong ettim sana\n")
+            }
+            
+            self.networkManager.ping()
+            
+            self.networkManager.registerWithOrderId(orderId: "\(orderId)", carNo: dispatchedVehicle.no, mdtId: dispatchedDriver.mdtId)
+            
+            self.networkManager.registerResult = { state in
+                print("Register is \(state)")
+            }
+            
+            self.networkManager.receiveCallOutResult = {
+                
+                let callPopup = CallPopup(layout: layout)
+                callPopup.onYes = {
+                    self.networkManager.receiveCallOut(accept: true)
+                    self.stateMachine.isCallConnected(state: true)
+                    self.demonstrator.toCallSheet()
+                }
+                callPopup.onNo = {
+                    self.networkManager.hangUp()
+                }
+                callPopup.show()
+                
+            }
         }
         
-        
-        
+        public override func onLayoutAppear(layout: Main.TripToPickUpPointLayout) {
+            
+        }
     }
-    
 }

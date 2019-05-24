@@ -60,6 +60,26 @@ extension Main {
         public override func onLayoutReady(layout: Main.MainLayout) {
 
             layout.mv.trackDeviceLocation()
+            
+            layout.o_loading.iv_cancel.onTap {
+                
+                let popup = CancellationPopup(layout: layout)
+                
+                popup.onYes = {
+                    
+                    self.apiManager.cancelOrder(orderID: self.dataStorage.grabOrderId()!, reason: 0, token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String) {
+                        (json) in
+                        print(json)
+                        
+                        popup.hide()
+                    }
+                    
+                }
+                
+                
+                popup.show()
+                
+            }
       
             startTrackingVehicles(layout: layout)
             

@@ -105,5 +105,17 @@ public class TSStateMachine: CoreStateMachine {
         return !self.stateCallSheetAppeared
     }
     
+    private var stateCallConnected: Bool = false
+    public func isCallConnected(state: Bool) {
+        self.stateCallConnected = state
+    }
+    
+    public func callConnected() -> Bool {
+        return self.stateCallConnected
+    }
+    public func notCallConnected() -> Bool {
+        return !self.stateCallConnected
+    }
+    
     
 }

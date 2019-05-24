@@ -22,6 +22,7 @@ public class TSNetworkManager: CoreNetworkManager, WebSocketDelegate {
     public var callOutResult: ActionWith<Bool>?
     public var receiveCallOutResult: Action?
     public var hangUpResult: Action?
+    public var pongResult: Action?
     public var receiveMessageData: ActionWith<Data>?
     public var receiveVoice: ActionWith<Data>?
     public var didFail: ActionWith<NSError>?
@@ -127,16 +128,13 @@ public class TSNetworkManager: CoreNetworkManager, WebSocketDelegate {
             hangUpResult?()
         }
         else if (dict["cmd"].stringValue == "ws.im.pong") {
-
+            pongResult?()
         }
         else {
             print(dict["cmd"].stringValue)
         }
     }
-//
-//    public func webSocketPong() {
-//        print("Yoksa bu mu")
-//    }
+
     
     public func webSocketMessageData(_ data: Data) {
         receiveMessageData?(data)
@@ -170,11 +168,11 @@ public class TSNetworkManager: CoreNetworkManager, WebSocketDelegate {
         
     }
     
-    public func writeOff() {
-        guard let definedSocket = defaultSocket() else {
-            return
-        }
-    }
+//    public func writeOff() {
+//        guard let definedSocket = defaultSocket() else {
+//            return
+//        }
+//    }
     
     public func callOut() {
         let jsonDict = JSON(["cmd": "ws.im.call"])

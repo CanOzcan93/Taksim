@@ -403,13 +403,20 @@ public class TSApiManager: CoreApiManager {
         }
     }
     
-    public func cancelOrder(orderID: UInt, reason: UInt, completion: @escaping (JSON)->()) {
-        let url = "http://94.101.81.210:48080/AppService/CancelOrder.do"
-        let data = "jsonParam={orderId:\"\(orderID)\", reason: \(reason)}"
+    public func cancelOrder(orderID: UInt, reason: UInt, token: String, completion: @escaping (JSON)->()) {
         
-        TSNetworkManager.post(url: url, body: data) { (json, header) in
+        let url = "http://94.101.81.210:48080/AppService/CancelOrder.do"
+        let header = ["_token": token]
+        let parameters: Dictionary<String,Any> = [ "jsonParam" : [
+            "orderId": "\(orderID)",
+            "reason": reason
+            ]
+        ]
+        
+        TSNetworkManager.multiPartPostWithImages(url: url, parameters: parameters, headers: header, photos: nil) { (json, headers) in
             completion(json)
         }
+
     }
     
     public func customerHistoryOrders(mobile: String, page: UInt, num: UInt,token: String,completion: @escaping (JSON)->()) {

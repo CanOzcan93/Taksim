@@ -101,8 +101,8 @@ extension Main {
             
             set.append(NSLayoutConstraint(item: iv_profile, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: iv_profile, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 160))
-            set.append(NSLayoutConstraint(item: iv_profile, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 130))
-            set.append(NSLayoutConstraint(item: iv_profile, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 130))
+            set.append(NSLayoutConstraint(item: iv_profile, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 130))
+            set.append(NSLayoutConstraint(item: iv_profile, attribute: .height, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 130))
             
             set.append(NSLayoutConstraint(item: v_pulse, attribute: .centerX, relatedBy: .equal, toItem: iv_profile, attribute: .centerX, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: v_pulse, attribute: .centerY, relatedBy: .equal, toItem: iv_profile, attribute: .centerY, multiplier: 1, constant: 0))
@@ -111,23 +111,23 @@ extension Main {
             
             set.append(NSLayoutConstraint(item: tv_name, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: tv_name, attribute: .top, relatedBy: .equal, toItem: iv_profile, attribute: .bottom, multiplier: 1, constant: 100))
-            set.append(NSLayoutConstraint(item: tv_name, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 170))
-            set.append(NSLayoutConstraint(item: tv_name, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 34))
+            set.append(NSLayoutConstraint(item: tv_name, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 170))
+            set.append(NSLayoutConstraint(item: tv_name, attribute: .height, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 34))
             
             set.append(NSLayoutConstraint(item: tv_plate, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: tv_plate, attribute: .top, relatedBy: .equal, toItem: tv_name, attribute: .bottom, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: tv_plate, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 107))
-            set.append(NSLayoutConstraint(item: tv_plate, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 25))
+            set.append(NSLayoutConstraint(item: tv_plate, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 107))
+            set.append(NSLayoutConstraint(item: tv_plate, attribute: .height, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 25))
             
             set.append(NSLayoutConstraint(item: tv_status, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: tv_status, attribute: .top, relatedBy: .equal, toItem: tv_plate, attribute: .bottom, multiplier: 1, constant: 20))
-            set.append(NSLayoutConstraint(item: tv_status, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 73))
-            set.append(NSLayoutConstraint(item: tv_status, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 22))
+            set.append(NSLayoutConstraint(item: tv_status, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 150))
+            set.append(NSLayoutConstraint(item: tv_status, attribute: .height, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 22))
             
             set.append(NSLayoutConstraint(item: iv_hang_up, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: iv_hang_up, attribute: .top, relatedBy: .equal, toItem: tv_status, attribute: .bottom, multiplier: 1, constant: 30))
-            set.append(NSLayoutConstraint(item: iv_hang_up, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 60))
-            set.append(NSLayoutConstraint(item: iv_hang_up, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 60))
+            set.append(NSLayoutConstraint(item: iv_hang_up, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 60))
+            set.append(NSLayoutConstraint(item: iv_hang_up, attribute: .height, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 60))
             
         }
         
@@ -145,6 +145,10 @@ extension Main {
             }
             
             
+        }
+        
+        public func changeStatus(status: String) {
+            self.tv_status.text = status
         }
         
         private func createPulse(rect: CGRect, pulseLineCount: UInt, duration: Double) {

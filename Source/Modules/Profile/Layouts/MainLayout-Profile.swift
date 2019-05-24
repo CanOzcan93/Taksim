@@ -87,7 +87,12 @@ extension Profile {
         private func constructNameTextInput() {
             
             self.ti_name = PostLogin.TextInput()
+            self.ti_name.returnKeyType = .next
             self.ti_name.setPlaceholder(text: lexiconProvider.get("name"))
+            self.ti_name.onPressReturnInKeyboard = {
+                self.endEditing(true)
+                self.ti_surname.becomeFirstResponder()
+            }
             
             self.addSubview(self.ti_name)
             
@@ -96,7 +101,12 @@ extension Profile {
         private func constructSurnameTextInput() {
             
             self.ti_surname = PostLogin.TextInput()
+            self.ti_surname.returnKeyType = .next
             self.ti_surname.setPlaceholder(text: lexiconProvider.get("last_name"))
+            self.ti_surname.onPressReturnInKeyboard = {
+                self.endEditing(true)
+                self.ti_phone.becomeFirstResponder()
+            }
             
             self.addSubview(self.ti_surname)
             
@@ -105,7 +115,12 @@ extension Profile {
         private func constructPhoneTextInput() {
             
             self.ti_phone = PostLogin.TextInput()
+            self.ti_phone.returnKeyType = .next
             self.ti_phone.setPlaceholder(text: lexiconProvider.get("phone"))
+            self.ti_phone.onPressReturnInKeyboard = {
+                self.endEditing(true)
+                self.ti_email.becomeFirstResponder()
+            }
             
             self.addSubview(self.ti_phone)
             
@@ -115,7 +130,12 @@ extension Profile {
             
             self.ti_email = PostLogin.TextInput()
             self.ti_email.keyboardType = .emailAddress
+            self.ti_email.returnKeyType = .done
             self.ti_email.setPlaceholder(text: lexiconProvider.get("email"))
+            self.ti_email.onPressReturnInKeyboard = {
+                self.endEditing(true)
+            }
+            
             
             self.addSubview(self.ti_email)
             
