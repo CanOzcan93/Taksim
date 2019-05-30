@@ -2,7 +2,7 @@
 //  TSATextField.swift
 //  Authentication
 //
-//  Created by Erhan Emre Eroğlu on 12.12.2018.
+//  Created by Can Özcan on 12.12.2018.
 //  Copyright © 2018 RedBlac. All rights reserved.
 //
 

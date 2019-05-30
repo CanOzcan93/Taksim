@@ -47,7 +47,6 @@ extension Profile {
             
         }
         
-        
         public func goBack() {
             
             transition = transitionFactory.getFromLeftToRight()

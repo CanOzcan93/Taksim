@@ -12,6 +12,8 @@ extension Authentication {
         
         public override func onLayoutReady(layout: Authentication.SignUpVerificationLayout) {
             
+            layout.ti_code.text = self.exchangeFlow.grabSmsCodeForSignUpOrLogin()
+            
             layout.iv_back.onTap {
                 self.demonstrator.goBack()
             }

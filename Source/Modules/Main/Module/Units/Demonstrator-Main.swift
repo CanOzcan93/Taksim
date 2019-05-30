@@ -43,6 +43,29 @@ extension Main {
             
         }
         
+        public func toCreditCardsSheet() {
+            
+            let profileModule = Profile.Module.getInstance()
+            let profileFactory = profileModule.factory!
+            let profileSheetFactory = profileFactory.sheetFactory!
+            sheet = profileSheetFactory.getCreditCardsSheet()
+            transition = transitionFactory.getFromRightToLeft()
+            
+            present()
+        }
+        
+        
+        public func toAddressSheet() {
+            
+            let profileModule = Profile.Module.getInstance()
+            let profileFactory = profileModule.factory!
+            let profileSheetFactory = profileFactory.sheetFactory!
+            sheet = profileSheetFactory.getAddressSheet()
+            transition = transitionFactory.getFromRightToLeft()
+            
+            present()
+        }
+        
         public func toProfile() {
             
             let profileModule = Profile.Module.getInstance()
@@ -172,10 +195,12 @@ extension Main {
             setCurrent(vc: autoCompleteController!)
         }
         
-        public func toTripToPickUpPoint() {
+        public func toTripToPickUpPoint(completion: Action?) {
             transition = transitionFactory.getFromRightToLeft()
             sheet = sheetFactory.getTripToPickUpPointSheet()
-            present()
+            present {
+                completion?()
+            }
         }
         
         public func toTripToDestinationPoint() {

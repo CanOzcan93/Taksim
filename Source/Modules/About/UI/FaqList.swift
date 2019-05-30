@@ -2,7 +2,7 @@
 //  FaqList.swift
 //  Taksim
 //
-//  Created by Erhan Emre Eroğlu on 15.01.2019.
+//  Created by Can Özcan on 15.01.2019.
 //  Copyright © 2019 RedBlac. All rights reserved.
 //
 
@@ -21,19 +21,19 @@ extension About {
             self.sv.translatesAutoresizingMaskIntoConstraints = false
             
             self.items = [FaqListItem]()
-        
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit? Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
+            
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
+            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
             
             
             self.packView(sv)
@@ -53,6 +53,7 @@ extension About {
             for i in 1...(items.count - 1) {
                 set.append(NSLayoutConstraint(item: items[i].v_background, attribute: .top, relatedBy: .equal, toItem: items[i - 1].v_background, attribute: .bottom, multiplier: 1, constant: -25))
             }
+            set.append(NSLayoutConstraint(item: items.last?.v_background, attribute: .bottom, relatedBy: .equal, toItem: sv, attribute: .bottom, multiplier: 1, constant: 0))
             
         }
         

@@ -25,7 +25,6 @@ extension Profile {
         
         private var isInitialized: Bool = false
         
-        
         public override func onInit() {
             self.item = TSView()
             self.item.isOpaque = false

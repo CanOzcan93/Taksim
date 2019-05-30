@@ -16,11 +16,15 @@ extension Main {
         public var aqPlayer = AQPlayer(sampleRate: 8000)
         private var echoCancellation: XBEchoCancellation!
         
-        public override func onLayoutAppear(layout: Main.CallLayout) {
-            
+        public override func onLayoutReady(layout: Main.CallLayout) {
             if self.stateMachine.callConnected() {
                 layout.changeStatus(status: "Bağlandı")
             }
+            
+            layout.addDriverInfo(driver: self.dataStorage.grabDispatchedDriver()!, vehicle: self.dataStorage.grabDispatchedVehicle()!)
+        }
+        
+        public override func onLayoutAppear(layout: Main.CallLayout) {
             
             self.echoCancellation = XBEchoCancellation.shared()
             self.echoCancellation.close()
@@ -41,9 +45,7 @@ extension Main {
                 }
                 let sendData = NSData(bytes: g711Buff, length: len)
                 free(g711Buff)
-                
                 self.networkManager.sendVoice(data: sendData as Data)
-                print(sendData)
             }
             
             self.networkManager.hangUpResult = {
@@ -74,7 +76,8 @@ extension Main {
                 g711_decode(pcmBuff, &outlen, g711Buf, inLen, Int32(TP_ALAW.rawValue))
                 let pcm = NSData(bytes: pcmBuff, length: Int(outlen))
                 free(pcmBuff)
-                self.mediaManager.aqPlayer.play(with: pcm as Data)
+                print(pcm)
+                self.aqPlayer!.play(with: pcm as Data)
                 
             }
             
@@ -87,8 +90,6 @@ extension Main {
             }
             
             self.stateMachine.isCallSheetAppear(state: true)
-            
-            layout.addDriverInfo(driver: self.dataStorage.grabDispatchedDriver()!, vehicle: self.dataStorage.grabDispatchedVehicle()!)
             
             layout.onHangUp = {
                 self.echoCancellation.stop()

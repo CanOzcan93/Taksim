@@ -2,7 +2,7 @@
 //  TextInput-PostLogin.swift
 //  Taksim
 //
-//  Created by Erhan Emre Eroğlu on 14.01.2019.
+//  Created by Can Özcan on 14.01.2019.
 //  Copyright © 2019 RedBlac. All rights reserved.
 //
 
@@ -12,14 +12,14 @@ extension PostLogin {
     
     public class TextInput: TSTextInput {
         
-        private var drawn: Bool!
+        private var drawn = false
 
         public override func onConstruct() {
             
             self.font = fontProvider.getRegularMedium()
             self.textColor = colorProvider.getDarkGray()
             
-            self.drawn = false
+            
             
         }
         
@@ -35,7 +35,9 @@ extension PostLogin {
             
             if !drawn {
                 self.layer.sublayers?.removeAll()
-                self.bounds = self.bounds.inset(by: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
+                let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: rect.height))
+                self.leftView = paddingView
+                self.leftViewMode = .always
                 
                 let path = UIBezierPath(roundedRect: rect, cornerRadius: 6).cgPath
                 let shadowPath = UIBezierPath(roundedRect: rect.inset(by: UIEdgeInsets(top: -1, left: -1, bottom: -1, right: -1)), cornerRadius: 8).cgPath

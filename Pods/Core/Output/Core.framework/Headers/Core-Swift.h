@@ -304,6 +304,12 @@ SWIFT_CLASS("_TtC4Core22CoreMultilineTextInput")
 @end
 
 
+SWIFT_CLASS("_TtC4Core18CoreNetworkManager")
+@interface CoreNetworkManager : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC4Core15CorePageControl")
 @interface CorePageControl : UIPageControl
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

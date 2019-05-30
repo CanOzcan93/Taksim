@@ -21,3 +21,4 @@ FOUNDATION_EXPORT const unsigned char CoreVersionString[];
 #import "CaptureG711.h"
 #import "AQPlayer.h"
 #import "XBEchoCancellation.h"
+#import "SRWebSocket.h"

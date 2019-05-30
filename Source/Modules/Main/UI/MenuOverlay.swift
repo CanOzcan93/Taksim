@@ -45,6 +45,8 @@ extension Main {
         // API
         
         public var onProfileClick: Action?
+        public var onCardsClick: Action?
+        public var onAddressesClick: Action?
         public var onNotificationsClick: Action?
         public var onPromotionClick: Action?
         public var onHelpClick: Action?
@@ -139,8 +141,13 @@ extension Main {
             }
             
             self.mi_cards = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getCreditCard(), text: lexiconProvider.get("credit_cards"))
+            self.mi_cards.v_ghost.onTap {
+                self.onCardsClick?()
+            }
             self.mi_addresses = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getHome(), text: lexiconProvider.get("locations"))
-            
+            self.mi_addresses.v_ghost.onTap {
+                self.onAddressesClick?()
+            }
         }
         
         private func constructFirstLine() {

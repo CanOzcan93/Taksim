@@ -36,6 +36,46 @@ extension Main {
             
         }
         
+        public override func onLayoutAppear(layout: Main.MainLayout) {
+            if dataStorage.grabOrderId() != nil {
+                
+                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2) {
+                    self.apiManager.startTrackingOrder(onSuccess: {
+                        
+                        print("App: Order matched with a Taxi")
+                        
+                        layout.o_loading.hide()
+                        
+                        self.demonstrator.toTripToPickUpPoint(completion: nil)
+                        
+                    }, onCancel: {
+                        
+                        print("App: I canceled the trip")
+                        
+                        layout.o_loading.hide()
+                        
+                    }, onFail: {
+                        
+                        print("App: Order did not match with any Taxi")
+                        
+                    }, onTripStarted: {
+                        
+                        
+                        print("App: Trip started")
+                        self.demonstrator.toTripToDestinationPoint()
+                        
+                    }, onPayment: {
+                        
+                        print("App: Trip ended and paid")
+                        
+                        self.eventManager.shout(key: "tripEnded")
+                        
+                    })
+                }
+                
+            }
+        }
+        
         public override func onLayoutReappear(layout: Main.MainLayout) {
             
             if (stateMachine.mainSheetShouldBeReset()) {
@@ -219,6 +259,14 @@ extension Main {
                 self.demonstrator.toProfile()
             }
             
+            layout.o_menu.onAddressesClick = {
+                self.demonstrator.toAddressSheet()
+            }
+            
+            layout.o_menu.onCardsClick = {
+                self.demonstrator.toCreditCardsSheet()
+            }
+            
             layout.o_menu.onNotificationsClick = {
                 self.demonstrator.toNotifications()
             }
@@ -328,7 +376,7 @@ extension Main {
                         
                         layout.o_loading.hide()
                         
-                        self.demonstrator.toTripToPickUpPoint()
+                        self.demonstrator.toTripToPickUpPoint(completion: nil)
                         
                     }, onCancel: {
                         
@@ -391,7 +439,7 @@ extension Main {
                         
                         layout.o_loading.hide()
                         
-                        self.demonstrator.toTripToPickUpPoint()
+                        self.demonstrator.toTripToPickUpPoint(completion: nil)
                         
                     }, onCancel: {
                         

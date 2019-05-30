@@ -7,7 +7,9 @@ PODS:
     - AlamofireImage
     - GoogleMaps
     - GooglePlaces
-    - SwiftWebSocket
+    - ReactiveObjC
+    - ReactiveObjCBridge
+    - ReactiveSwift
     - SwiftyJSON
   - GoogleMaps (3.0.3):
     - GoogleMaps/Maps (= 3.0.3)
@@ -16,7 +18,13 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.0.3):
     - GoogleMaps/Base (= 3.0.3)
-  - SwiftWebSocket (2.7.0)
+  - ReactiveObjC (3.1.0)
+  - ReactiveObjCBridge (4.0.0):
+    - ReactiveObjC (~> 3.1)
+    - ReactiveSwift (~> 4.0)
+  - ReactiveSwift (4.0.0):
+    - Result (~> 4.0)
+  - Result (4.1.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
@@ -28,7 +36,10 @@ SPEC REPOS:
     - AlamofireImage
     - GoogleMaps
     - GooglePlaces
-    - SwiftWebSocket
+    - ReactiveObjC
+    - ReactiveObjCBridge
+    - ReactiveSwift
+    - Result
     - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -37,18 +48,21 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Core:
-    :commit: 54a2f40e621a05469b8007f8203e28b021a4f3ea
+    :commit: 80b9f6b6be58711b7c3c31839380c005e7d6235e
     :git: https://github.com/CanOzcan93/Core.git
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
-  Core: da4c6571e0df7728992549ee24e52ba87917e202
+  Core: 668abd46873a1f7aed328e10baf487a393be7851
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
-  SwiftWebSocket: 612c9729fd503cb6b0b8b45390c788686dac306f
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  ReactiveObjCBridge: c2e4c6a8c1f960902f48ce2ee4ff2b24b8ae172d
+  ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 72c3777c6f60d7de8ab38d73b09fbc5997b4cc31
+PODFILE CHECKSUM: ac2ad15d90e60977da191cb4113295e9ac9144c4
 
 COCOAPODS: 1.5.3

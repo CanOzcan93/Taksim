@@ -38,7 +38,13 @@
     "GooglePlaces": [
 
     ],
-    "SwiftWebSocket": [
+    "ReactiveSwift": [
+
+    ],
+    "ReactiveObjC": [
+
+    ],
+    "ReactiveObjCBridge": [
 
     ]
   },

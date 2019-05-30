@@ -27,6 +27,7 @@ extension Authentication {
                                 print(json["verifyCode"].stringValue)
                                 let url = "http://otpurl.ttmesaj.com/SendSMS/SendSMSURL.aspx?un=mobilbil&pw=M4A7K9L1&msg=Sifreniz:\(json["verifyCode"].stringValue)&orgn=Mobilbil&list=\(newPhone)&sd=0"
                                 Alamofire.request(url)
+                                self.exchangeFlow.letSmsCodeForSignUpOrLogin(code: json["verifyCode"].stringValue)
                                 self.exchangeFlow.letPhoneNumberForSignUpOrLogin(phoneNumber: newPhone)
                                 self.demonstrator.toSignUpVerificationSheet()
                             }

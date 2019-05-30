@@ -56,6 +56,27 @@ extension Profile {
             return photoShoot!
         }
         
+        private var address: AddressSheet?
+        public func getAddressSheet() -> AddressSheet {
+            guard address != nil else {
+                address = AddressSheet()
+                return address!
+            }
+            
+            return address!
+        }
+        
+        private var creditCards: CreditCardsSheet?
+        public func getCreditCardsSheet() -> CreditCardsSheet {
+            guard creditCards != nil else {
+                creditCards = CreditCardsSheet()
+                return creditCards!
+            }
+            
+            return creditCards!
+        }
+
+        
     }
     
 }

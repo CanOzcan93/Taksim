@@ -2,7 +2,7 @@
 //  TSExchangeFlow.swift
 //  Blender
 //
-//  Created by Erhan Emre Eroğlu on 18.12.2018.
+//  Created by Can Özcan on 18.12.2018.
 //  Copyright © 2018 RedBlac. All rights reserved.
 //
 
@@ -57,6 +57,14 @@ public class TSExchangeFlow: CoreExchangeFlow {
     }
     public func grabPhoneNumberForSignUpOrLogin() -> String? {
         return self.phoneNumberForSignUpOrLogin
+    }
+    
+    private var smsCodeForSignUpOrLogin: String?
+    public func letSmsCodeForSignUpOrLogin(code: String) {
+        self.smsCodeForSignUpOrLogin = code
+    }
+    public func grabSmsCodeForSignUpOrLogin() -> String? {
+        return self.smsCodeForSignUpOrLogin
     }
     
     private var profilePhotoChanged: UIImage?

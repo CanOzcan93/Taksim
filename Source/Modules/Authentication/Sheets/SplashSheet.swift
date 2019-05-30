@@ -22,6 +22,9 @@ extension Authentication {
                                 self.stateMachine.isLoggedInApp(state: true)
                                 self.persistentStorage.store(key: self.persistentStorage.tokenKey, value: token)
                                 self.dataStorage.letCurrentUser(json: json, completion: nil)
+                                if json["currentOrder"]["orderId"].exists() {
+                                    self.dataStorage.storeOrderId(id: json["currentOrder"]["orderId"].uIntValue)
+                                }
                                 self.demonstrator.toMainModule()
                             }
                             else {

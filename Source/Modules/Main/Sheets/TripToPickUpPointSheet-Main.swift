@@ -22,6 +22,8 @@ extension Main {
         private var deviceLocation: CoreCoordinate!
         private var path: GMSMutablePath!
         
+        private var drawn = false
+        
         public override func onLayoutReady(layout: Main.TripToPickUpPointLayout) {
             
             let orderId = self.dataStorage.grabOrderId()!
@@ -38,16 +40,6 @@ extension Main {
             
             deviceLocation = locationManager.getLastLocation()
             
-            layout.mv.drawRoute(apiManager: apiManager, from: dispatchedVehicle.coordinate, to: exchangeFlow.grabPickUpPointCoordinate()!, color: colorProvider.getRouteBlue()) { response in
-                
-                let route = response["routes"].arrayValue.first!["legs"].arrayValue.first!
-                layout.o_driver.setDuration(duration: route["duration"].dictionaryValue["value"]!.intValue)
-                
-                self.path = GMSMutablePath(fromEncodedPath: response["routes"].arrayValue.first!["overview_polyline"].dictionaryValue["points"]!.stringValue)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) { layout.o_driver.show() }
-                
-            }
             
             eventManager.listen(key: "dispatchedVehicleUpdated") {
                 
@@ -55,7 +47,25 @@ extension Main {
                 
                 self.vehicleMarker.dragTo(coordinate: self.dispatchedVehicle.coordinate)
                 
-                layout.mv.focus(coordinates: [self.dispatchedVehicle.coordinate, self.exchangeFlow.grabPickUpPointCoordinate()!, self.deviceLocation], paths: [self.path!])
+                if !self.drawn {
+                    layout.mv.drawRoute(apiManager: self.apiManager, from: self.dispatchedVehicle.coordinate, to: self.exchangeFlow.grabPickUpPointCoordinate()!, color: self.colorProvider.getRouteBlue()) { response in
+                        
+                        let route = response["routes"].arrayValue.first!["legs"].arrayValue.first!
+                        layout.o_driver.setDuration(duration: route["duration"].dictionaryValue["value"]!.intValue)
+                        
+                        self.path = GMSMutablePath(fromEncodedPath: response["routes"].arrayValue.first!["overview_polyline"].dictionaryValue["points"]!.stringValue)
+                        
+                        layout.mv.focus(coordinates: [self.dispatchedVehicle.coordinate, self.exchangeFlow.grabPickUpPointCoordinate()!, self.deviceLocation], paths: [self.path!])
+                        
+                        self.drawn = true
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { layout.o_driver.show() }
+                        
+                    }
+                }
+                
+                
+                
                 
             }
             
@@ -81,6 +91,8 @@ extension Main {
                         res in
                         
                         print(res)
+                        
+                        self.networkManager.disposable.dispose()
                         
                         self.stateMachine.shouldMainSheetBeReset(state: true)
                         self.eventManager.shout(key: "resetMainSheet")
@@ -111,9 +123,13 @@ extension Main {
                 print("Pong ettim sana\n")
             }
             
-            self.networkManager.ping()
+//            self.networkManager.ping()
             
-            self.networkManager.registerWithOrderId(orderId: "\(orderId)", carNo: dispatchedVehicle.no, mdtId: dispatchedDriver.mdtId)
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                self.networkManager.registerWithOrderId(orderId: "\(orderId)", carNo: self.dispatchedVehicle.no, mdtId: self.dispatchedDriver.mdtId)
+            }
+            
+            
             
             self.networkManager.registerResult = { state in
                 print("Register is \(state)")
