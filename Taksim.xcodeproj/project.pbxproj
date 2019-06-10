@@ -2136,8 +2136,9 @@
 			baseConfigurationReference = B76590BE6496585AAB0E3F5B /* Pods-Taksim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FFY4F4GZ24;
+				DEVELOPMENT_TEAM = MGY3VJ2J45;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
@@ -2150,8 +2151,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.redblac.taksim.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taksimizmir.taksim.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7 armv7s armv6";
@@ -2163,8 +2165,9 @@
 			baseConfigurationReference = 236B4C7355DA8D92F2D5C310 /* Pods-Taksim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FFY4F4GZ24;
+				DEVELOPMENT_TEAM = MGY3VJ2J45;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
@@ -2177,8 +2180,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.redblac.taksim.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taksimizmir.taksim.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7 armv7s armv6";
