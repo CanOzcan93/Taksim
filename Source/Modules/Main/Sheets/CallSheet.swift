@@ -76,7 +76,7 @@ extension Main {
                 g711_decode(pcmBuff, &outlen, g711Buf, inLen, Int32(TP_ALAW.rawValue))
                 let pcm = NSData(bytes: pcmBuff, length: Int(outlen))
                 free(pcmBuff)
-                print(pcm)
+//                print(pcm)
                 self.aqPlayer!.play(with: pcm as Data)
                 
             }

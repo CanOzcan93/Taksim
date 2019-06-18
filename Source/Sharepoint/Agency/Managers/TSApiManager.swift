@@ -394,11 +394,19 @@ public class TSApiManager: CoreApiManager {
     }
     
     
-    public func evaluateOrder(orderID: UInt, carNo: String, driverNo:String, evaluation:UInt, completion: @escaping (JSON)->()) {
+    public func evaluateOrder(orderID: UInt, carNo: String, driverNo:String, evaluation:UInt, token: String, completion: @escaping (JSON)->()) {
         let url = "http://94.101.81.210:48080/AppService/EvaluateOrder.do"
-        let data = "jsonParam={orderId:\"\(orderID)\", carNo:\"\(carNo)\", driverNo:\"\(driverNo)\", evaluation: \(evaluation)}"
+        let header = ["_token": token]
+        let parameters: Dictionary<String,Any> = [ "jsonParam" : [
+            "orderId": "\(orderID)",
+            "carNo": carNo,
+            "driverNo": driverNo,
+            "evaluation": "\(evaluation)"
+            ]
+        ]
+
         
-        TSNetworkManager.post(url: url, body: data) { (json, header) in
+        TSNetworkManager.multiPartPostWithImages(url: url, parameters: parameters, headers: header, photos: nil) { (json, header) in
             completion(json)
         }
     }

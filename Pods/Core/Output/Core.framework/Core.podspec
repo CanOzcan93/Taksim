@@ -139,8 +139,10 @@ Pod::Spec.new do |s|
   s.dependency "SwiftyJSON"
   s.dependency "GoogleMaps"
   s.dependency "GooglePlaces"
-  s.dependency "SwiftWebSocket"
-
+  s.dependency "ReactiveSwift"
+  s.dependency "ReactiveObjC"
+  s.dependency "ReactiveObjCBridge"
+  
   s.static_framework = true
 
 end

@@ -123,6 +123,21 @@ extension Main {
       
             startTrackingVehicles(layout: layout)
             
+            layout.pu_review.btn_send.onClick({
+                
+                self.apiManager.evaluateOrder(
+                    orderID: self.dataStorage.grabOrderId()!,
+                    carNo: self.dataStorage.grabDispatchedVehicle()!.no,
+                    driverNo: self.dataStorage.grabDispatchedDriver()!.driverNo!,
+                    evaluation: layout.pu_review!.rating!,
+                    token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String) { json in
+                        if json["errCode"].uIntValue != 0 {
+                        }
+                        layout.pu_review.hide()
+                        layout.endEditing(true)
+                        
+                    }
+            })
             layout.iv_menu.onTap {
                 layout.o_menu.show()
                 if let profilePicture = self.dataStorage.grabCurrentUser()!.profilePicture {
@@ -248,6 +263,7 @@ extension Main {
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
 
+                            layout.o_quickorder.hide()
                             layout.o_estimation.show()
                         })
                         
@@ -327,7 +343,7 @@ extension Main {
                 self.stateMachine.isEditingPickUpPoint(state: true)
                 self.stateMachine.isEditingDestinationPoint(state: false)
                 
-                layout.o_estimation.hide()
+//                layout.o_estimation.hide()
                 
                 self.demonstrator.toAutoComplete(delegate: self)
                 
@@ -338,7 +354,7 @@ extension Main {
                 self.stateMachine.isEditingPickUpPoint(state: false)
                 self.stateMachine.isEditingDestinationPoint(state: true)
             
-                layout.o_estimation.hide()
+//                layout.o_estimation.hide()
                 
                 self.demonstrator.toAutoComplete(delegate: self)
                 

@@ -90,8 +90,6 @@ extension Main {
                     self.apiManager.cancelOrder(orderID: self.dataStorage.grabOrderId()!, reason: 0, token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String) {
                         res in
                         
-                        print(res)
-                        
                         self.networkManager.disposable.dispose()
                         
                         self.stateMachine.shouldMainSheetBeReset(state: true)
@@ -122,8 +120,6 @@ extension Main {
             self.networkManager.pongResult = {
                 print("Pong ettim sana\n")
             }
-            
-//            self.networkManager.ping()
             
             DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
                 self.networkManager.registerWithOrderId(orderId: "\(orderId)", carNo: self.dispatchedVehicle.no, mdtId: self.dispatchedDriver.mdtId)

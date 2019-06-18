@@ -23,12 +23,12 @@ extension Main {
         private var mti: TSMultilineTextInput!
         
         private var btn_cancel: PostLogin.OutlinedButton!
-        private var btn_send: PostLogin.Button!
+        public var btn_send: PostLogin.Button!
         
         
         // Fields
         
-        public var rating: Int!
+        public var rating: UInt!
         
         
         // Internal Fields
@@ -50,8 +50,12 @@ extension Main {
             constructStarIcons()
             constructMultilineTextInput()
             
-            constructCancelButton()
+            constructCancelButton(layout: layout)
             constructSendButton()
+            
+            self.v_shade.setTouchEvent = {
+                layout.endEditing(true)
+            }
             
         }
         
@@ -75,6 +79,10 @@ extension Main {
         private func constructShadeView() {
             
             self.v_shade = TSView()
+//            self.v_shade.onTap {
+//                self.v_shade.endEditing(true)
+//            }
+            
             self.v_shade.backgroundColor = colorProvider.getBlackSoft()
             
             self.packView(self.v_shade)
@@ -117,7 +125,7 @@ extension Main {
                 self.iv_stars[i].image = imageProvider.getOutlinedStar()
                 self.iv_stars[i].onTap {
                     
-                    self.rating = i
+                    self.rating = UInt(i+1)
                     self.updateRating()
                     
                 }
@@ -160,13 +168,14 @@ extension Main {
             
         }
         
-        private func constructCancelButton() {
+        private func constructCancelButton(layout: CoreLayout) {
             
             self.btn_cancel = PostLogin.OutlinedButton()
             self.btn_cancel.setTitle(self.lexiconProvider.get("cancel"), for: .normal)
             self.btn_cancel.layer.cornerRadius = 20
             self.btn_cancel.onClick {
                 self.hide()
+                layout.endEditing(true)
             }
             
             self.packView(self.btn_cancel)
@@ -270,7 +279,7 @@ extension Main {
         private func updateRating() {
             
             for i in 0...4 {
-                if i <= rating {
+                if i <= rating-1 {
                     self.iv_stars[i].image = imageProvider.getFilledStar()
                 } else {
                     self.iv_stars[i].image = imageProvider.getOutlinedStar()
@@ -315,6 +324,8 @@ extension Main {
             })
             
         }
+        
+        
         
     }
     

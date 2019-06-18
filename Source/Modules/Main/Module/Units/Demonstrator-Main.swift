@@ -236,13 +236,12 @@ extension Main {
         public func goBackFromTripToDestinationPointSheetToMainSheet(callSheetState: Bool) {
             
             transition = transitionFactory.getFromLeftToRight()
-            sheetFactory = SheetFactory()
-            dismiss {
-                self.dismiss {
-                    if callSheetState {
-                        self.dismiss()
-                    }
-                }
+            let tripPickUpSheet = sheetFactory.getTripToPickUpPointSheet()
+            tripPickUpSheet.dismiss(animated: false) {
+                tripPickUpSheet.networkManager.disposable.dispose()
+                self.sheetFactory = SheetFactory()
+                self.sheet = self.sheetFactory.getMainSheet()
+                self.dismiss()
             }
             
         }

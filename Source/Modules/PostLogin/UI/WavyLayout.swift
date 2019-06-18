@@ -32,6 +32,10 @@ extension PostLogin {
         
         public override func onConstruct() {
             
+            self.setTouchEvent = {
+                self.endEditing(true)
+            }
+            
             self.iv_background = TSImageView()
             self.iv_background.image = imageProvider.getLightWaves()
             self.addSubview(self.iv_background)
@@ -53,9 +57,9 @@ extension PostLogin {
             
         }
         
-        open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.endEditing(true)
-        }
+//        open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//            self.endEditing(true)
+//        }
         
         public override func onConstrain(set: inout [NSLayoutConstraint]) {
         
