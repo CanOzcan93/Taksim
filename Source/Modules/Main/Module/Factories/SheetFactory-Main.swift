@@ -48,6 +48,10 @@ extension Main {
             
         }
         
+        public func existTripToPickUpPointSheet() -> Bool {
+            return tripToPickUpPointSheet != nil
+        }
+        
         private var tripToDestinationPointSheet: TripToDestinationPointSheet!
         public func getTripToDestinationPointSheet() -> TripToDestinationPointSheet {
             

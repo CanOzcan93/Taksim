@@ -233,19 +233,26 @@ extension Main {
             
         }
         
-        public func goBackFromTripToDestinationPointSheetToMainSheet(callSheetState: Bool) {
+        public func goBackFromTripToDestinationPointSheetToMainSheet() {
             
             transition = transitionFactory.getFromLeftToRight()
-            let tripPickUpSheet = sheetFactory.getTripToPickUpPointSheet()
-            tripPickUpSheet.dismiss(animated: false) {
-                tripPickUpSheet.networkManager.disposable.dispose()
-                self.sheetFactory = SheetFactory()
-                self.sheet = self.sheetFactory.getMainSheet()
-                self.dismiss()
+            
+            if sheetFactory.existTripToPickUpPointSheet() {
+                let tripPickUpSheet = sheetFactory.getTripToPickUpPointSheet()
+                tripPickUpSheet.dismiss(animated: false) {
+                    tripPickUpSheet.networkManager.disposable.dispose()
+                    self.sheetFactory = SheetFactory()
+                    self.sheet = self.sheetFactory.getMainSheet()
+                    self.dismiss()
+                }
+            }
+            else {
+                sheet = sheetFactory.getMainSheet()
+                dismiss()
             }
             
+            
         }
-        
     }
     
 }

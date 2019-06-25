@@ -77,10 +77,12 @@ extension Main {
             
             eventManager.listen(key: "tripEnded") {
                 
-                self.stateMachine.shouldMainSheetBeReset(state: true)
+                if self.stateMachine.pickUpSheetAppeared() {
+                    self.stateMachine.shouldMainSheetBeReset(state: true)
+                }
                 self.stateMachine.shouldMainSheetShowReview(state: true)
                 
-                self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet(callSheetState: self.stateMachine.callSheetAppeared())
+                self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet()
                 
             }
             

@@ -56,6 +56,7 @@ extension Authentication {
         private func constructCode() {
             
             ti_code = TextInput()
+            ti_code.activateMovement(layout: self)
             ti_code.setPlaceholder(text: "Kod:")
             
         }

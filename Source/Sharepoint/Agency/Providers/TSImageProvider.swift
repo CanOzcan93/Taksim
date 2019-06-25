@@ -494,6 +494,16 @@ public class TSImageProvider: CoreImageProvider {
         return ic_hang_up!
     }
     
+    private var ic_cur_loc: UIImage?
+    public func getCurrentLocationIcon() -> UIImage {
+        
+        guard ic_cur_loc != nil else {
+            ic_cur_loc = UIImage(named: "ic_currentLoc")
+            return ic_cur_loc!
+        }
+        
+        return ic_cur_loc!
+    }
     
     
 }

@@ -362,6 +362,11 @@ public class TSApiManager: CoreApiManager {
                     self.tripStarted = true
                 }
                 
+                if (!self.orderDispatched) {
+                    self.dataStorage.storeDispatchedDriver(json: res) {
+                        self.orderDispatched = true
+                    }
+                }
                 let carInfo = res.dictionaryValue["carInfo"]!
                 let lat = carInfo.dictionaryValue["lat"]?.doubleValue
                 let lon = carInfo.dictionaryValue["lon"]?.doubleValue

@@ -55,6 +55,7 @@ extension Authentication {
         private func constructPhone() {
             
             ti_phone = TextInput()
+            ti_phone.activateMovement(layout: self)
             ti_phone.setPlaceholder(text: "Telefon Numarası:")
             
         }

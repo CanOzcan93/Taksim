@@ -93,16 +93,16 @@ public class TSStateMachine: CoreStateMachine {
         return !self.stateOfQuickOrder
     }
     
-    private var stateCallSheetAppeared: Bool = false
-    public func isCallSheetAppear(state: Bool) {
-        self.stateCallSheetAppeared = state
+    private var statePickUpSheetAppeared: Bool = false
+    public func isPickUpSheetAppear(state: Bool) {
+        self.statePickUpSheetAppeared = state
     }
     
-    public func callSheetAppeared() -> Bool {
-        return self.stateCallSheetAppeared
+    public func pickUpSheetAppeared() -> Bool {
+        return self.statePickUpSheetAppeared
     }
-    public func notCallSheetAppeared() -> Bool {
-        return !self.stateCallSheetAppeared
+    public func notPickUpSheetAppeared() -> Bool {
+        return !self.statePickUpSheetAppeared
     }
     
     private var stateCallConnected: Bool = false

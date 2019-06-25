@@ -36,17 +36,19 @@ extension Main {
             
         }
         
-        public override func onLayoutAppear(layout: Main.MainLayout) {
+        public override func onLayoutFirstAppear(layout: Main.MainLayout) {
             if dataStorage.grabOrderId() != nil {
                 
-                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2) {
+                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1) {
                     self.apiManager.startTrackingOrder(onSuccess: {
                         
                         print("App: Order matched with a Taxi")
                         
                         layout.o_loading.hide()
                         
-                        self.demonstrator.toTripToPickUpPoint(completion: nil)
+                        self.demonstrator.toTripToPickUpPoint {
+                            self.stateMachine.isPickUpSheetAppear(state: true)
+                        }
                         
                     }, onCancel: {
                         
@@ -59,8 +61,6 @@ extension Main {
                         print("App: Order did not match with any Taxi")
                         
                     }, onTripStarted: {
-                        
-                        
                         print("App: Trip started")
                         self.demonstrator.toTripToDestinationPoint()
                         
@@ -119,6 +119,10 @@ extension Main {
                 
                 popup.show()
                 
+            }
+            
+            layout.btn_curLoc.onClick {
+                layout.mv.dragTo(coordinate: self.locationManager.getLastLocation())
             }
       
             startTrackingVehicles(layout: layout)
@@ -262,7 +266,6 @@ extension Main {
                         layout.mv.focus(on: [path])
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-
                             layout.o_quickorder.hide()
                             layout.o_estimation.show()
                         })
@@ -343,7 +346,7 @@ extension Main {
                 self.stateMachine.isEditingPickUpPoint(state: true)
                 self.stateMachine.isEditingDestinationPoint(state: false)
                 
-//                layout.o_estimation.hide()
+                //                layout.o_estimation.hide()
                 
                 self.demonstrator.toAutoComplete(delegate: self)
                 
@@ -354,7 +357,7 @@ extension Main {
                 self.stateMachine.isEditingPickUpPoint(state: false)
                 self.stateMachine.isEditingDestinationPoint(state: true)
             
-//                layout.o_estimation.hide()
+                //                layout.o_estimation.hide()
                 
                 self.demonstrator.toAutoComplete(delegate: self)
                 
@@ -392,7 +395,9 @@ extension Main {
                         
                         layout.o_loading.hide()
                         
-                        self.demonstrator.toTripToPickUpPoint(completion: nil)
+                        self.demonstrator.toTripToPickUpPoint {
+                            self.stateMachine.isPickUpSheetAppear(state: true)
+                        }
                         
                     }, onCancel: {
                         
@@ -455,7 +460,9 @@ extension Main {
                         
                         layout.o_loading.hide()
                         
-                        self.demonstrator.toTripToPickUpPoint(completion: nil)
+                        self.demonstrator.toTripToPickUpPoint {
+                            self.stateMachine.isPickUpSheetAppear(state: true)
+                        }
                         
                     }, onCancel: {
                         

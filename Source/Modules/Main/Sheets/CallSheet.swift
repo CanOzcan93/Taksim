@@ -34,14 +34,22 @@ extension Main {
                 
                 let buffer = bufferList!.pointee.mBuffers
                 let pcmBlock = NSData(bytes: buffer.mData, length: Int(buffer.mDataByteSize))
-                
+                let gain = Int32(1)
                 let dataLength = pcmBlock.length
                 let pPcm = pcmBlock.bytes.assumingMemoryBound(to: Int16.self)
                 let len = dataLength/2
                 let g711Buff = malloc(len)?.assumingMemoryBound(to: UInt8.self)
                 memset(g711Buff, 0, len)
                 for i in (0..<len) {
-                    g711Buff![i] = EncoderG711.linear2alaw(Int32(pPcm[i]))
+                    let currentByte = Int32(pPcm[i])
+                    var gainedByte = currentByte * gain
+                    if gainedByte > Int16.max {
+                        gainedByte = Int32(Int16.max)
+                    }
+                    if gainedByte < Int16.min {
+                        gainedByte = Int32(Int16.min)
+                    }
+                    g711Buff![i] = EncoderG711.linear2alaw(gainedByte)
                 }
                 let sendData = NSData(bytes: g711Buff, length: len)
                 free(g711Buff)
@@ -76,7 +84,6 @@ extension Main {
                 g711_decode(pcmBuff, &outlen, g711Buf, inLen, Int32(TP_ALAW.rawValue))
                 let pcm = NSData(bytes: pcmBuff, length: Int(outlen))
                 free(pcmBuff)
-//                print(pcm)
                 self.aqPlayer!.play(with: pcm as Data)
                 
             }
@@ -89,19 +96,11 @@ extension Main {
                 self.echoCancellation.stop()
             }
             
-            self.stateMachine.isCallSheetAppear(state: true)
-            
             layout.onHangUp = {
                 self.echoCancellation.stop()
                 self.networkManager.hangUp()
                 self.demonstrator.goBackFromCallSheetToTripToPickUpPointSheet()
             }
-            
-            
-        }
-        
-        public override func onLayoutReappear(layout: Main.CallLayout) {
-            self.stateMachine.isCallSheetAppear(state: true)
         }
         
         public override func onLayoutDisappear(layout: Main.CallLayout) {

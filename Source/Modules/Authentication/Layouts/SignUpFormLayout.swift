@@ -58,6 +58,7 @@ extension Authentication {
         private func constructNameTextInput() {
             
             ti_name = TextInput()
+            ti_name.activateMovement(layout: self)
             ti_name.setPlaceholder(text: "Adınız:")
             
             self.addSubview(ti_name)
@@ -68,6 +69,7 @@ extension Authentication {
             
             ti_surname = TextInput()
             ti_surname.setPlaceholder(text: "Soyadınız:")
+            ti_surname.activateMovement(layout: self)
             
             self.addSubview(ti_surname)
             
@@ -78,6 +80,7 @@ extension Authentication {
             ti_email = TextInput()
             ti_email.setPlaceholder(text: "E-Posta:")
             ti_email.keyboardType = .emailAddress
+            ti_email.activateMovement(layout: self)
             
             self.addSubview(ti_email)
             
