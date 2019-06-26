@@ -20,7 +20,7 @@ extension Main {
             
             self.mv = TSMapView(layout: self, initialCoordinate: CoreCoordinate(latitude: 38.4291513, longitude: 27.139717), initialZoom: 14)
             self.mv.trackDeviceLocation()
-            self.mv.transitive.settings.setAllGesturesEnabled(false)
+//            self.mv.transitive.settings.setAllGesturesEnabled(false)
             
             self.o_driver = DriverOverlay(layout: self)
             

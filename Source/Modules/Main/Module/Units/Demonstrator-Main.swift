@@ -227,7 +227,8 @@ extension Main {
         }
         
         public func goBackToMainSheet() {
-            sheetFactory.resetSheetsButMainSheet()
+            self.sheetFactory.getTripToPickUpPointSheet().networkManager.close()
+            self.sheetFactory = SheetFactory()
             transition = transitionFactory.getFromLeftToRight()
             dismiss()
             
@@ -241,6 +242,7 @@ extension Main {
                 let tripPickUpSheet = sheetFactory.getTripToPickUpPointSheet()
                 tripPickUpSheet.dismiss(animated: false) {
                     tripPickUpSheet.networkManager.disposable.dispose()
+                    tripPickUpSheet.networkManager.close()
                     self.sheetFactory = SheetFactory()
                     self.sheet = self.sheetFactory.getMainSheet()
                     self.dismiss()

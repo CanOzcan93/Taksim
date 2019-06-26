@@ -75,13 +75,6 @@ extension Main {
             return callSheet!
             
         }
-        
-        public func resetSheetsButMainSheet() {
-            self.tripToPickUpPointSheet = nil
-            self.tripToDestinationPointSheet = nil
-            self.callSheet = nil
-        }
-        
     }
     
 }

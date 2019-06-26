@@ -178,7 +178,8 @@ extension Main {
             
             eventManager.listen(key: "resetMainSheet") {
                 
-                self.eventManager.resetEventManager()
+                self.eventManager.forget(key: "tripStarted")
+                self.eventManager.forget(key: "tripEnded")
                 
                 self.vehicles = [Vehicle]()
                 self.incomingVehicles = [Vehicle]()
@@ -485,6 +486,7 @@ extension Main {
                         print("Trip ended and paid")
                         
                         self.eventManager.shout(key: "tripEnded")
+//                        self.eventManager.resetEventManager()
                         
                     })
                     

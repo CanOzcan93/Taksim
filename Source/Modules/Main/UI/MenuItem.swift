@@ -100,7 +100,8 @@ extension Main {
             
             set.append(NSLayoutConstraint(item: v_ghost, attribute: .right, relatedBy: .equal, toItem: iv_overlay, attribute: .right, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: v_ghost, attribute: .width, relatedBy: .equal, toItem: iv_overlay, attribute: .width, multiplier: 1, constant: -40))
-            set.append(NSLayoutConstraint(item: v_ghost, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 35))
+            set.append(NSLayoutConstraint(item: v_ghost, attribute: .height, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 35))
+            set.append(NSLayoutConstraint(item: v_ghost, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 25))
             
         }
         

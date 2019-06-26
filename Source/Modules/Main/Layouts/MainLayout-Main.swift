@@ -42,6 +42,15 @@ extension Main {
             
             self.i_route = RouteInput(layout: self)
             
+            self.btn_curLoc = TSButton()
+            self.btn_curLoc.setImage(imageProvider.getCurrentLocationIcon(), for: .normal)
+            self.btn_curLoc.backgroundColor = .clear
+            self.btn_curLoc.onDraw = { rect in
+                self.btn_curLoc.layer.cornerRadius = rect.size.width/2
+                self.btn_curLoc.clipsToBounds = true
+            }
+            self.addSubview(btn_curLoc)
+            
             self.iv_menu = TSImageView()
             self.iv_menu.image = imageProvider.getHamburgerMenu()
             
@@ -53,15 +62,6 @@ extension Main {
             self.o_loading = LoadingOverlay(layout: self)
             
             self.pu_review = ReviewPopup(layout: self)
-            
-            self.btn_curLoc = TSButton()
-            self.btn_curLoc.setImage(imageProvider.getCurrentLocationIcon(), for: .normal)
-            self.btn_curLoc.backgroundColor = .clear
-            self.btn_curLoc.onDraw = { rect in
-                self.btn_curLoc.layer.cornerRadius = rect.size.width/2
-                self.btn_curLoc.clipsToBounds = true
-            }
-            self.addSubview(btn_curLoc)
         
         }
         

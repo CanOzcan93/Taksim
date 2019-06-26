@@ -147,8 +147,5 @@ extension Main {
             }
         }
         
-        public override func onLayoutAppear(layout: Main.TripToPickUpPointLayout) {
-            
-        }
     }
 }
