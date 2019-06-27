@@ -21,7 +21,7 @@ extension Profile {
         private var tv_date: TSTextView!
         private var tv_km_price: TSTextView!
         
-        private var iv_star: TSImageView!
+//        private var iv_star: TSImageView!
         
         private var isInitialized: Bool = false
         
@@ -35,7 +35,7 @@ extension Profile {
                 if !self.isInitialized {
 
                     let path = UIBezierPath(roundedRect: rect, cornerRadius: rect.height*0.2).cgPath
-                    let shadowPath = UIBezierPath(roundedRect: rect.inset(by: UIEdgeInsets(top: -1, left: -1, bottom: -1, right: -1)), cornerRadius: 8).cgPath
+                    let shadowPath = UIBezierPath(roundedRect: rect.inset(by: UIEdgeInsets(top: -0.1, left: -0.1, bottom: -0.1, right: -0.1)), cornerRadius: 8).cgPath
 
                     let layer = CAShapeLayer()
                     layer.path = path
@@ -147,12 +147,12 @@ extension Profile {
             
             super.onConstrain(set: &set, wrapper: wrapper, item: item)
             
-            set.append(NSLayoutConstraint(item: wrapper, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 100))
+            set.append(NSLayoutConstraint(item: wrapper, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 120))
             
             set.append(NSLayoutConstraint(item: item, attribute: .width, relatedBy: .equal, toItem: wrapper, attribute: .width, multiplier: 1, constant: -10))
             set.append(NSLayoutConstraint(item: item, attribute: .centerX, relatedBy: .equal, toItem: wrapper, attribute: .centerX, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: item, attribute: .top, relatedBy: .equal, toItem: wrapper, attribute: .top, multiplier: 1, constant: 10))
-            set.append(NSLayoutConstraint(item: item, attribute: .bottom, relatedBy: .equal, toItem: wrapper, attribute: .bottom, multiplier: 1, constant: -10))
+            set.append(NSLayoutConstraint(item: item, attribute: .top, relatedBy: .equal, toItem: wrapper, attribute: .top, multiplier: 1, constant: 15))
+            set.append(NSLayoutConstraint(item: item, attribute: .bottom, relatedBy: .equal, toItem: wrapper, attribute: .bottom, multiplier: 1, constant: -15))
             
             constrainImageDriver(set: &set, wrapper: wrapper, item: item)
             constrainNoTextView(set: &set, wrapper: wrapper, item: item)

@@ -78,6 +78,16 @@ public class TSExchangeFlow: CoreExchangeFlow {
         self.profilePhotoChanged = nil
     }
     
+    private var amountOfOrder: Double?
+    public func letAmountOfOrder(amount: Double) {
+        self.amountOfOrder = Double(round(amount*100)/100)
+    }
+    public func grabAmountOfOrder() -> Double {
+        return self.amountOfOrder!
+    }
+    public func resetAmountOfOrder() {
+        self.amountOfOrder = nil
+    }
 
 //    private var selectedVehicleNo: String?
 //    public func letSelectedVehicleNo(no: String?) {

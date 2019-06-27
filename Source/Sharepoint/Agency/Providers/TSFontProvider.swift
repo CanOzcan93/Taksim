@@ -94,6 +94,18 @@ open class TSFontProvider: CoreFontProvider {
         
     }
     
+    private var semiboldBiggest: UIFont?
+    public func getSemiboldBiggest() -> UIFont {
+        
+        guard semiboldBiggest != nil else {
+            semiboldBiggest = UIFont(name: "OpenSans-Semibold", size: 30)
+            return semiboldBiggest!
+        }
+        
+        return semiboldBiggest!
+        
+    }
+    
     private var lightSmall: UIFont?
     public func getLightSmall() -> UIFont {
         

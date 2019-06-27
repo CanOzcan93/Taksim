@@ -39,7 +39,7 @@ extension Main {
         public override func onLayoutFirstAppear(layout: Main.MainLayout) {
             if dataStorage.grabOrderId() != nil {
                 
-                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1) {
+                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.2) {
                     self.apiManager.startTrackingOrder(onSuccess: {
                         
                         print("App: Order matched with a Taxi")
@@ -486,7 +486,6 @@ extension Main {
                         print("Trip ended and paid")
                         
                         self.eventManager.shout(key: "tripEnded")
-//                        self.eventManager.resetEventManager()
                         
                     })
                     

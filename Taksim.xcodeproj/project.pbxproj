@@ -313,7 +313,9 @@
 		E615CA0A22C21421009F328A /* ic_currentLoc@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E615CA0722C21419009F328A /* ic_currentLoc@3x.png */; };
 		E615CA0B22C21421009F328A /* ic_currentLoc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E615CA0822C2141B009F328A /* ic_currentLoc@2x.png */; };
 		E615CA0C22C21421009F328A /* ic_currentLoc.png in Resources */ = {isa = PBXBuildFile; fileRef = E615CA0922C2141D009F328A /* ic_currentLoc.png */; };
+		E615CA0E22C39AA3009F328A /* StatusOrderOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E615CA0D22C39AA3009F328A /* StatusOrderOverlay.swift */; };
 		E62E7AB4228DAAC800C644A4 /* CallPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62E7AB3228DAAC800C644A4 /* CallPopup.swift */; };
+		E678AAE022C3BA6500E8A24E /* OrderPaymentOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E678AADF22C3BA6500E8A24E /* OrderPaymentOverlay.swift */; };
 		E69DDC9522803B8B004DF10B /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DDC9422803B8B004DF10B /* Driver.swift */; };
 		E6B1AAD5229ED695001F5024 /* AddressSheet-Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B1AAD3229ED693001F5024 /* AddressSheet-Profile.swift */; };
 		E6B1AAD6229ED695001F5024 /* CreditCardsSheet-Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B1AAD4229ED694001F5024 /* CreditCardsSheet-Profile.swift */; };
@@ -649,7 +651,9 @@
 		E615CA0722C21419009F328A /* ic_currentLoc@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_currentLoc@3x.png"; sourceTree = "<group>"; };
 		E615CA0822C2141B009F328A /* ic_currentLoc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_currentLoc@2x.png"; sourceTree = "<group>"; };
 		E615CA0922C2141D009F328A /* ic_currentLoc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_currentLoc.png; sourceTree = "<group>"; };
+		E615CA0D22C39AA3009F328A /* StatusOrderOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOrderOverlay.swift; sourceTree = "<group>"; };
 		E62E7AB3228DAAC800C644A4 /* CallPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallPopup.swift; sourceTree = "<group>"; };
+		E678AADF22C3BA6500E8A24E /* OrderPaymentOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPaymentOverlay.swift; sourceTree = "<group>"; };
 		E69DDC9422803B8B004DF10B /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		E6B1AAD3229ED693001F5024 /* AddressSheet-Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddressSheet-Profile.swift"; sourceTree = "<group>"; };
 		E6B1AAD4229ED694001F5024 /* CreditCardsSheet-Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreditCardsSheet-Profile.swift"; sourceTree = "<group>"; };
@@ -980,6 +984,8 @@
 				E60EC58122378C6100D79221 /* CancellationPopup.swift */,
 				E6D1BF942257A05500586767 /* QuickOrderOverlay.swift */,
 				E62E7AB3228DAAC800C644A4 /* CallPopup.swift */,
+				E615CA0D22C39AA3009F328A /* StatusOrderOverlay.swift */,
+				E678AADF22C3BA6500E8A24E /* OrderPaymentOverlay.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1857,6 +1863,7 @@
 				E60EC64E22378C6100D79221 /* WavyLayout.swift in Sources */,
 				E60EC68B22378C6100D79221 /* TSListView.swift in Sources */,
 				E60EC63F22378C6100D79221 /* Page-Main.swift in Sources */,
+				E678AAE022C3BA6500E8A24E /* OrderPaymentOverlay.swift in Sources */,
 				E60EC64122378C6100D79221 /* TripToPickUpPointLayout-Main.swift in Sources */,
 				E60EC61E22378C6100D79221 /* FaqLayout.swift in Sources */,
 				E60EC65B22378C6100D79221 /* TutorialSliderItem-Authentication.swift in Sources */,
@@ -1977,6 +1984,7 @@
 				E60EC62B22378C6100D79221 /* SheetFactory-Profile.swift in Sources */,
 				E6B1AADA229ED69E001F5024 /* AddressLayout-Profile.swift in Sources */,
 				E60EC65422378C6100D79221 /* Factory-PostLogin.swift in Sources */,
+				E615CA0E22C39AA3009F328A /* StatusOrderOverlay.swift in Sources */,
 				E60EC66022378C6100D79221 /* Button-Authentication.swift in Sources */,
 				E60EC63222378C6100D79221 /* VehicleMapMarker.swift in Sources */,
 				E60EC68522378C6100D79221 /* TSCompoundView.swift in Sources */,

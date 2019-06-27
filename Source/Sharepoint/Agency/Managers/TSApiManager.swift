@@ -24,6 +24,7 @@ public class TSApiManager: CoreApiManager {
     
     private var dataStorage: TSDataStorage!
     private var persistentStorage: TSPersistentStorage!
+    private var exchangeFlow: TSExchangeFlow!
     
     public func injectDependencies() {
 
@@ -36,6 +37,7 @@ public class TSApiManager: CoreApiManager {
         
         dataStorage = repository.dataStorage
         persistentStorage = repository.persistentStorage
+        exchangeFlow = repository.exchangeFlow
         
     }
     
@@ -345,6 +347,7 @@ public class TSApiManager: CoreApiManager {
                 
             } else if (status == 9) {
                 
+                self.exchangeFlow.letAmountOfOrder(amount: res["feeInfo"]["amount"].doubleValue)
                 self.onPayment()
                 
             } else if (status == 11) {

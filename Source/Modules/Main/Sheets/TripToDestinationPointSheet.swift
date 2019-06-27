@@ -77,12 +77,33 @@ extension Main {
             
             eventManager.listen(key: "tripEnded") {
                 
-                if self.stateMachine.pickUpSheetAppeared() {
-                    self.stateMachine.shouldMainSheetBeReset(state: true)
+                layout.st_overlay.changeStatus(text: "Yolculuğunuz Tamamlandı")
+                layout.pay_overlay.changeAmount(payment: self.exchangeFlow.grabAmountOfOrder())
+                layout.pay_overlay.show()
+                layout.pay_overlay.onApprove = {
+                    if self.stateMachine.pickUpSheetAppeared() {
+                        self.stateMachine.shouldMainSheetBeReset(state: true)
+                    }
+                    self.stateMachine.shouldMainSheetShowReview(state: true)
+                    
+                    self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet()
+                    self.exchangeFlow.resetAmountOfOrder()
+                    self.stateMachine.isClickedCashPayment(state: true)
                 }
-                self.stateMachine.shouldMainSheetShowReview(state: true)
                 
-                self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 30){
+                    if self.stateMachine.notClickedCashPayment() {
+                        if self.stateMachine.pickUpSheetAppeared() {
+                            self.stateMachine.shouldMainSheetBeReset(state: true)
+                        }
+                        self.stateMachine.shouldMainSheetShowReview(state: true)
+                        
+                        self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet()
+                        self.exchangeFlow.resetAmountOfOrder()
+                    }
+                    self.stateMachine.isClickedCashPayment(state: false)
+                    
+                }
                 
             }
             
