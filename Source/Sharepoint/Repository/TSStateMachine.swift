@@ -117,17 +117,17 @@ public class TSStateMachine: CoreStateMachine {
         return !self.stateCallConnected
     }
     
-    private var stateClickedCashPayment: Bool = false
-    public func isClickedCashPayment(state: Bool) {
-        self.stateClickedCashPayment = state
-    }
-    
-    public func clickedCashPayment() -> Bool {
-        return self.stateClickedCashPayment
-    }
-    public func notClickedCashPayment() -> Bool {
-        return !self.stateClickedCashPayment
-    }
+//    private var stateClickedCashPayment: Bool = false
+//    public func isClickedCashPayment(state: Bool) {
+//        self.stateClickedCashPayment = state
+//    }
+//    
+//    public func clickedCashPayment() -> Bool {
+//        return self.stateClickedCashPayment
+//    }
+//    public func notClickedCashPayment() -> Bool {
+//        return !self.stateClickedCashPayment
+//    }
     
     
 }

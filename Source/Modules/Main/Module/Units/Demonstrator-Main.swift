@@ -250,6 +250,7 @@ extension Main {
             }
             else {
                 sheet = sheetFactory.getMainSheet()
+                self.sheetFactory = SheetFactory()
                 dismiss()
             }
             

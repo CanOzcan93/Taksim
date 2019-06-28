@@ -8,6 +8,7 @@
 
 import GoogleMaps
 import Core
+import ReactiveObjC
 
 extension Main {
     
@@ -21,6 +22,41 @@ extension Main {
         
         private var deviceLocation: CoreCoordinate!
         private var path: GMSMutablePath!
+        
+        private var disposable: RACDisposable!
+        
+        public override func onLayoutReady(layout: Main.TripToDestinationPointLayout) {
+         
+            eventManager.listen(key: "tripEnded") {
+                
+                self.disposable = RACSignal<AnyObject>.interval(30, on: RACScheduler(priority: RACSchedulerPriorityBackground)).subscribeNext { (date) in
+                    if self.stateMachine.pickUpSheetAppeared() {
+                        self.stateMachine.shouldMainSheetBeReset(state: true)
+                    }
+                    self.stateMachine.shouldMainSheetShowReview(state: true)
+                    
+                    self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet()
+                    self.exchangeFlow.resetAmountOfOrder()
+                    self.disposable.dispose()
+                }
+                
+                layout.st_overlay.changeStatus(text: "Yolculuğunuz Tamamlandı")
+                layout.pay_overlay.changeAmount(payment: self.exchangeFlow.grabAmountOfOrder())
+                layout.pay_overlay.show()
+                layout.pay_overlay.onApprove = {
+                    if self.stateMachine.pickUpSheetAppeared() {
+                        self.stateMachine.shouldMainSheetBeReset(state: true)
+                    }
+                    self.stateMachine.shouldMainSheetShowReview(state: true)
+                    
+                    self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet()
+                    self.exchangeFlow.resetAmountOfOrder()
+                    self.disposable.dispose()
+                    self.eventManager.forget(key: "tripEnded")
+                }
+            }
+ 
+        }
         
         public override func onLayoutAppear(layout: Main.TripToDestinationPointLayout) {
             
@@ -75,37 +111,7 @@ extension Main {
                 
             }
             
-            eventManager.listen(key: "tripEnded") {
-                
-                layout.st_overlay.changeStatus(text: "Yolculuğunuz Tamamlandı")
-                layout.pay_overlay.changeAmount(payment: self.exchangeFlow.grabAmountOfOrder())
-                layout.pay_overlay.show()
-                layout.pay_overlay.onApprove = {
-                    if self.stateMachine.pickUpSheetAppeared() {
-                        self.stateMachine.shouldMainSheetBeReset(state: true)
-                    }
-                    self.stateMachine.shouldMainSheetShowReview(state: true)
-                    
-                    self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet()
-                    self.exchangeFlow.resetAmountOfOrder()
-                    self.stateMachine.isClickedCashPayment(state: true)
-                }
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 30){
-                    if self.stateMachine.notClickedCashPayment() {
-                        if self.stateMachine.pickUpSheetAppeared() {
-                            self.stateMachine.shouldMainSheetBeReset(state: true)
-                        }
-                        self.stateMachine.shouldMainSheetShowReview(state: true)
-                        
-                        self.demonstrator.goBackFromTripToDestinationPointSheetToMainSheet()
-                        self.exchangeFlow.resetAmountOfOrder()
-                    }
-                    self.stateMachine.isClickedCashPayment(state: false)
-                    
-                }
-                
-            }
+            
             
             
             

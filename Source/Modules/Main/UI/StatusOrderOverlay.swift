@@ -62,8 +62,8 @@ extension Main {
         private func constructStatusTextView() {
             
             self.tv_status = TSTextView()
-            self.tv_status.font = self.fontProvider.getSemiboldBiggest()
-            self.tv_status.text = "Taksiniz Yola Çıktı"
+            self.tv_status.font = self.fontProvider.getSemiboldLargest()
+            self.tv_status.text = "Yolculuğunuz Başladı"
             self.tv_status.textColor = self.colorProvider.getWhiteFull()
             self.tv_status.textAlignment = .center
             self.packView(self.tv_status)

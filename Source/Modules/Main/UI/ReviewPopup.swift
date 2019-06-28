@@ -19,6 +19,7 @@ extension Main {
         private var v_background: TSView!
         
         private var tv: PostLogin.TextView!
+        private var tv_review: PostLogin.TextView!
         private var iv_stars: [TSImageView]!
         private var mti: TSMultilineTextInput!
         
@@ -46,6 +47,7 @@ extension Main {
             constructShadeView()
             constructBackgroundView()
             
+            constructReviewTextView()
             constructTextView()
             constructStarIcons()
             constructMultilineTextInput()
@@ -64,6 +66,7 @@ extension Main {
             constrainShadeView(set: &set, layout: layout)
             constrainBackgroundView(set: &set, layout: layout)
             
+            constrainReviewTextView(set: &set)
             constrainTextView(set: &set)
             constrainStarIcons(set: &set)
             constrainMultilineTextInput(set: &set)
@@ -102,6 +105,17 @@ extension Main {
             
             self.packView(self.v_background)
             
+        }
+        
+        private func constructReviewTextView() {
+            self.tv_review = PostLogin.TextView()
+            self.tv_review.font = fontProvider.getSemiboldLargest()
+            self.tv_review.textAlignment = .center
+            self.tv_review.text = "Değerlendirmeniz Alınmıştır"
+            self.tv_review.alpha = 0
+            self.tv_review.numberOfLines = 2
+            self.tv_review.isUserInteractionEnabled = false
+            self.packView(self.tv_review)
         }
         
         private func constructTextView() {
@@ -175,6 +189,7 @@ extension Main {
             self.btn_cancel.layer.cornerRadius = 20
             self.btn_cancel.onClick {
                 self.hide()
+                self.reset()
                 layout.endEditing(true)
             }
             
@@ -220,6 +235,15 @@ extension Main {
             set.append(hiddenPopupConstraints[1])
             set.append(NSLayoutConstraint(item: v_background, attribute: .centerX, relatedBy: .equal, toItem: v_shade, attribute: .centerX, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: v_background, attribute: .centerY, relatedBy: .equal, toItem: v_shade, attribute: .centerY, multiplier: 1, constant: 0))
+            
+        }
+        
+        private func constrainReviewTextView(set: inout [NSLayoutConstraint]) {
+            
+            set.append(NSLayoutConstraint(item: tv_review, attribute: .centerX, relatedBy: .equal, toItem: v_background, attribute: .centerX, multiplier: 1, constant: 0))
+            set.append(NSLayoutConstraint(item: tv_review, attribute: .centerY, relatedBy: .equal, toItem: v_background, attribute: .centerY, multiplier: 1, constant: 0))
+            set.append(NSLayoutConstraint(item: tv_review, attribute: .width, relatedBy: .equal, toItem: v_background, attribute: .width, multiplier: 0.8, constant: 0))
+            set.append(NSLayoutConstraint(item: tv_review, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 100))
             
         }
         
@@ -279,7 +303,7 @@ extension Main {
         private func updateRating() {
             
             for i in 0...4 {
-                if i <= rating-1 {
+                if i <= Int(rating)-1 {
                     self.iv_stars[i].image = imageProvider.getFilledStar()
                 } else {
                     self.iv_stars[i].image = imageProvider.getOutlinedStar()
@@ -325,6 +349,42 @@ extension Main {
             
         }
         
+        public func reset() {
+            rating = 0
+            updateRating()
+            self.hide()
+            changeViewAlpha(reviewDeactivated: true)
+        }
+        
+        public func reviewReceived() {
+            changeViewAlpha(reviewDeactivated: false)
+            DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+                self.reset()
+            }
+        }
+        
+        private func changeViewAlpha(reviewDeactivated: Bool) {
+            self.tv_review.alpha = !reviewDeactivated ? 1 : 0
+            self.tv_review.isUserInteractionEnabled = !reviewDeactivated
+            self.tv_review.setNeedsDisplay()
+            self.tv.alpha = reviewDeactivated ? 1 : 0
+            self.tv.isUserInteractionEnabled = reviewDeactivated
+            self.tv.setNeedsDisplay()
+            for iv in iv_stars {
+                iv.alpha = reviewDeactivated ? 1 : 0
+                iv.isUserInteractionEnabled = reviewDeactivated
+                iv.setNeedsDisplay()
+            }
+            self.mti.alpha = reviewDeactivated ? 1 : 0
+            self.mti.isUserInteractionEnabled = reviewDeactivated
+            self.mti.setNeedsDisplay()
+            self.btn_send.alpha = reviewDeactivated ? 1 : 0
+            self.btn_send.isUserInteractionEnabled = reviewDeactivated
+            self.btn_send.setNeedsDisplay()
+            self.btn_cancel.alpha = reviewDeactivated ? 1 : 0
+            self.btn_cancel.isUserInteractionEnabled = reviewDeactivated
+            self.btn_cancel.setNeedsDisplay()
+        }
         
         
     }

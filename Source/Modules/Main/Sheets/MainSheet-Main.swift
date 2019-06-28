@@ -137,9 +137,8 @@ extension Main {
                     token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String) { json in
                         if json["errCode"].uIntValue != 0 {
                         }
-                        layout.pu_review.hide()
+                        layout.pu_review.reviewReceived()
                         layout.endEditing(true)
-                        
                     }
             })
             layout.iv_menu.onTap {
