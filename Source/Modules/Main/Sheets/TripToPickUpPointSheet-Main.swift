@@ -26,16 +26,20 @@ extension Main {
         
         public override func onLayoutReady(layout: Main.TripToPickUpPointLayout) {
             
+            layout.btn_curLoc.onClick {
+                layout.mv.dragTo(coordinate: self.locationManager.getLastLocation(), zoom: 16)
+            }
+            
             let orderId = self.dataStorage.grabOrderId()!
             dispatchedVehicle = dataStorage.grabDispatchedVehicle()
             dispatchedDriver = dataStorage.grabDispatchedDriver()
             
             layout.o_driver.setDriverInfo(driver: dispatchedDriver, vehicle: dispatchedVehicle)
             
-            vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize())
+            vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize(), centered: false)
             layout.mv.drawMarker(marker: vehicleMarker)
             
-            pickUpMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabPickUpPointCoordinate()!, size: layout.mv.lastScaledSize())
+            pickUpMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabPickUpPointCoordinate()!, size: layout.mv.lastScaledSize(), centered: false)
             layout.mv.drawMarker(marker: pickUpMarker)
             
             deviceLocation = locationManager.getLastLocation()
@@ -145,6 +149,10 @@ extension Main {
                 callPopup.show()
                 
             }
+        }
+        
+        public override func onLayoutAppear(layout: Main.TripToPickUpPointLayout) {
+            locationManager.changeMapCurrentMarker(map: layout.mv)
         }
         
     }

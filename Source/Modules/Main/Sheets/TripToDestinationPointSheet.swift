@@ -26,6 +26,17 @@ extension Main {
         private var disposable: RACDisposable!
         
         public override func onLayoutReady(layout: Main.TripToDestinationPointLayout) {
+            
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
+                layout.mv.dragTo(coordinate: self.dispatchedVehicle.coordinate, angle: Double(self.dispatchedVehicle.direction), zoom: 16)
+                
+            }
+            
+            layout.btn_curLoc.onClick {
+                self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
+                layout.mv.dragTo(coordinate: self.dispatchedVehicle.coordinate, angle: Double(self.dispatchedVehicle.direction), zoom: 16)
+            }
          
             eventManager.listen(key: "tripEnded") {
                 
@@ -61,16 +72,17 @@ extension Main {
         public override func onLayoutAppear(layout: Main.TripToDestinationPointLayout) {
             
             dispatchedVehicle = dataStorage.grabDispatchedVehicle()
+//            locationManager.changeMapCurrentMarker(map: layout.mv)
             
             if self.stateMachine.notQuickOrderStarted() {
                 
-                vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize())
+                vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize(), centered: false)
                 layout.mv.drawMarker(marker: vehicleMarker)
                 
-                pickUpMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabPickUpPointCoordinate()!, size: layout.mv.lastScaledSize())
+                pickUpMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabPickUpPointCoordinate()!, size: layout.mv.lastScaledSize(), centered: false)
                 layout.mv.drawMarker(marker: pickUpMarker)
                 
-                destinationMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabDestinationCoordinate()!, size: layout.mv.lastScaledSize())
+                destinationMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabDestinationCoordinate()!, size: layout.mv.lastScaledSize(), centered: false)
                 layout.mv.drawMarker(marker: destinationMarker)
                 
                 deviceLocation = locationManager.getLastLocation()
@@ -81,33 +93,22 @@ extension Main {
                     
                 }
                 
-                eventManager.listen(key: "dispatchedVehicleUpdated") {
-                    
-                    self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
-                    
-                    self.vehicleMarker.dragTo(coordinate: self.dispatchedVehicle.coordinate)
-                    
-                    layout.mv.focus(coordinates: [self.dispatchedVehicle.coordinate, self.exchangeFlow.grabPickUpPointCoordinate()!, self.exchangeFlow.grabDestinationCoordinate()!, self.deviceLocation], paths: [self.path!])
-                    
-                }
-                
-                
+//                eventManager.listen(key: "dispatchedVehicleUpdated") {
+//
+//                    self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
+//
+//                    self.vehicleMarker.dragTo(coordinate: self.dispatchedVehicle.coordinate)
+//
+//                    layout.mv.focus(coordinates: [self.dispatchedVehicle.coordinate, self.exchangeFlow.grabPickUpPointCoordinate()!, self.exchangeFlow.grabDestinationCoordinate()!, self.deviceLocation], paths: [self.path!])
+//
+//                }
                 
             }
             
             else {
                 
-                vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize())
+                vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize(), centered: false)
                 layout.mv.drawMarker(marker: vehicleMarker)
-                
-                eventManager.listen(key: "dispatchedVehicleUpdated") {
-                    self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
-                    
-                    layout.mv.dragTo(coordinate: self.dispatchedVehicle.coordinate, angle: Double(self.dispatchedVehicle.direction), zoom: 16)
-                    
-                }
-                
-                
                 
             }
             

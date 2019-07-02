@@ -505,5 +505,17 @@ public class TSImageProvider: CoreImageProvider {
         return ic_cur_loc!
     }
     
+    private var ic_loc_mar: UIImage?
+    public func getLocationMarkerIcon() -> UIImage {
+        
+        guard ic_loc_mar != nil else {
+            ic_loc_mar = UIImage(named: "ic_human")
+            return ic_loc_mar!
+        }
+        
+        return ic_loc_mar!
+    }
+    
+    
     
 }

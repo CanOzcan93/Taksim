@@ -78,6 +78,8 @@ extension Main {
         
         public override func onLayoutReappear(layout: Main.MainLayout) {
             
+            locationManager.changeMapCurrentMarker(map: layout.mv)
+            
             if (stateMachine.mainSheetShouldBeReset()) {
                 layout.mv.dragTo(coordinate: self.locationManager.getLastLocation(), zoom: 14)
                 layout.o_quickorder.show()
@@ -99,7 +101,7 @@ extension Main {
         
         public override func onLayoutReady(layout: Main.MainLayout) {
 
-            layout.mv.trackDeviceLocation()
+            self.locationManager.activateCurrentLocationMarker(image: imageProvider.getLocationMarkerIcon(), map: layout.mv)
             
             layout.o_loading.iv_cancel.onTap {
                 
@@ -122,7 +124,7 @@ extension Main {
             }
             
             layout.btn_curLoc.onClick {
-                layout.mv.dragTo(coordinate: self.locationManager.getLastLocation())
+                layout.mv.dragTo(coordinate: self.locationManager.getLastLocation(), zoom: 16)
             }
       
             startTrackingVehicles(layout: layout)
@@ -249,10 +251,10 @@ extension Main {
                     let pickUpPoint = self.exchangeFlow.grabPickUpPointCoordinate()!
                     let destinationPoint = self.exchangeFlow.grabDestinationCoordinate()!
                     
-                    self.pickUpMarker = CoreMapMarker(image: self.imageProvider.getMarkerIcon(), on: pickUpPoint, size: layout.mv.lastScaledSize())
+                    self.pickUpMarker = CoreMapMarker(image: self.imageProvider.getMarkerIcon(), on: pickUpPoint, size: layout.mv.lastScaledSize(), centered: false)
                     layout.mv.drawMarker(marker: self.pickUpMarker)
                     
-                    self.destinationMarker = CoreMapMarker(image: self.imageProvider.getMarkerIcon(), on: destinationPoint, size: layout.mv.lastScaledSize())
+                    self.destinationMarker = CoreMapMarker(image: self.imageProvider.getMarkerIcon(), on: destinationPoint, size: layout.mv.lastScaledSize(), centered: false)
                     layout.mv.drawMarker(marker: self.destinationMarker)
                     
                     layout.mv.drawRoute(apiManager: self.apiManager, from: pickUpPoint, to: destinationPoint, color: self.colorProvider.getRouteBlue()) { (response) in
@@ -515,7 +517,7 @@ extension Main {
                         
                     } else {
                         
-                        let marker = VehicleMapMarker(image: self.imageProvider.getTaxiIcon(), on: vehicle.coordinate, size: layout.mv.lastScaledSize())
+                        let marker = VehicleMapMarker(image: self.imageProvider.getTaxiIcon(), on: vehicle.coordinate, size: layout.mv.lastScaledSize(), centered: false)
                         marker.vehicle = vehicle
                         self.vehicleMarkers.append(marker)
                         

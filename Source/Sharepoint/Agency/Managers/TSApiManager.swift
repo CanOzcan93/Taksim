@@ -217,7 +217,7 @@ public class TSApiManager: CoreApiManager {
                 completion(json)
             }
         } else {
-            TSNetworkManager.multiPartPostWithImages(url: url, parameters: parameters, headers: header, photos: nil) { (json, heades) in
+            TSNetworkManager.multiPartPostWithImages(url: url, parameters: parameters, headers: header, photos: nil) { (json, headers) in
                 completion(json)
             }
         }

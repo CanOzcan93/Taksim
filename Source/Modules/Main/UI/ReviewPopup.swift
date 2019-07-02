@@ -353,12 +353,14 @@ extension Main {
             rating = 0
             updateRating()
             self.hide()
-            changeViewAlpha(reviewDeactivated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
+                self.changeViewAlpha(reviewDeactivated: true)
+            }
         }
         
         public func reviewReceived() {
             changeViewAlpha(reviewDeactivated: false)
-            DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+            DispatchQueue.main.asyncAfter(deadline: .now()+3) {
                 self.reset()
             }
         }
