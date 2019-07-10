@@ -37,6 +37,8 @@ extension Main {
                 self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
                 layout.mv.dragTo(coordinate: self.dispatchedVehicle.coordinate, angle: Double(self.dispatchedVehicle.direction), zoom: 16)
             }
+            
+            self.eventManager.forget(key: "dispatchedVehicleUpdated")
          
             eventManager.listen(key: "tripEnded") {
                 
@@ -79,8 +81,8 @@ extension Main {
                 vehicleMarker = CoreMapMarker(image: self.imageProvider.getTaxiIcon(), on: dispatchedVehicle.coordinate, size: layout.mv.lastScaledSize(), centered: false)
                 layout.mv.drawMarker(marker: vehicleMarker)
                 
-                pickUpMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabPickUpPointCoordinate()!, size: layout.mv.lastScaledSize(), centered: false)
-                layout.mv.drawMarker(marker: pickUpMarker)
+//                pickUpMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabPickUpPointCoordinate()!, size: layout.mv.lastScaledSize(), centered: false)
+//                layout.mv.drawMarker(marker: pickUpMarker)
                 
                 destinationMarker = CoreMapMarker(image: imageProvider.getMarkerIcon(), on: exchangeFlow.grabDestinationCoordinate()!, size: layout.mv.lastScaledSize(), centered: false)
                 layout.mv.drawMarker(marker: destinationMarker)
@@ -93,16 +95,6 @@ extension Main {
                     
                 }
                 
-//                eventManager.listen(key: "dispatchedVehicleUpdated") {
-//
-//                    self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
-//
-//                    self.vehicleMarker.dragTo(coordinate: self.dispatchedVehicle.coordinate)
-//
-//                    layout.mv.focus(coordinates: [self.dispatchedVehicle.coordinate, self.exchangeFlow.grabPickUpPointCoordinate()!, self.exchangeFlow.grabDestinationCoordinate()!, self.deviceLocation], paths: [self.path!])
-//
-//                }
-                
             }
             
             else {
@@ -111,6 +103,17 @@ extension Main {
                 layout.mv.drawMarker(marker: vehicleMarker)
                 
             }
+            
+            eventManager.listen(key: "dispatchedVehicleUpdated") {
+                
+                self.dispatchedVehicle = self.dataStorage.grabDispatchedVehicle()
+                
+                self.vehicleMarker.dragTo(coordinate: self.dispatchedVehicle.coordinate)
+                
+                //                    layout.mv.focus(coordinates: [self.dispatchedVehicle.coordinate, self.exchangeFlow.grabPickUpPointCoordinate()!, self.exchangeFlow.grabDestinationCoordinate()!, self.deviceLocation], paths: [self.path!])
+                
+            }
+
             
             
             

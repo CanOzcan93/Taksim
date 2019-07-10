@@ -81,6 +81,31 @@ public class TSImageProvider: CoreImageProvider {
         return logo!
         
     }
+    
+    private var logo_iso: UIImage?
+    public func getLogoIso() -> UIImage {
+        
+        guard logo_iso != nil else {
+            logo_iso = UIImage(named: "logo_iso")
+            return logo_iso!
+        }
+        
+        return logo_iso!
+        
+    }
+    
+    private var logo_izmir: UIImage?
+    public func getLogoIzmir() -> UIImage {
+        
+        guard logo_izmir != nil else {
+            logo_izmir = UIImage(named: "logo_izmirbb")
+            return logo_izmir!
+        }
+        
+        return logo_izmir!
+        
+    }
+    
     public func getLogoRatio() -> CGFloat {
         return (270 / 135)
     }

@@ -10,6 +10,8 @@ import Core
 
 public class TSLexiconProvider: CoreLexiconProvider<TSLexicon, TSLanguage> {
     
+    public var faqDict: [Dictionary<String,String>]!
+    
     public override func onInit() -> Dictionary<String, TSLexicon>? {
         
         var dict = Dictionary<String, TSLexicon>()

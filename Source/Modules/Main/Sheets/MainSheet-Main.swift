@@ -181,6 +181,7 @@ extension Main {
                 
                 self.eventManager.forget(key: "tripStarted")
                 self.eventManager.forget(key: "tripEnded")
+                self.eventManager.forget(key: "dispatchedVehicleUpdated")
                 
                 self.vehicles = [Vehicle]()
                 self.incomingVehicles = [Vehicle]()

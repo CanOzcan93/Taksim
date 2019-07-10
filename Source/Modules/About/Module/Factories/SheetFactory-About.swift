@@ -36,6 +36,42 @@ extension About {
             
         }
         
+        private var termOfUse: TermOfUseSheet?
+        public func getTermOfUseSheet() -> TermOfUseSheet {
+            
+            guard termOfUse != nil else {
+                termOfUse = TermOfUseSheet()
+                return termOfUse!
+            }
+            
+            return termOfUse!
+            
+        }
+        
+        private var aboutUs: AboutUsSheet?
+        public func getAboutUsSheet() -> AboutUsSheet {
+            
+            guard aboutUs != nil else {
+                aboutUs = AboutUsSheet()
+                return aboutUs!
+            }
+            
+            return aboutUs!
+            
+        }
+        
+        private var privacyPolicy: PrivacyPolicySheet?
+        public func getPrivacyPolicySheet() -> PrivacyPolicySheet {
+            
+            guard privacyPolicy != nil else {
+                privacyPolicy = PrivacyPolicySheet()
+                return privacyPolicy!
+            }
+            
+            return privacyPolicy!
+            
+        }
+        
     }
     
 }

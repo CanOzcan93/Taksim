@@ -6,11 +6,13 @@
 //  Copyright © 2019 RedBlac. All rights reserved.
 //
 
+import WebKit
+
 extension About {
     
     public class HelpLayout: PostLogin.WavyLayout {
         
-        private var lv: HelpList!
+        public var lv: HelpList!
         
         public override func onHeading() -> String {
             return lexiconProvider.get("help")

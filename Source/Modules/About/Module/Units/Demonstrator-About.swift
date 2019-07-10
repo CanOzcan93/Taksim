@@ -30,6 +30,33 @@ extension About {
             
         }
         
+        public func toTermOfUseSheet() {
+            
+            sheet = sheetFactory.getTermOfUseSheet()
+            transition = transitionFactory.getFromRightToLeft()
+            
+            present()
+            
+        }
+        
+        public func toAboutUsSheet() {
+            
+            sheet = sheetFactory.getAboutUsSheet()
+            transition = transitionFactory.getFromRightToLeft()
+            
+            present()
+            
+        }
+        
+        public func toPrivacyPolicySheet() {
+            
+            sheet = sheetFactory.getPrivacyPolicySheet()
+            transition = transitionFactory.getFromRightToLeft()
+            
+            present()
+            
+        }
+        
         public func goBack() {
             
             transition = transitionFactory.getFromLeftToRight()

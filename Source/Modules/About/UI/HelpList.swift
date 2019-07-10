@@ -13,7 +13,7 @@ extension About {
     public class HelpList: TSCompoundView {
         
         private var sv: UIScrollView!
-        private var items: [HelpListItem]!
+        public var items: [HelpListItem]!
         
         public override func onConstruct(layout: CoreLayout) {
             
@@ -22,11 +22,9 @@ extension About {
             
             self.items = [HelpListItem]()
             
-            self.items.append(HelpListItem(layout: layout, scroll: sv, title: "Hakkımızda", text: "Yakında Eklenecektir"))
-            self.items.append(HelpListItem(layout: layout, scroll: sv, title: "Ödeme Politikası", text: "Yakında Eklenecektir"))
             self.items.append(HelpListItem(layout: layout, scroll: sv, title: "Kullanım Koşulları", text: "Yakında Eklenecektir"))
+            self.items.append(HelpListItem(layout: layout, scroll: sv, title: "Hakkımızda", text: "Yakında Eklenecektir"))
             self.items.append(HelpListItem(layout: layout, scroll: sv, title: "Gizlilik Politikası", text: "Yakında Eklenecektir"))
-            self.items.append(HelpListItem(layout: layout, scroll: sv, title: "Geri Bildirim", text: "Yakında Eklenecektir"))
             
             self.packView(sv)
             

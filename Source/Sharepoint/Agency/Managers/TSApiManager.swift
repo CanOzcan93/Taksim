@@ -126,7 +126,7 @@ public class TSApiManager: CoreApiManager {
     
     public func version(completion: @escaping (JSON)->()) {
         let url = "http://94.101.81.210:48080/AppService/CheckVersion.do"
-        let data = "jsonParam={\"type\": 1,\"os\": 1,\"version\":12}"
+        let data = "jsonParam={\"type\": 1,\"os\": 1,\"version\":1}"
         
         TSNetworkManager.post(url: url, body: data) { (json, header) in
             completion(json)
@@ -271,6 +271,14 @@ public class TSApiManager: CoreApiManager {
             completion(json)
         }
         
+    }
+    
+    public func getFaq(completion: @escaping (JSON)->()) {
+        let url = "http://www.taksimizmir.com/app_content/taksim_sss.json"
+        
+        TSNetworkManager.getJson(url: url) { (json) in
+            completion(json)
+        }
     }
     
     private var orderDispatched: Bool!

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF771287AC0213162D158DE6 /* Pods_Taksim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473BB1A1E1524145556F53BC /* Pods_Taksim.framework */; };
 		E60EC53422378B4A00D79221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60EC53322378B4A00D79221 /* Assets.xcassets */; };
 		E60EC60D22378C6100D79221 /* TSPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EC54022378C6100D79221 /* TSPage.swift */; };
 		E60EC60E22378C6100D79221 /* TSSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EC54122378C6100D79221 /* TSSheet.swift */; };
@@ -317,6 +316,19 @@
 		E61A894722CA349D00E3A3F5 /* ic_human@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E61A894422CA349900E3A3F5 /* ic_human@2x.png */; };
 		E61A894822CA349D00E3A3F5 /* ic_human.png in Resources */ = {isa = PBXBuildFile; fileRef = E61A894522CA349B00E3A3F5 /* ic_human.png */; };
 		E61A894922CA349D00E3A3F5 /* ic_human@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E61A894622CA349D00E3A3F5 /* ic_human@3x.png */; };
+		E61B8B0222D60A970020A25F /* logo_iso.png in Resources */ = {isa = PBXBuildFile; fileRef = E61B8AFC22D60A960020A25F /* logo_iso.png */; };
+		E61B8B0322D60A970020A25F /* logo_izmirbb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E61B8AFD22D60A960020A25F /* logo_izmirbb@2x.png */; };
+		E61B8B0422D60A970020A25F /* logo_iso@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E61B8AFE22D60A970020A25F /* logo_iso@3x.png */; };
+		E61B8B0522D60A970020A25F /* logo_izmirbb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E61B8AFF22D60A970020A25F /* logo_izmirbb@3x.png */; };
+		E61B8B0622D60A970020A25F /* logo_izmirbb.png in Resources */ = {isa = PBXBuildFile; fileRef = E61B8B0022D60A970020A25F /* logo_izmirbb.png */; };
+		E61B8B0722D60A970020A25F /* logo_iso@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E61B8B0122D60A970020A25F /* logo_iso@2x.png */; };
+		E61B8B0F22D61E450020A25F /* TermOfUseSheet-About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B8B0C22D61E440020A25F /* TermOfUseSheet-About.swift */; };
+		E61B8B1022D61E450020A25F /* AboutUsSheet-About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B8B0D22D61E450020A25F /* AboutUsSheet-About.swift */; };
+		E61B8B1122D61E450020A25F /* PrivacyPolicySheet-About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B8B0E22D61E450020A25F /* PrivacyPolicySheet-About.swift */; };
+		E61B8B1522D61E540020A25F /* TermOfUseLayout-About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B8B1222D61E540020A25F /* TermOfUseLayout-About.swift */; };
+		E61B8B1622D61E540020A25F /* AboutUsLayout-About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B8B1322D61E540020A25F /* AboutUsLayout-About.swift */; };
+		E61B8B1722D61E540020A25F /* HelpWebViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B8B1422D61E540020A25F /* HelpWebViewLayout.swift */; };
+		E61B8B1922D61E7D0020A25F /* PrivacyPolicyLayout-About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B8B1822D61E7D0020A25F /* PrivacyPolicyLayout-About.swift */; };
 		E62E7AB4228DAAC800C644A4 /* CallPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62E7AB3228DAAC800C644A4 /* CallPopup.swift */; };
 		E678AAE022C3BA6500E8A24E /* OrderPaymentOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E678AADF22C3BA6500E8A24E /* OrderPaymentOverlay.swift */; };
 		E69DDC9522803B8B004DF10B /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DDC9422803B8B004DF10B /* Driver.swift */; };
@@ -340,12 +352,13 @@
 		E6D1BF952257A05500586767 /* QuickOrderOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF942257A05500586767 /* QuickOrderOverlay.swift */; };
 		E6D1BF972257A9C500586767 /* TripToDestinationPointSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF962257A9C500586767 /* TripToDestinationPointSheet.swift */; };
 		E6D1BF992257B16800586767 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF982257B16800586767 /* LoadingOverlay.swift */; };
+		ECC2E5BCC21EFD2ABC4E92AA /* Pods_Taksim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD7C80C97207E43A80FC219 /* Pods_Taksim.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10BDD1D3F36E90972214F3EC /* Pods-Taksim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.debug.xcconfig"; sourceTree = "<group>"; };
-		473BB1A1E1524145556F53BC /* Pods_Taksim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taksim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B34CE0D1CF5EDC02DA1E0236 /* Pods-Taksim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.release.xcconfig"; sourceTree = "<group>"; };
+		859752B245B049543B16B98D /* Pods-Taksim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.debug.xcconfig"; sourceTree = "<group>"; };
+		BDD7C80C97207E43A80FC219 /* Pods_Taksim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taksim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1DB3799CED95D567404C37A /* Pods-Taksim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.release.xcconfig"; sourceTree = "<group>"; };
 		E60EC52922378B4900D79221 /* Taksim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taksim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60EC53322378B4A00D79221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60EC53822378B4A00D79221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -658,6 +671,19 @@
 		E61A894422CA349900E3A3F5 /* ic_human@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_human@2x.png"; sourceTree = "<group>"; };
 		E61A894522CA349B00E3A3F5 /* ic_human.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_human.png; sourceTree = "<group>"; };
 		E61A894622CA349D00E3A3F5 /* ic_human@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_human@3x.png"; sourceTree = "<group>"; };
+		E61B8AFC22D60A960020A25F /* logo_iso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_iso.png; sourceTree = "<group>"; };
+		E61B8AFD22D60A960020A25F /* logo_izmirbb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_izmirbb@2x.png"; sourceTree = "<group>"; };
+		E61B8AFE22D60A970020A25F /* logo_iso@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_iso@3x.png"; sourceTree = "<group>"; };
+		E61B8AFF22D60A970020A25F /* logo_izmirbb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_izmirbb@3x.png"; sourceTree = "<group>"; };
+		E61B8B0022D60A970020A25F /* logo_izmirbb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_izmirbb.png; sourceTree = "<group>"; };
+		E61B8B0122D60A970020A25F /* logo_iso@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_iso@2x.png"; sourceTree = "<group>"; };
+		E61B8B0C22D61E440020A25F /* TermOfUseSheet-About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TermOfUseSheet-About.swift"; sourceTree = "<group>"; };
+		E61B8B0D22D61E450020A25F /* AboutUsSheet-About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AboutUsSheet-About.swift"; sourceTree = "<group>"; };
+		E61B8B0E22D61E450020A25F /* PrivacyPolicySheet-About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrivacyPolicySheet-About.swift"; sourceTree = "<group>"; };
+		E61B8B1222D61E540020A25F /* TermOfUseLayout-About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TermOfUseLayout-About.swift"; sourceTree = "<group>"; };
+		E61B8B1322D61E540020A25F /* AboutUsLayout-About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AboutUsLayout-About.swift"; sourceTree = "<group>"; };
+		E61B8B1422D61E540020A25F /* HelpWebViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpWebViewLayout.swift; sourceTree = "<group>"; };
+		E61B8B1822D61E7D0020A25F /* PrivacyPolicyLayout-About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrivacyPolicyLayout-About.swift"; sourceTree = "<group>"; };
 		E62E7AB3228DAAC800C644A4 /* CallPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallPopup.swift; sourceTree = "<group>"; };
 		E678AADF22C3BA6500E8A24E /* OrderPaymentOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPaymentOverlay.swift; sourceTree = "<group>"; };
 		E69DDC9422803B8B004DF10B /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
@@ -688,26 +714,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF771287AC0213162D158DE6 /* Pods_Taksim.framework in Frameworks */,
+				ECC2E5BCC21EFD2ABC4E92AA /* Pods_Taksim.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7A03BCBF0A9FC6B0DF283EF7 /* Frameworks */ = {
+		2648D13260D7F5EBD1638DFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				473BB1A1E1524145556F53BC /* Pods_Taksim.framework */,
+				BDD7C80C97207E43A80FC219 /* Pods_Taksim.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9A2BA1BD401D6DC1C1C3DBD4 /* Pods */ = {
+		3C3655EB0157BDDB8070874D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				10BDD1D3F36E90972214F3EC /* Pods-Taksim.debug.xcconfig */,
-				B34CE0D1CF5EDC02DA1E0236 /* Pods-Taksim.release.xcconfig */,
+				859752B245B049543B16B98D /* Pods-Taksim.debug.xcconfig */,
+				D1DB3799CED95D567404C37A /* Pods-Taksim.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -720,8 +746,8 @@
 				E60EC53E22378B5500D79221 /* Source */,
 				E60EC52B22378B4900D79221 /* Meta */,
 				E60EC52A22378B4900D79221 /* Products */,
-				9A2BA1BD401D6DC1C1C3DBD4 /* Pods */,
-				7A03BCBF0A9FC6B0DF283EF7 /* Frameworks */,
+				3C3655EB0157BDDB8070874D /* Pods */,
+				2648D13260D7F5EBD1638DFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -821,6 +847,9 @@
 		E60EC54B22378C6100D79221 /* Sheets */ = {
 			isa = PBXGroup;
 			children = (
+				E61B8B0D22D61E450020A25F /* AboutUsSheet-About.swift */,
+				E61B8B0E22D61E450020A25F /* PrivacyPolicySheet-About.swift */,
+				E61B8B0C22D61E440020A25F /* TermOfUseSheet-About.swift */,
 				E60EC54C22378C6100D79221 /* FaqSheet-About.swift */,
 				E60EC54D22378C6100D79221 /* HelpSheet.swift */,
 			);
@@ -869,6 +898,10 @@
 		E60EC55B22378C6100D79221 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
+				E61B8B1822D61E7D0020A25F /* PrivacyPolicyLayout-About.swift */,
+				E61B8B1322D61E540020A25F /* AboutUsLayout-About.swift */,
+				E61B8B1422D61E540020A25F /* HelpWebViewLayout.swift */,
+				E61B8B1222D61E540020A25F /* TermOfUseLayout-About.swift */,
 				E60EC55C22378C6100D79221 /* FaqLayout.swift */,
 				E60EC55D22378C6100D79221 /* HelpLayout.swift */,
 			);
@@ -1373,12 +1406,6 @@
 		E60EC6B222379F4400D79221 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E61A894522CA349B00E3A3F5 /* ic_human.png */,
-				E61A894422CA349900E3A3F5 /* ic_human@2x.png */,
-				E61A894622CA349D00E3A3F5 /* ic_human@3x.png */,
-				E615CA0922C2141D009F328A /* ic_currentLoc.png */,
-				E615CA0822C2141B009F328A /* ic_currentLoc@2x.png */,
-				E615CA0722C21419009F328A /* ic_currentLoc@3x.png */,
 				E60EC6BB22379F4400D79221 /* background_2.png */,
 				E60EC6C122379F4400D79221 /* background_2@2x.png */,
 				E60EC6BC22379F4400D79221 /* background_2@3x.png */,
@@ -1403,15 +1430,15 @@
 				E6C7E46C226A062700168D7C /* ic_camera.png */,
 				E6C7E46D226A062700168D7C /* ic_camera@2x.png */,
 				E6C7E46E226A062800168D7C /* ic_camera@3x.png */,
-				E6C7E473226A065D00168D7C /* ic_turn_camera.png */,
-				E6C7E474226A065D00168D7C /* ic_turn_camera@2x.png */,
-				E6C7E472226A065C00168D7C /* ic_turn_camera@3x.png */,
 				E60EC6F42237A1C400D79221 /* ic_credit_card.png */,
 				E60EC71E2237A1C800D79221 /* ic_credit_card@2x.png */,
 				E60EC7452237A1CB00D79221 /* ic_credit_card@3x.png */,
 				E60EC7202237A1C800D79221 /* ic_cross_filled.png */,
 				E60EC7492237A1CC00D79221 /* ic_cross_filled@2x.png */,
 				E60EC6F62237A1C400D79221 /* ic_cross_filled@3x.png */,
+				E615CA0922C2141D009F328A /* ic_currentLoc.png */,
+				E615CA0822C2141B009F328A /* ic_currentLoc@2x.png */,
+				E615CA0722C21419009F328A /* ic_currentLoc@3x.png */,
 				E60EC7022237A1C500D79221 /* ic_down_arrow.png */,
 				E60EC6FA2237A1C500D79221 /* ic_down_arrow@2x.png */,
 				E60EC7072237A1C600D79221 /* ic_down_arrow@3x.png */,
@@ -1433,6 +1460,9 @@
 				E60EC7412237A1CB00D79221 /* ic_home.png */,
 				E60EC7352237A1CA00D79221 /* ic_home@2x.png */,
 				E60EC70A2237A1C600D79221 /* ic_home@3x.png */,
+				E61A894522CA349B00E3A3F5 /* ic_human.png */,
+				E61A894422CA349900E3A3F5 /* ic_human@2x.png */,
+				E61A894622CA349D00E3A3F5 /* ic_human@3x.png */,
 				E60EC7442237A1CB00D79221 /* ic_instagram.png */,
 				E60EC7472237A1CB00D79221 /* ic_instagram@2x.png */,
 				E60EC72D2237A1C900D79221 /* ic_instagram@3x.png */,
@@ -1481,6 +1511,9 @@
 				E60EC74C2237A1CC00D79221 /* ic_star_outlined.png */,
 				E60EC70E2237A1C600D79221 /* ic_star_outlined@2x.png */,
 				E60EC7362237A1CA00D79221 /* ic_star_outlined@3x.png */,
+				E6C7E473226A065D00168D7C /* ic_turn_camera.png */,
+				E6C7E474226A065D00168D7C /* ic_turn_camera@2x.png */,
+				E6C7E472226A065C00168D7C /* ic_turn_camera@3x.png */,
 				E60EC7002237A1C500D79221 /* ic_twitter.png */,
 				E60EC72E2237A1C900D79221 /* ic_twitter@2x.png */,
 				E60EC7012237A1C500D79221 /* ic_twitter@3x.png */,
@@ -1497,6 +1530,12 @@
 				E60EC6F72237A1C500D79221 /* ic-taxi@2x.png */,
 				E60EC7182237A1C700D79221 /* ic-taxi@3x.png */,
 				E60EC74D2237A1CC00D79221 /* Loading */,
+				E61B8AFC22D60A960020A25F /* logo_iso.png */,
+				E61B8B0122D60A970020A25F /* logo_iso@2x.png */,
+				E61B8AFE22D60A970020A25F /* logo_iso@3x.png */,
+				E61B8B0022D60A970020A25F /* logo_izmirbb.png */,
+				E61B8AFD22D60A960020A25F /* logo_izmirbb@2x.png */,
+				E61B8AFF22D60A970020A25F /* logo_izmirbb@3x.png */,
 				E60EC6B622379F4400D79221 /* logo.png */,
 				E60EC6B722379F4400D79221 /* logo@2x.png */,
 				E60EC6B522379F4400D79221 /* logo@3x.png */,
@@ -1558,12 +1597,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E60EC53B22378B4A00D79221 /* Build configuration list for PBXNativeTarget "Taksim" */;
 			buildPhases = (
-				3DD608893936C75041A418D6 /* [CP] Check Pods Manifest.lock */,
+				BBB8D71DC30DDCF46D83F62A /* [CP] Check Pods Manifest.lock */,
 				E60EC52522378B4900D79221 /* Sources */,
 				E60EC52622378B4900D79221 /* Frameworks */,
 				E60EC52722378B4900D79221 /* Resources */,
-				3D0F27E99F2F4764305492EC /* [CP] Embed Pods Frameworks */,
-				84BCC023EF32BFEFA5460465 /* [CP] Copy Pods Resources */,
+				EE344CB4DB93367D670EBCAA /* [CP] Embed Pods Frameworks */,
+				5168B6922F17A469D596360C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1638,6 +1677,8 @@
 				E60EC7CE2237A1CD00D79221 /* loading_7.png in Resources */,
 				E60EC78C2237A1CD00D79221 /* ic_map_tutorial@3x.png in Resources */,
 				E60EC6EA2237A1B100D79221 /* menu_background.png in Resources */,
+				E61B8B0222D60A970020A25F /* logo_iso.png in Resources */,
+				E61B8B0722D60A970020A25F /* logo_iso@2x.png in Resources */,
 				E60EC78A2237A1CD00D79221 /* ic_vertical_dots@2x.png in Resources */,
 				E60EC7972237A1CD00D79221 /* ic_bell.png in Resources */,
 				E60EC7B72237A1CD00D79221 /* ic_bulls_eye@3x.png in Resources */,
@@ -1672,6 +1713,7 @@
 				E60EC7BA2237A1CD00D79221 /* ic_credit_card@3x.png in Resources */,
 				E60EC7C12237A1CD00D79221 /* ic_star_outlined.png in Resources */,
 				E60EC7B52237A1CD00D79221 /* ic_left_arrow_white.png in Resources */,
+				E61B8B0322D60A970020A25F /* logo_izmirbb@2x.png in Resources */,
 				E60EC6D722379F4400D79221 /* OpenSans-Light.ttf in Resources */,
 				E60EC7682237A1CC00D79221 /* ic_exit@2x.png in Resources */,
 				E60EC7922237A1CD00D79221 /* ic_profile.png in Resources */,
@@ -1710,6 +1752,7 @@
 				E60EC7C52237A1CD00D79221 /* loading_12.png in Resources */,
 				E60EC7D92237A1CD00D79221 /* ic_speech_bubble@3x.png in Resources */,
 				E60EC7AD2237A1CD00D79221 /* ic_left_arrow_white@3x.png in Resources */,
+				E61B8B0522D60A970020A25F /* logo_izmirbb@3x.png in Resources */,
 				E60EC6D322379F4400D79221 /* background@3x.png in Resources */,
 				E60EC78D2237A1CD00D79221 /* ic-taxi@3x.png in Resources */,
 				E60EC6C822379F4400D79221 /* cover@2x.png in Resources */,
@@ -1740,6 +1783,7 @@
 				E60EC6E52237A1B100D79221 /* rounded_shadow@3x.png in Resources */,
 				E60EC7C02237A1CD00D79221 /* ic_bulls_eye.png in Resources */,
 				E60EC7B32237A1CD00D79221 /* ic_profile@2x.png in Resources */,
+				E61B8B0622D60A970020A25F /* logo_izmirbb.png in Resources */,
 				E60EC7BF2237A1CD00D79221 /* ic_location@2x.png in Resources */,
 				E60EC6E32237A1B100D79221 /* waves_light@3x.png in Resources */,
 				E60EC76E2237A1CC00D79221 /* ic_izmir_tutorial.png in Resources */,
@@ -1769,6 +1813,7 @@
 				E60EC7802237A1CD00D79221 /* ic_bulls_eye@2x.png in Resources */,
 				E60EC7732237A1CC00D79221 /* ic_present.png in Resources */,
 				E61A894822CA349D00E3A3F5 /* ic_human.png in Resources */,
+				E61B8B0422D60A970020A25F /* logo_iso@3x.png in Resources */,
 				E60EC7A32237A1CD00D79221 /* ic_twitter@2x.png in Resources */,
 				E60EC7C32237A1CD00D79221 /* loading_11.png in Resources */,
 				E60EC7672237A1CC00D79221 /* ic_help@3x.png in Resources */,
@@ -1778,7 +1823,53 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3D0F27E99F2F4764305492EC /* [CP] Embed Pods Frameworks */ = {
+		5168B6922F17A469D596360C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBB8D71DC30DDCF46D83F62A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Taksim-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE344CB4DB93367D670EBCAA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1812,52 +1903,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3DD608893936C75041A418D6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Taksim-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		84BCC023EF32BFEFA5460465 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1920,6 +1965,7 @@
 				E60EC68F22378C6100D79221 /* TSApplication.swift in Sources */,
 				E6C7E4692269B47F00168D7C /* PhotoShootLayout.swift in Sources */,
 				E60EC68022378C6100D79221 /* TSSliderItem.swift in Sources */,
+				E61B8B1922D61E7D0020A25F /* PrivacyPolicyLayout-About.swift in Sources */,
 				E6B1AAD5229ED695001F5024 /* AddressSheet-Profile.swift in Sources */,
 				E60EC66C22378C6100D79221 /* Factory-Authentication.swift in Sources */,
 				E60EC62C22378C6100D79221 /* Page-Profile.swift in Sources */,
@@ -1942,6 +1988,7 @@
 				E60EC67422378C6100D79221 /* MainLayout-Authentication.swift in Sources */,
 				E60EC67D22378C6100D79221 /* TSPhrase.swift in Sources */,
 				E60EC69522378C6100D79221 /* TSLexiconProvider.swift in Sources */,
+				E61B8B1622D61E540020A25F /* AboutUsLayout-About.swift in Sources */,
 				E60EC67122378C6100D79221 /* SheetFactory-Authentication.swift in Sources */,
 				E60EC67322378C6100D79221 /* Sheet-Authentication.swift in Sources */,
 				E60EC65522378C6100D79221 /* PageFactory-PostLogin.swift in Sources */,
@@ -1959,6 +2006,7 @@
 				E60EC61922378C6100D79221 /* PageFactory-About.swift in Sources */,
 				E60EC64822378C6100D79221 /* PageFactory-Main.swift in Sources */,
 				E60EC61522378C6100D79221 /* Module-About.swift in Sources */,
+				E61B8B1122D61E450020A25F /* PrivacyPolicySheet-About.swift in Sources */,
 				E60EC69C22378C6100D79221 /* TSNetworkManager.swift in Sources */,
 				E60EC68422378C6100D79221 /* TSView.swift in Sources */,
 				E60EC69922378C6100D79221 /* TSLocationManager.swift in Sources */,
@@ -1968,6 +2016,7 @@
 				E60EC62222378C6100D79221 /* NotificationList.swift in Sources */,
 				E60EC61B22378C6100D79221 /* SheetFactory-About.swift in Sources */,
 				E60EC68C22378C6100D79221 /* TSMapView.swift in Sources */,
+				E61B8B1522D61E540020A25F /* TermOfUseLayout-About.swift in Sources */,
 				E60EC66F22378C6100D79221 /* TransitionFactory-Authentication.swift in Sources */,
 				E60EC66122378C6100D79221 /* TutorialPageControl.swift in Sources */,
 				E6C7E4632268AF2F00168D7C /* OrderHistoryLayout.swift in Sources */,
@@ -2004,6 +2053,7 @@
 				E60EC64422378C6100D79221 /* Module-Main.swift in Sources */,
 				E60EC67822378C6100D79221 /* SignUpVerificationLayout.swift in Sources */,
 				E60EC66A22378C6100D79221 /* SignUpFormSheet.swift in Sources */,
+				E61B8B1722D61E540020A25F /* HelpWebViewLayout.swift in Sources */,
 				E60EC64722378C6100D79221 /* Demonstrator-Main.swift in Sources */,
 				E60EC69D22378C6100D79221 /* TSProvider.swift in Sources */,
 				E60EC64B22378C6100D79221 /* OutlinedButton-PostLogin.swift in Sources */,
@@ -2027,6 +2077,8 @@
 				E60EC63B22378C6100D79221 /* CoordinateSelectionSheet-Main.swift in Sources */,
 				E60EC62D22378C6100D79221 /* Sheet-Profile.swift in Sources */,
 				E60EC68322378C6100D79221 /* TSTransitiveView.swift in Sources */,
+				E61B8B0F22D61E450020A25F /* TermOfUseSheet-About.swift in Sources */,
+				E61B8B1022D61E450020A25F /* AboutUsSheet-About.swift in Sources */,
 				E60EC66D22378C6100D79221 /* Demonstrator-Authentication.swift in Sources */,
 				E60EC62A22378C6100D79221 /* TransitionFactory-Profile.swift in Sources */,
 				E62E7AB4228DAAC800C644A4 /* CallPopup.swift in Sources */,
@@ -2165,7 +2217,7 @@
 		};
 		E60EC53C22378B4A00D79221 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10BDD1D3F36E90972214F3EC /* Pods-Taksim.debug.xcconfig */;
+			baseConfigurationReference = 859752B245B049543B16B98D /* Pods-Taksim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2194,7 +2246,7 @@
 		};
 		E60EC53D22378B4A00D79221 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B34CE0D1CF5EDC02DA1E0236 /* Pods-Taksim.release.xcconfig */;
+			baseConfigurationReference = D1DB3799CED95D567404C37A /* Pods-Taksim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

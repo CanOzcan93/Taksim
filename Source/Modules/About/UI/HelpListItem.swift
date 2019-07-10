@@ -29,6 +29,8 @@ extension About {
         private var title: String!
         private var text: String!
         
+        public var onClickedBar: Action!
+        
         required init(layout:CoreLayout, scroll: UIScrollView, title: String, text: String) {
             
             self.sv = scroll
@@ -51,7 +53,12 @@ extension About {
             self.v_background.contentMode = .scaleToFill
             self.v_background.image = imageProvider.getRoundedShadow().resizableImage(withCapInsets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))
             self.v_background.onTap {
-                self.toggle()
+                if self.onClickedBar == nil {
+                    self.toggle()
+                }
+                else {
+                    self.onClickedBar!()
+                }
             }
             
             self.sv.addSubview(self.v_background)

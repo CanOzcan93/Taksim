@@ -20,7 +20,7 @@ extension About {
             
             super.onConstruct()
             
-            self.lv = FaqList(layout: self)
+            self.lv = FaqList(layout: self,dicts: lexiconProvider.faqDict!)
             
         }
         

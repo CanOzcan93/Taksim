@@ -48,7 +48,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Core:
-    :commit: 9070f44a3a300f89afc6debe146c31a014c3baa3
+    :commit: 6f119bd15f89cba0e465cfa0cf778e3c774d27c5
     :git: https://github.com/CanOzcan93/Core.git
 
 SPEC CHECKSUMS:

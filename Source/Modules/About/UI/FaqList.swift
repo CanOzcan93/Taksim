@@ -14,6 +14,16 @@ extension About {
         
         private var sv: UIScrollView!
         private var items: [FaqListItem]!
+        private var dicts = [Dictionary<String,String>]()
+        
+        public required init(layout: CoreLayout, dicts: [Dictionary<String,String>]) {
+            self.dicts = dicts
+            super.init(layout: layout)
+        }
+        
+        public required init(layout: CoreLayout) {
+            super.init(layout: layout)
+        }
         
         public override func onConstruct(layout: CoreLayout) {
             
@@ -22,19 +32,9 @@ extension About {
             
             self.items = [FaqListItem]()
             
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            self.items.append(FaqListItem(layout: layout, scroll: sv, title: "Yakında Eklenecektir", text: "Yakında Eklenecektir"))
-            
+            for dict in dicts {
+                self.items.append(FaqListItem(layout: layout, scroll: sv, title: dict["caption"]!, text: dict["content"]!))
+            }
             
             self.packView(sv)
             

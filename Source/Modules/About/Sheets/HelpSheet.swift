@@ -16,7 +16,18 @@ extension About {
                 self.demonstrator.goBack()
             }
             
+            layout.lv.items[0].onClickedBar = {
+                self.demonstrator.toTermOfUseSheet()
+            }
+            
+            layout.lv.items[1].onClickedBar = {
+                self.demonstrator.toAboutUsSheet()
+            }
+            
+            layout.lv.items[2].onClickedBar = {
+                self.demonstrator.toPrivacyPolicySheet()
+            }
+            
         }
-        
     }
 }
