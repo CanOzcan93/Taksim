@@ -27,7 +27,7 @@ extension Authentication {
                         let newPhone = String(phoneNumber.suffix(10))
                         self.apiManager.getVerifyCode(mobilePhone: newPhone, completion: { (json) in
                             if json["errCode"].uIntValue == 0 && json["errCode"].exists() {
-                                if newPhone.suffix(8) == "59559595" {
+                                if newPhone.prefix(8) == "59559595" {
                                     self.exchangeFlow.letSmsCodeForSignUpOrLogin(code: json["verifyCode"].stringValue)
                                 }
                                 else {

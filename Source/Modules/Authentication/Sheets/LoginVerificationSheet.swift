@@ -14,7 +14,7 @@ extension Authentication {
         
         public override func onLayoutReady(layout: Authentication.LoginVerificationLayout) {
 
-            if self.exchangeFlow.grabPhoneNumberForSignUpOrLogin()?.suffix(8) == "59559595"{
+            if self.exchangeFlow.grabPhoneNumberForSignUpOrLogin()?.prefix(8) == "59559595"{
                 layout.ti_code.text = self.exchangeFlow.grabSmsCodeForSignUpOrLogin()
             }
             

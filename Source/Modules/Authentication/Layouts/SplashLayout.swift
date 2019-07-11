@@ -92,8 +92,8 @@ extension Authentication {
         private func constrainLogoIzmir(set: inout [NSLayoutConstraint]) {
             
             set.append(NSLayoutConstraint(item: iv_logoIzmir, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 0.5, constant: 0))
-            set.append(NSLayoutConstraint(item: iv_logoIzmir, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -5))
-            set.append(NSLayoutConstraint(item: iv_logoIzmir, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 100))
+            set.append(NSLayoutConstraint(item: iv_logoIzmir, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -10))
+            set.append(NSLayoutConstraint(item: iv_logoIzmir, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 0.17, constant: 0))
             set.append(NSLayoutConstraint(item: iv_logoIzmir, attribute: .height, relatedBy: .equal, toItem: iv_logoIzmir, attribute: .width, multiplier: 1.1, constant: 0))
             
         }
@@ -101,9 +101,9 @@ extension Authentication {
         private func constrainLogoIso(set: inout [NSLayoutConstraint]) {
             
             set.append(NSLayoutConstraint(item: iv_logoIso, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.4, constant: 0))
-            set.append(NSLayoutConstraint(item: iv_logoIso, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -5))
-            set.append(NSLayoutConstraint(item: iv_logoIso, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 200))
-            set.append(NSLayoutConstraint(item: iv_logoIso, attribute: .height, relatedBy: .equal, toItem: iv_logoIso, attribute: .width, multiplier: 0.35, constant: 0))
+            set.append(NSLayoutConstraint(item: iv_logoIso, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -10))
+            set.append(NSLayoutConstraint(item: iv_logoIso, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 0.15, constant: 0))
+            set.append(NSLayoutConstraint(item: iv_logoIso, attribute: .height, relatedBy: .equal, toItem: iv_logoIso, attribute: .width, multiplier: 1.2, constant: 0))
             
         }
         
