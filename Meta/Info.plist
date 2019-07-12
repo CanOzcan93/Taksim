@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>10</string>
+	<string>11</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -45,17 +45,17 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Kameralara Erişim Talebi</string>
+	<string>Profil Resminizi Değiştirirken Anlık Fotoğraf Çekebilmeniz İçin Uygulamanın Kameralara Erişimini Onaylıyor musunuz?</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Koordinat Bilgilerinize Erişim Talebi</string>
+	<string>İsteğiniz Doğrultusunda Uygun Olan Taksilere Göndermek için Uygulamanın Konum Bilgilerinize Erişimini Onaylıyor musunuz?</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Koordinat Bilgilerinize Erişim Talebi</string>
+	<string>İsteğiniz Doğrultusunda Uygun Olan Taksilere Göndermek için Uygulamanın Konum Bilgilerinize Erişimini Onaylıyor musunuz?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Koordinat Bilgilerinize Erişim Talebi</string>
+	<string>İsteğiniz Doğrultusunda Uygun Olan Taksilere Göndermek için Uygulamanın Konum Bilgilerinize Erişimini Onaylıyor musunuz?</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Mikrofona Erişim Talebi</string>
+	<string>Şöför ile Yapacağınız Görüşme Esnasında Ses Verisi İletmek İçin Uygulamanın Mikrofonunuza Erişimini Onaylıyor musunuz?</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Fotoğraflara Erişim Talebi</string>
+	<string>Profil Resminizi Değiştirirken Arşivden Seçim Yapabilmeniz İçin Uygulamanın Fotoğraflarınıza Erişimini Onaylıyor musunuz?</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>OpenSans-Bold.ttf</string>
