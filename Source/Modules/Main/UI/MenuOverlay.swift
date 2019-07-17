@@ -140,14 +140,14 @@ extension Main {
                 self.onProfileClick?()
             }
             
-            self.mi_cards = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getCreditCard(), text: lexiconProvider.get("credit_cards"))
-            self.mi_cards.v_ghost.onTap {
-                self.onCardsClick?()
-            }
-            self.mi_addresses = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getHome(), text: lexiconProvider.get("locations"))
-            self.mi_addresses.v_ghost.onTap {
-                self.onAddressesClick?()
-            }
+//            self.mi_cards = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getCreditCard(), text: lexiconProvider.get("credit_cards"))
+//            self.mi_cards.v_ghost.onTap {
+//                self.onCardsClick?()
+//            }
+//            self.mi_addresses = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getHome(), text: lexiconProvider.get("locations"))
+//            self.mi_addresses.v_ghost.onTap {
+//                self.onAddressesClick?()
+//            }
         }
         
         private func constructFirstLine() {
@@ -161,15 +161,15 @@ extension Main {
         
         private func constructSecondMenuStack(layout: CoreLayout) {
             
-            self.mi_notifications = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getBell(), text: lexiconProvider.get("notifications"))
-            self.mi_notifications.v_ghost.onTap {
-                self.onNotificationsClick?()
-            }
+//            self.mi_notifications = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getBell(), text: lexiconProvider.get("notifications"))
+//            self.mi_notifications.v_ghost.onTap {
+//                self.onNotificationsClick?()
+//            }
             
-            self.mi_promotion = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getPresent(), text: lexiconProvider.get("promotion"))
-            self.mi_promotion.v_ghost.onTap {
-                self.onPromotionClick?()
-            }
+//            self.mi_promotion = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getPresent(), text: lexiconProvider.get("promotion"))
+//            self.mi_promotion.v_ghost.onTap {
+//                self.onPromotionClick?()
+//            }
             
             self.mi_trips = MenuItem(layout: layout, overlay: iv_overlay, image: imageProvider.getList(), text: lexiconProvider.get("trips"))
             self.mi_trips.v_ghost.onTap{
@@ -256,16 +256,23 @@ extension Main {
         
         private func constrainFirstMenuStack(set: inout [NSLayoutConstraint]) {
             
+//            set.append(NSLayoutConstraint(item: mi_profile.v_ghost, attribute: .top, relatedBy: .equal, toItem: iv_avatar, attribute: .bottom, multiplier: 1, constant: 20))
+//            set.append(NSLayoutConstraint(item: mi_cards.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_profile.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
+//            set.append(NSLayoutConstraint(item: mi_addresses.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_cards.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
+            
             set.append(NSLayoutConstraint(item: mi_profile.v_ghost, attribute: .top, relatedBy: .equal, toItem: iv_avatar, attribute: .bottom, multiplier: 1, constant: 20))
-            set.append(NSLayoutConstraint(item: mi_cards.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_profile.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: mi_addresses.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_cards.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
             
         }
         
         private func constrainFirstLine(set: inout [NSLayoutConstraint]) {
             
+//            set.append(NSLayoutConstraint(item: v_line_1, attribute: .centerX, relatedBy: .equal, toItem: iv_overlay, attribute: .centerX, multiplier: 1, constant: 0))
+//            set.append(NSLayoutConstraint(item: v_line_1, attribute: .top, relatedBy: .equal, toItem: mi_addresses.v_ghost, attribute: .bottom, multiplier: 1, constant: 10))
+//            set.append(NSLayoutConstraint(item: v_line_1, attribute: .width, relatedBy: .equal, toItem: iv_overlay, attribute: .width, multiplier: 1, constant: -70))
+//            set.append(NSLayoutConstraint(item: v_line_1, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 1))
+            
             set.append(NSLayoutConstraint(item: v_line_1, attribute: .centerX, relatedBy: .equal, toItem: iv_overlay, attribute: .centerX, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: v_line_1, attribute: .top, relatedBy: .equal, toItem: mi_addresses.v_ghost, attribute: .bottom, multiplier: 1, constant: 10))
+            set.append(NSLayoutConstraint(item: v_line_1, attribute: .top, relatedBy: .equal, toItem: mi_profile.v_ghost, attribute: .bottom, multiplier: 1, constant: 10))
             set.append(NSLayoutConstraint(item: v_line_1, attribute: .width, relatedBy: .equal, toItem: iv_overlay, attribute: .width, multiplier: 1, constant: -70))
             set.append(NSLayoutConstraint(item: v_line_1, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 1))
             
@@ -273,9 +280,13 @@ extension Main {
         
         private func constrainSecondMenuStack(set: inout [NSLayoutConstraint]) {
             
-            set.append(NSLayoutConstraint(item: mi_notifications.v_ghost, attribute: .top, relatedBy: .equal, toItem: v_line_1, attribute: .bottom, multiplier: 1, constant: 10))
-            set.append(NSLayoutConstraint(item: mi_promotion.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_notifications.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
-            set.append(NSLayoutConstraint(item: mi_trips.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_promotion.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
+//            set.append(NSLayoutConstraint(item: mi_notifications.v_ghost, attribute: .top, relatedBy: .equal, toItem: v_line_1, attribute: .bottom, multiplier: 1, constant: 10))
+//            set.append(NSLayoutConstraint(item: mi_promotion.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_notifications.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
+//            set.append(NSLayoutConstraint(item: mi_trips.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_promotion.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
+//            set.append(NSLayoutConstraint(item: mi_help.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_trips.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
+//            set.append(NSLayoutConstraint(item: mi_faq.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_help.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
+            
+            set.append(NSLayoutConstraint(item: mi_trips.v_ghost, attribute: .top, relatedBy: .equal, toItem: v_line_1, attribute: .bottom, multiplier: 1, constant: 10))
             set.append(NSLayoutConstraint(item: mi_help.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_trips.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: mi_faq.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_help.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
             

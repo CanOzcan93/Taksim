@@ -167,7 +167,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import AVFoundation;
-@import CallKit;
 @import CoreGraphics;
 @import CoreLocation;
 @import Foundation;
@@ -283,16 +282,6 @@ SWIFT_CLASS("_TtC4Core16CoreMediaManager")
 @interface CoreMediaManager : NSObject <AVCapturePhotoCaptureDelegate>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error;
-@end
-
-@class CXProvider;
-@class CXAnswerCallAction;
-@class CXEndCallAction;
-
-@interface CoreMediaManager (SWIFT_EXTENSION(Core)) <CXProviderDelegate>
-- (void)providerDidReset:(CXProvider * _Nonnull)provider;
-- (void)provider:(CXProvider * _Nonnull)provider performAnswerCallAction:(CXAnswerCallAction * _Nonnull)action;
-- (void)provider:(CXProvider * _Nonnull)provider performEndCallAction:(CXEndCallAction * _Nonnull)action;
 @end
 
 @class NSTextContainer;

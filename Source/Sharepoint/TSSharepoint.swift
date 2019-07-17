@@ -50,6 +50,7 @@ public class TSSharepoint: CoreSharepoint<TSAgency, TSManager, TSApiManager, TSE
     
     public static func resetSharepoint() {
         instance = nil
+        
     }
     
 }
