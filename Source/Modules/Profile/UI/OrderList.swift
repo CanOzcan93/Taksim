@@ -14,6 +14,10 @@ extension Profile {
             self.backgroundColor = .clear
         }
         
+        public override func emptyMessage() -> String {
+            return "Şu anda görüntülenebilen herhangi bir siparişiniz bulunmamaktadır."
+        }
+        
     }
     
 }
