@@ -50,7 +50,7 @@ extension Authentication {
 
 extension String {
     public var isValidMobilePhoneNumber: Bool {
-        let phoneNumberRegex = "(\\+90|0)?(5)[0-9][0-9][1-9]([0-9]){6}"
+        let phoneNumberRegex = "(\\+90|0)?(5)([0-9]){9}"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneNumberRegex)
         let isValidPhone = phoneTest.evaluate(with: self)
         return isValidPhone

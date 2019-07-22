@@ -24,7 +24,9 @@ extension Main {
         private var v_right: TSView!
         
         private var btn: PostLogin.TallButton!
+        private var btn_cancel: PostLogin.CancelButton!
         public var onOrder: Action?
+        public var onCancel: Action?
         
         
         // Internal Fields
@@ -40,6 +42,7 @@ extension Main {
             constructBackgroundView()
             constructUpperStack()
             constructButton()
+            constructCancelButton()
             
         }
         
@@ -53,7 +56,8 @@ extension Main {
             constrainRightSeperator(set: &set)
             constrainRightMostTextView(set: &set)
             
-            constrainButton(set: &set)
+            constrainButton(set: &set, layout: layout)
+            constrainButtonCancel(set: &set, layout: layout)
             
         }
         
@@ -135,6 +139,16 @@ extension Main {
             
         }
         
+        private func constructCancelButton() {
+            self.btn_cancel = PostLogin.CancelButton()
+            self.btn_cancel.setTitle("X", for: .normal)
+            self.btn_cancel.onClick {
+                self.onCancel?()
+            }
+            
+            self.packView(self.btn_cancel)
+        }
+        
         private func constrainBackgroundView(set: inout [NSLayoutConstraint], layout: CoreLayout) {
             
             self.hiddenConstraint = NSLayoutConstraint(item: v_background, attribute: .top, relatedBy: .equal, toItem: layout, attribute: .bottom, multiplier: 1, constant: 0)
@@ -192,11 +206,19 @@ extension Main {
             
         }
         
-        private func constrainButton(set: inout [NSLayoutConstraint]) {
+        private func constrainButton(set: inout [NSLayoutConstraint], layout: CoreLayout) {
             
-            set.append(NSLayoutConstraint(item: btn, attribute: .centerX, relatedBy: .equal, toItem: v_background, attribute: .centerX, multiplier: 1, constant: 0))
+            set.append(NSLayoutConstraint(item: btn, attribute: .centerX, relatedBy: .equal, toItem: v_background, attribute: .centerX, multiplier: 1, constant: -30))
             set.append(NSLayoutConstraint(item: btn, attribute: .bottom, relatedBy: .equal, toItem: v_background, attribute: .bottom, multiplier: 1, constant: -15))
-            set.append(NSLayoutConstraint(item: btn, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 305))
+            set.append(NSLayoutConstraint(item: btn, attribute: .width, relatedBy: .equal, toItem: layout, attribute: .width, multiplier: 0.8, constant: 0))
+            
+        }
+        
+        private func constrainButtonCancel(set: inout [NSLayoutConstraint], layout: CoreLayout) {
+            
+            set.append(NSLayoutConstraint(item: btn_cancel, attribute: .right, relatedBy: .equal, toItem: v_background, attribute: .right, multiplier: 1, constant: -5))
+            set.append(NSLayoutConstraint(item: btn_cancel, attribute: .bottom, relatedBy: .equal, toItem: v_background, attribute: .bottom, multiplier: 1, constant: -15))
+            set.append(NSLayoutConstraint(item: btn_cancel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 50))
             
         }
         

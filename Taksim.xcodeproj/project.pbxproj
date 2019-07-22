@@ -353,6 +353,7 @@
 		E6D1BF952257A05500586767 /* QuickOrderOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF942257A05500586767 /* QuickOrderOverlay.swift */; };
 		E6D1BF972257A9C500586767 /* TripToDestinationPointSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF962257A9C500586767 /* TripToDestinationPointSheet.swift */; };
 		E6D1BF992257B16800586767 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1BF982257B16800586767 /* LoadingOverlay.swift */; };
+		E6ECCA5022E5D67D00AB48DA /* CancelButton-PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ECCA4F22E5D67D00AB48DA /* CancelButton-PostLogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -707,6 +708,7 @@
 		E6D1BF942257A05500586767 /* QuickOrderOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOrderOverlay.swift; sourceTree = "<group>"; };
 		E6D1BF962257A9C500586767 /* TripToDestinationPointSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripToDestinationPointSheet.swift; sourceTree = "<group>"; };
 		E6D1BF982257B16800586767 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		E6ECCA4F22E5D67D00AB48DA /* CancelButton-PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CancelButton-PostLogin.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1114,6 +1116,7 @@
 				E60EC59F22378C6100D79221 /* TextInput-PostLogin.swift */,
 				E60EC5A022378C6100D79221 /* TextView.swift */,
 				E6D1BF982257B16800586767 /* LoadingOverlay.swift */,
+				E6ECCA4F22E5D67D00AB48DA /* CancelButton-PostLogin.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1941,6 +1944,7 @@
 				E60EC66822378C6100D79221 /* MainSheet-Authentication.swift in Sources */,
 				E60EC61722378C6100D79221 /* Demonstrator-About.swift in Sources */,
 				E60EC67922378C6100D79221 /* OnboardingLayout-Authentication.swift in Sources */,
+				E6ECCA5022E5D67D00AB48DA /* CancelButton-PostLogin.swift in Sources */,
 				E60EC68D22378C6100D79221 /* TSTextInput.swift in Sources */,
 				E60EC6A422378C6100D79221 /* CustomerInfo.swift in Sources */,
 				E60EC61122378C6100D79221 /* FaqListItem.swift in Sources */,

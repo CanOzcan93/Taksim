@@ -275,6 +275,18 @@ extension Main {
                         
                     }
                 }
+                else if self.stateMachine.destinationPointNotSelected() && !self.stateMachine.editingPickUpPoint() {
+                    layout.i_route.setDestinationAddress(address: "")
+                    layout.mv.clearMarkers()
+                    self.startTrackingVehicles(layout: layout)
+                    layout.mv.clearRoute()
+                    layout.mv.dragTo(coordinate: self.locationManager.getLastLocation(), zoom: 16)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        layout.o_estimation.hide()
+                        layout.o_quickorder.show()
+                    })
+                }
             }
             
             layout.o_menu.onProfileClick = {
@@ -428,6 +440,13 @@ extension Main {
                     
                 }
                 
+            }
+            
+            layout.o_estimation.onCancel = {
+                self.stateMachine.isDestinationPointSelected(state: false)
+                self.exchangeFlow.letDestinationAddress(address: nil)
+                self.exchangeFlow.letDestinationCoordinate(coordinate: nil)
+                self.eventManager.shout(key: "updateRouteLocation")
             }
             
             layout.o_estimation.onOrder = {
