@@ -230,15 +230,56 @@ extension Main {
             eventManager.listen(key: "updateRouteLocation") {
                 
                 layout.o_quickorder.hide()
+                var editedCoordinate: CoreCoordinate!
+                var editedAddress: String!
                 
                 if (self.stateMachine.editingPickUpPoint()) {
+                    editedCoordinate = self.exchangeFlow.grabPickUpPointCoordinate()
+                    editedAddress = self.exchangeFlow.grabPickUpPointAddress()
                     layout.i_route.setPickUpAddress(address: self.exchangeFlow.grabPickUpPointAddress()!)
                 }
                 
                 if (self.stateMachine.editingDestinationPoint()) {
+                    editedCoordinate = self.exchangeFlow.grabDestinationCoordinate()
+                    editedAddress = self.exchangeFlow.grabDestinationAddress()
                     layout.i_route.setDestinationAddress(address: self.exchangeFlow.grabDestinationAddress()!)
                 }
                 
+                if (self.stateMachine.editingHomeLocation()) {
+                    self.apiManager.addCustomerAddress(
+                        name: "Home",
+                        coordinate: editedCoordinate!,
+                        remark: "Home",
+                        address: editedAddress!,
+                        userID: self.dataStorage.grabCurrentUser()!.userId,
+                        token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String
+                    ) { json in
+                        self.stateMachine.isEditingHomeLocation(state: false)
+                    }
+                } else if (self.stateMachine.editingWorkLocation()) {
+                    self.apiManager.addCustomerAddress(
+                        name: "Work",
+                        coordinate: editedCoordinate!,
+                        remark: "Work",
+                        address: editedAddress!,
+                        userID: self.dataStorage.grabCurrentUser()!.userId,
+                        token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String
+                    ) { json in
+                        self.stateMachine.isEditingWorkLocation(state: false)
+                    }
+                } else if (self.stateMachine.editingFavoriteLocation()) {
+                    self.apiManager.addCustomerAddress(
+                        name: "Favorite",
+                        coordinate: editedCoordinate!,
+                        remark: "Favorite",
+                        address: editedAddress!,
+                        userID: self.dataStorage.grabCurrentUser()!.userId,
+                        token: self.persistentStorage.recall(key: self.persistentStorage.tokenKey) as! String
+                    ) { json in
+                        self.stateMachine.isEditingFavoriteLocation(state: false)
+                    }
+                }
+
                 self.stateMachine.isEditingPickUpPoint(state: false)
                 self.stateMachine.isEditingDestinationPoint(state: false)
                 
@@ -363,7 +404,7 @@ extension Main {
                 
                 //                layout.o_estimation.hide()
                 
-                self.demonstrator.toAutoComplete(delegate: self)
+                self.demonstrator.toSearchLocation(delegate: self)
                 
             }
             
@@ -374,7 +415,7 @@ extension Main {
             
                 //                layout.o_estimation.hide()
                 
-                self.demonstrator.toAutoComplete(delegate: self)
+                self.demonstrator.toSearchLocation(delegate: self)
                 
             }
             
@@ -515,9 +556,9 @@ extension Main {
             }
         }
         
-        public override func onDismiss() {
-            eventManager.forget(key: "updateRouteLocation")
-        }
+//        public override func onDismiss() {
+//            eventManager.forget(key: "updateRouteLocation")
+//        }
         
         private func startTrackingVehicles(layout: Main.MainLayout) {
             
@@ -582,6 +623,9 @@ extension Main {
         }
         
         public func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+            self.stateMachine.isEditingHomeLocation(state: false)
+            self.stateMachine.isEditingWorkLocation(state: false)
+            self.stateMachine.isEditingFavoriteLocation(state: false)
             self.demonstrator.goBack()
         }
         

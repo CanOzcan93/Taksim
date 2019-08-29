@@ -16,7 +16,7 @@ extension Main {
         
         public override func onLayoutAppear(layout: Main.CoordinateSelectionLayout) {
             
-            let place = exchangeFlow.grabLastSelectedPlace()!.coordinate
+            let place = exchangeFlow.grabLastSelectedPlace()!
             let coordinate = CoreCoordinate(latitude: place.latitude, longitude: place.longitude)
             layout.mv.dragTo(coordinate: coordinate)
             

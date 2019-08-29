@@ -9,6 +9,7 @@
 import Core
 import SwiftyJSON
 import ReactiveObjC
+import Alamofire
 
 public class TSNetworkManager: CoreNetworkManager, SRWebSocketDelegate {
     
@@ -234,7 +235,51 @@ public class TSNetworkManager: CoreNetworkManager, SRWebSocketDelegate {
         return newestStr
     }
     
+    public static func multiPartPostWithImagesPublic(url: String, parameters: [String:Any], headers:[String:String], photos:[String:UIImage]?, completion: @escaping (JSON, [AnyHashable : Any]?)->()) {
+        
+        var jsonDict = JSON()
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            for (key,value) in parameters {
+                
+                if JSONSerialization.isValidJSONObject(value) {
+                    let data = try! JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        multipartFormData.append(jsonString.data(using: .utf8)!, withName: key)
+                    }
+                } else {
+                    multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+                }
+            }
+            
+            if photos != nil {
+                for (key, photo) in photos! {
+                    multipartFormData.append(photo.jpegData(compressionQuality: 0.2)!, withName: key, fileName: "\(key).jpg", mimeType: "image/*")
+                }
+            }
+            
+        }, to: url, headers: headers ) { (result) in
+            switch result {
+            case .success(let upload,let a,let b):
+                upload.uploadProgress { progress in
+                    print("\(progress) \n")
+                }
+                upload.responseJSON { (response) in
+                    if let jsonnable = response.result.value {
+                        jsonDict = JSON(jsonnable)
+                        completion(jsonDict, response.response?.allHeaderFields)
+                    }
+                }
+            case .failure(let encodingError):
+                break
+            }
+        }
+        
+    }
+    
 }
+
+
 
 
 //import Core

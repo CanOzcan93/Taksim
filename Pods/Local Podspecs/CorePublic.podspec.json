@@ -1,0 +1,52 @@
+{
+  "name": "CorePublic",
+  "version": "0.0.1",
+  "summary": "This is special framework for Can Özcan (for now)",
+  "description": "This special framework includes everything in iOS but you should learn how to code with this library. So, don't download this framework. :)",
+  "homepage": "https://github.com/CanOzcan93",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Can Özcan": "can_ozcan@msn.net"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "swift_version": "4.2",
+  "source": {
+    "git": "https://github.com/CanOzcan93/CorePublic.git",
+    "tag": "0.0.1"
+  },
+  "frameworks": "Foundation",
+  "vendored_frameworks": "Output/Core.framework",
+  "requires_arc": true,
+  "dependencies": {
+    "Alamofire": [
+
+    ],
+    "AlamofireImage": [
+
+    ],
+    "SwiftyJSON": [
+
+    ],
+    "GoogleMaps": [
+
+    ],
+    "GooglePlaces": [
+
+    ],
+    "ReactiveSwift": [
+
+    ],
+    "ReactiveObjC": [
+
+    ],
+    "ReactiveObjCBridge": [
+
+    ]
+  },
+  "static_framework": true
+}

@@ -47,7 +47,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## Core
+## CorePublic
 
 Copyright (c) 2019 CanOzcan93 <can.ozcan@redblac.net>
 

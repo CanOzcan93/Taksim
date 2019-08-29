@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.8.1)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
-  - Core (0.0.1):
+  - CorePublic (0.0.1):
     - Alamofire
     - AlamofireImage
     - GoogleMaps
@@ -28,7 +28,7 @@ PODS:
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
-  - Core (from `https://github.com/CanOzcan93/Core.git`)
+  - CorePublic (from `https://github.com/CanOzcan93/CorePublic.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -43,18 +43,18 @@ SPEC REPOS:
     - SwiftyJSON
 
 EXTERNAL SOURCES:
-  Core:
-    :git: https://github.com/CanOzcan93/Core.git
+  CorePublic:
+    :git: https://github.com/CanOzcan93/CorePublic.git
 
 CHECKOUT OPTIONS:
-  Core:
-    :commit: ac686c6bc42e6fcb6f6fe38f5be89a52cabbefa6
-    :git: https://github.com/CanOzcan93/Core.git
+  CorePublic:
+    :commit: 28489f512c50f8da471ead35cfc94e92b20fc49b
+    :git: https://github.com/CanOzcan93/CorePublic.git
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
-  Core: 668abd46873a1f7aed328e10baf487a393be7851
+  CorePublic: f3aa8e0d5e6b9fdfbbb7a79fc009a322c33025f3
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
@@ -63,6 +63,6 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: ac2ad15d90e60977da191cb4113295e9ac9144c4
+PODFILE CHECKSUM: 863ed4ed9c1c83ebae3c982a319672241bf561a8
 
 COCOAPODS: 1.5.3

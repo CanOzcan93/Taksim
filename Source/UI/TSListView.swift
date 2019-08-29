@@ -19,11 +19,11 @@ open class TSListView<ItemType: TSListItemView>: CoreListView<ItemType> {
     
     private var provider: TSProvider!
     
-    private var animationProvider: TSAnimationProvider!
-    private var colorProvider: TSColorProvider!
-    private var fontProvider: TSFontProvider!
-    private var imageProvider: TSImageProvider!
-    private var lexiconProvider: TSLexiconProvider!
+    public var animationProvider: TSAnimationProvider!
+    public var colorProvider: TSColorProvider!
+    public var fontProvider: TSFontProvider!
+    public var imageProvider: TSImageProvider!
+    public var lexiconProvider: TSLexiconProvider!
     
     open override func onInjection() {
         

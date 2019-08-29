@@ -21,6 +21,8 @@ extension Main {
         private var sheetFactory: SheetFactory!
         private var transitionFactory: TransitionFactory!
         
+        private var autoDelegate: GMSAutocompleteViewControllerDelegate!
+        
         private var autoCompleteController: GMSAutocompleteViewController?
         
         public required init() {
@@ -144,14 +146,25 @@ extension Main {
             
         }
         
-        public func toAutoComplete(delegate: GMSAutocompleteViewControllerDelegate) {
+        public func toSearchLocation(delegate: GMSAutocompleteViewControllerDelegate) {
+            
+            self.autoDelegate = delegate
+            sheet = SearchLocationSheet()
+            transition = transitionFactory.getFromRightToLeft()
+            present()
+
+            setCurrent(vc: sheet!)
+            
+        }
+        
+        public func toAutoComplete() {
             
             let locationFilter = GMSAutocompleteFilter()
             locationFilter.country = "tr"
             
             autoCompleteController = GMSAutocompleteViewController()
             autoCompleteController!.autocompleteFilter = locationFilter
-            autoCompleteController!.delegate = delegate
+            autoCompleteController!.delegate = self.autoDelegate
             
             sheet = autoCompleteController!
             transition = transitionFactory.getFromRightToLeft()
@@ -159,6 +172,9 @@ extension Main {
             present()
             
             setCurrent(vc: autoCompleteController!)
+
+            
+
             
         }
         
@@ -182,10 +198,12 @@ extension Main {
         public func goBackFromCoordinateSelectionToMainSheet() {
             
             transition = transitionFactory.getFromLeftToRight()
+            sheet = sheetFactory.getMainSheet()
+            sheet.dismiss(animated: false, completion: nil)
             
-            dismiss()
-            
-            autoCompleteController?.dismiss(animated: false, completion: nil)
+//            dismiss()
+//
+//            autoCompleteController?.dismiss(animated: false, completion: nil)
             
         }
         

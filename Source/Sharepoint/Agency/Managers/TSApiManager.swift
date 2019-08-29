@@ -213,11 +213,11 @@ public class TSApiManager: CoreApiManager {
         ]
         
         if photo != nil {
-            TSNetworkManager.multiPartPostWithImages(url: url, parameters: parameters, headers: header, photos: ["photo": photo!]) { (json, headers) in
+            TSNetworkManager.multiPartPostWithImagesPublic(url: url, parameters: parameters, headers: header, photos: ["photo": photo!]) { (json, headers) in
                 completion(json)
             }
         } else {
-            TSNetworkManager.multiPartPostWithImages(url: url, parameters: parameters, headers: header, photos: nil) { (json, headers) in
+            TSNetworkManager.multiPartPostWithImagesPublic(url: url, parameters: parameters, headers: header, photos: nil) { (json, headers) in
                 completion(json)
             }
         }
@@ -422,7 +422,7 @@ public class TSApiManager: CoreApiManager {
         ]
 
         
-        TSNetworkManager.multiPartPostWithImages(url: url, parameters: parameters, headers: header, photos: nil) { (json, header) in
+        TSNetworkManager.multiPartPostWithImagesPublic(url: url, parameters: parameters, headers: header, photos: nil) { (json, header) in
             completion(json)
         }
     }
@@ -431,13 +431,20 @@ public class TSApiManager: CoreApiManager {
         
         let url = "http://94.101.81.210:48080/AppService/CancelOrder.do"
         let header = ["_token": token]
-        let parameters: Dictionary<String,Any> = [ "jsonParam" : [
-            "orderId": "\(orderID)",
-            "reason": reason
-            ]
-        ]
+//        let parameters: Dictionary<String,Any> = [ "jsonParam" : [
+//            "orderId": "\(orderID)",
+//            "reason": reason
+//            ]
+//        ]
         
-        TSNetworkManager.multiPartPostWithImages(url: url, parameters: parameters, headers: header, photos: nil) { (json, headers) in
+//        TSNetworkManager.multiPartPostWithImagesPublic(url: url, parameters: parameters, headers: header, photos: nil) { (json, headers) in
+//            completion(json)
+//        }
+        
+        let orderJson = "orderId:\(orderID), reason: \(reason)"
+        let data = "jsonParam={\(orderJson)}"
+        
+        TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
             completion(json)
         }
 
@@ -447,6 +454,75 @@ public class TSApiManager: CoreApiManager {
         let url = "http://94.101.81.210:48080/AppService/GetCustomerHistoryOrders.do"
         let data = "jsonParam={mobile:\"\(mobile)\", page:\(page), num:\(num)}"
         let header = ["_token": token]
+        
+        TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
+            completion(json)
+        }
+    }
+    
+    public func getCustomerAddress(userID: UInt, token: String, completion: @escaping (JSON)->()) {
+        let url = "http://94.101.81.210:48080/AppService/GetCustomerAddress.do"
+//        let url = "https://postman-echo.com/post"
+        let header = ["_token": token, "accept-encoding":"gzip, deflate", "user-agent": "PostmanRuntime/7.15.2"]
+//        let parameters: Dictionary<String,Any> = [ "jsonParam" : [
+//            "userId": userID
+//            ]
+//        ]
+//
+//        TSNetworkManager.multiPartPostWithImagesPublic(url: url, parameters: parameters, headers: header, photos: nil) { (json, header) in
+//            print("Get Customer Address \(json.rawString()!)")
+//            completion(json)
+//        }
+        
+        let orderJson = "userId:\"\(userID)\""
+        let data = "jsonParam={\(orderJson)}"
+
+        TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
+            completion(json)
+        }
+    }
+    
+    public func addCustomerAddress(name: String, coordinate: CoreCoordinate, remark: String, address: String, userID: UInt, token: String, completion: @escaping (JSON)->()) {
+        let url = "http://94.101.81.210:48080/AppService/AddCustomerAddress.do"
+        let header = ["_token": token]
+//        let parameters: Dictionary<String,Any> = [ "jsonParam" : [
+//            "address": address,
+//            "lat": coordinate.coordinate.latitude,
+//            "lon": coordinate.coordinate.longitude,
+//            "name": name,
+//            "remark": remark,
+//            "userId": userID
+//            ]
+//        ]
+//
+//
+//        TSNetworkManager.multiPartPostWithImagesPublic(url: url, parameters: parameters, headers: header, photos: nil) { (json, header) in
+//            completion(json)
+//        }
+        
+        let orderJson = "address:\"\(address)\",lat:\"\(coordinate.coordinate.latitude)\",lon:\"\(coordinate.coordinate.longitude)\",name:\"\(name)\",remark:\"\(remark)\",userId:\"\(userID)\","
+        let data = "jsonParam={\(orderJson)}"
+        
+        TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
+            completion(json)
+        }
+    }
+    
+    public func removeCustomerAddress(addressID: UInt, token: String, completion: @escaping (JSON)->()) {
+        let url = "http://94.101.81.210:48080/AppService/RemoveCustomerAddress.do"
+        let header = ["_token": token]
+//        let parameters: Dictionary<String,Any> = [ "jsonParam" : [
+//            "addressId": addressID
+//            ]
+//        ]
+//
+//
+//        TSNetworkManager.multiPartPostWithImagesPublic(url: url, parameters: parameters, headers: header, photos: nil) { (json, header) in
+//            completion(json)
+//        }
+        
+        let orderJson = "addressId:\"\(addressID)\""
+        let data = "jsonParam={\(orderJson)}"
         
         TSNetworkManager.postWithHeader(url: url, body: data, headers: header) { (json, header) in
             completion(json)

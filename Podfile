@@ -5,7 +5,7 @@ use_modular_headers!
 target 'Taksim' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Core', :git => 'https://github.com/CanOzcan93/Core.git'
+  pod 'CorePublic', :git => 'https://github.com/CanOzcan93/CorePublic.git'
 
   # Pods for Taksim
 

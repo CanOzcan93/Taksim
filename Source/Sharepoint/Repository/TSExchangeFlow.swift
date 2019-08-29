@@ -11,11 +11,14 @@ import GooglePlaces
 
 public class TSExchangeFlow: CoreExchangeFlow {
     
-    private var lastSelectedPlace: GMSPlace?
-    public func letSelectedPlace(place: GMSPlace?) {
+    private var lastSelectedPlace: CLLocationCoordinate2D?
+    public func letSelectedPlace(place: CLLocationCoordinate2D?) {
         self.lastSelectedPlace = place
     }
-    public func grabLastSelectedPlace() -> GMSPlace? {
+    public func letSelectedPlace(place: GMSPlace) {
+        self.lastSelectedPlace = place.coordinate
+    }
+    public func grabLastSelectedPlace() -> CLLocationCoordinate2D? {
         return self.lastSelectedPlace
     }
     

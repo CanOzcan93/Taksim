@@ -40,6 +40,7 @@ extension Authentication {
                             if json["errCode"].uIntValue == 0 && json["errCode"].exists(){
                                 self.stateMachine.isLoggedInApp(state: true)
                                 self.persistentStorage.store(key: self.persistentStorage.tokenKey, value: token)
+                                print("Token: \(token as! String)")
                                 self.dataStorage.letCurrentUser(json: json, completion: nil)
                                 if json["currentOrder"]["orderId"].exists() {
                                     self.dataStorage.storeOrderId(id: json["currentOrder"]["orderId"].uIntValue)

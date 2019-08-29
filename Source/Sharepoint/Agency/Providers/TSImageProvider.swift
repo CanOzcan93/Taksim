@@ -385,6 +385,42 @@ public class TSImageProvider: CoreImageProvider {
         
     }
     
+    private var plus_simple: UIImage?
+    public func getPlusSimple() -> UIImage {
+        
+        guard plus_simple != nil else {
+            plus_simple = UIImage(named: "ic_plus_simple")
+            return plus_simple!
+        }
+        
+        return plus_simple!
+        
+    }
+    
+    private var quit_simple: UIImage?
+    public func getQuitSimple() -> UIImage {
+        
+        guard quit_simple != nil else {
+            quit_simple = UIImage(named: "ic_quit_simple")
+            return quit_simple!
+        }
+        
+        return quit_simple!
+        
+    }
+    
+    private var suitcase: UIImage?
+    public func getSuitcase() -> UIImage {
+        
+        guard suitcase != nil else {
+            suitcase = UIImage(named: "ic_suitcase")
+            return suitcase!
+        }
+        
+        return suitcase!
+        
+    }
+    
     private var down_arrow: UIImage?
     public func getDownArrow() -> UIImage {
         

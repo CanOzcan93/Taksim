@@ -117,6 +117,42 @@ public class TSStateMachine: CoreStateMachine {
         return !self.stateCallConnected
     }
     
+    private var stateEditingHomeLocation: Bool = false
+    public func isEditingHomeLocation(state: Bool) {
+        self.stateEditingHomeLocation = state
+    }
+    
+    public func editingHomeLocation() -> Bool {
+        return self.stateEditingHomeLocation
+    }
+    public func notEditingHomeLocation() -> Bool {
+        return !self.stateEditingHomeLocation
+    }
+    
+    private var stateEditingWorkLocation: Bool = false
+    public func isEditingWorkLocation(state: Bool) {
+        self.stateEditingWorkLocation = state
+    }
+    
+    public func editingWorkLocation() -> Bool {
+        return self.stateEditingWorkLocation
+    }
+    public func notEditingWorkLocation() -> Bool {
+        return !self.stateEditingWorkLocation
+    }
+    
+    private var stateEditingFavoriteLocation: Bool = false
+    public func isEditingFavoriteLocation(state: Bool) {
+        self.stateEditingFavoriteLocation = state
+    }
+    
+    public func editingFavoriteLocation() -> Bool {
+        return self.stateEditingFavoriteLocation
+    }
+    public func notEditingFavoriteLocation() -> Bool {
+        return !self.stateEditingFavoriteLocation
+    }
+    
 //    private var stateClickedCashPayment: Bool = false
 //    public func isClickedCashPayment(state: Bool) {
 //        self.stateClickedCashPayment = state

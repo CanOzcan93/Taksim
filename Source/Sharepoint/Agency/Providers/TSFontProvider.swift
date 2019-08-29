@@ -11,6 +11,9 @@ import Core
 open class TSFontProvider: CoreFontProvider {
     
     private var regularSmaller: UIFont?
+    /// Open Sans / Size: 12
+    ///
+    /// - Returns: Open Sans / Size: 12
     public func getRegularSmaller() -> UIFont {
         
         guard regularSmaller != nil else {
@@ -23,6 +26,9 @@ open class TSFontProvider: CoreFontProvider {
     }
     
     private var regularSmall: UIFont?
+    /// Open Sans / Size: 14
+    ///
+    /// - Returns: Open Sans / Size: 14
     public func getRegularSmall() -> UIFont {
         
         guard regularSmall != nil else {
@@ -35,6 +41,9 @@ open class TSFontProvider: CoreFontProvider {
     }
     
     private var regularMedium: UIFont?
+    /// Open Sans / Size: 16
+    ///
+    /// - Returns: Open Sans / Size: 16
     public func getRegularMedium() -> UIFont {
         
         guard regularMedium != nil else {
@@ -47,6 +56,9 @@ open class TSFontProvider: CoreFontProvider {
     }
     
     private var semiboldMedium: UIFont?
+    /// Open Sans Semibold / Size: 16
+    ///
+    /// - Returns: Open Sans Semibold / Size: 16
     public func getSemiboldMedium() -> UIFont {
         
         guard semiboldMedium != nil else {
@@ -59,6 +71,9 @@ open class TSFontProvider: CoreFontProvider {
     }
     
     private var semiboldMid: UIFont?
+    /// Open Sans Semibold / Size: 18
+    ///
+    /// - Returns: Open Sans Semibold / Size: 18
     public func getSemiboldMid() -> UIFont {
         
         guard semiboldMid != nil else {
@@ -71,6 +86,9 @@ open class TSFontProvider: CoreFontProvider {
     }
     
     private var semiboldLarge: UIFont?
+    /// Open Sans Semibold / Size: 20
+    ///
+    /// - Returns: Open Sans Semibold / Size: 20
     public func getSemiboldLarge() -> UIFont {
         
         guard semiboldLarge != nil else {
@@ -83,6 +101,9 @@ open class TSFontProvider: CoreFontProvider {
     }
     
     private var semiboldLargest: UIFont?
+    /// Open Sans Semibold / Size: 27
+    ///
+    /// - Returns: Open Sans Semibold / Size: 27
     public func getSemiboldLargest() -> UIFont {
         
         guard semiboldLargest != nil else {
@@ -95,6 +116,9 @@ open class TSFontProvider: CoreFontProvider {
     }
     
     private var semiboldBiggest: UIFont?
+    /// Open Sans Semibold / Size: 30
+    ///
+    /// - Returns: Open Sans Semibold / Size: 30
     public func getSemiboldBiggest() -> UIFont {
         
         guard semiboldBiggest != nil else {
@@ -107,6 +131,9 @@ open class TSFontProvider: CoreFontProvider {
     }
     
     private var lightSmall: UIFont?
+    /// Open Sans Light / Size: 14
+    ///
+    /// - Returns: Open Sans Light / Size: 14
     public func getLightSmall() -> UIFont {
         
         guard lightSmall != nil else {
@@ -119,6 +146,9 @@ open class TSFontProvider: CoreFontProvider {
     }
     
     private var lightMedium: UIFont?
+    /// Open Sans Light / Size: 16
+    ///
+    /// - Returns: Open Sans Light / Size: 16/*
     public func getLightMedium() -> UIFont {
         
         guard lightMedium != nil else {
