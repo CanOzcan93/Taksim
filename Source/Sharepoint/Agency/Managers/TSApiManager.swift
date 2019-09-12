@@ -436,7 +436,7 @@ public class TSApiManager: CoreApiManager {
 //            "reason": reason
 //            ]
 //        ]
-        
+//        print("Cancel order\n Token:\(token) \n OrderID:\(orderID)")
 //        TSNetworkManager.multiPartPostWithImagesPublic(url: url, parameters: parameters, headers: header, photos: nil) { (json, headers) in
 //            completion(json)
 //        }
@@ -462,8 +462,7 @@ public class TSApiManager: CoreApiManager {
     
     public func getCustomerAddress(userID: UInt, token: String, completion: @escaping (JSON)->()) {
         let url = "http://94.101.81.210:48080/AppService/GetCustomerAddress.do"
-//        let url = "https://postman-echo.com/post"
-        let header = ["_token": token, "accept-encoding":"gzip, deflate", "user-agent": "PostmanRuntime/7.15.2"]
+        let header = ["_token": token]
 //        let parameters: Dictionary<String,Any> = [ "jsonParam" : [
 //            "userId": userID
 //            ]
