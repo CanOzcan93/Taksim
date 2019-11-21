@@ -14,7 +14,7 @@ extension Main {
         
         public override func onInjection() {
             super.onInjection()
-            self.backgroundColor = .clear
+            self.backgroundColor = .white
             self.separatorStyle = .singleLine
             self.separatorInset.left = 0
             self.separatorColor = colorProvider.getGrayLighter()

@@ -79,7 +79,8 @@ extension Profile {
             
             self.iv_plus = TSImageView()
             self.iv_plus.image = imageProvider.getPlus()
-            
+            self.iv_plus.alpha = 0
+            self.iv_plus.isUserInteractionEnabled = false
             self.addSubview(self.iv_plus)
             
         }

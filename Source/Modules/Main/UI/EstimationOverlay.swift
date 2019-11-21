@@ -94,6 +94,7 @@ extension Main {
             self.tv_left = TSTextView()
             self.tv_left.text = "40 km"
             self.tv_left.textAlignment = .center
+            self.tv_left.textColor = colorProvider.getDarkGray()
             
             self.packView(self.tv_left)
             
@@ -102,12 +103,14 @@ extension Main {
             self.v_left.frame = CGRect(x: 0, y: 0, width: 1, height: 22.5)
             self.v_left.backgroundColor = UIColor.darkGray
             
+            
             self.packView(self.v_left)
             
             
             self.tv_center = TSTextView()
             self.tv_center.text = "12 dk"
             self.tv_center.textAlignment = .center
+            self.tv_center.textColor = colorProvider.getDarkGray()
             
             self.packView(self.tv_center)
             
@@ -122,6 +125,7 @@ extension Main {
             self.tv_right = TSTextView()
             self.tv_right.text = "32 TL"
             self.tv_right.textAlignment = .center
+            self.tv_right.textColor = colorProvider.getDarkGray()
             
             self.packView(self.tv_right)
             

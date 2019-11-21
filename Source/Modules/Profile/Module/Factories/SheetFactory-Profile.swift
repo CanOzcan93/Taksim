@@ -75,6 +75,23 @@ extension Profile {
             
             return creditCards!
         }
+        
+        private var addCards: AddCardSheet?
+        public func getAddCardSheet() -> AddCardSheet {
+            guard addCards != nil else {
+                addCards = AddCardSheet()
+                return addCards!
+            }
+            
+            return addCards!
+        }
+        
+        private var cardWeb: CardWebSheet?
+        public func getWebCardSheet() -> CardWebSheet {
+            cardWeb = CardWebSheet()
+            return cardWeb!
+            
+        }
 
         
     }

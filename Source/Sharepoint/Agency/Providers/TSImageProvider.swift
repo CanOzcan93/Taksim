@@ -577,6 +577,17 @@ public class TSImageProvider: CoreImageProvider {
         return ic_loc_mar!
     }
     
+    private var logo_bonus: UIImage?
+    public func getLogoBonus() -> UIImage {
+        
+        guard logo_bonus != nil else {
+            logo_bonus = UIImage(named: "logo_bonus")
+            return logo_bonus!
+        }
+        
+        return logo_bonus!
+    }
+    
     
     
 }

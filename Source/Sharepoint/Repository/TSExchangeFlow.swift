@@ -91,6 +91,17 @@ public class TSExchangeFlow: CoreExchangeFlow {
     public func resetAmountOfOrder() {
         self.amountOfOrder = nil
     }
+    
+    private var cardHtml: String?
+    public func letCardHtml(html: String) {
+        self.cardHtml = html
+    }
+    public func grabCardHtml() -> String {
+        return self.cardHtml!
+    }
+    public func resetCardHtml() {
+        self.cardHtml = nil
+    }
 
 //    private var selectedVehicleNo: String?
 //    public func letSelectedVehicleNo(no: String?) {

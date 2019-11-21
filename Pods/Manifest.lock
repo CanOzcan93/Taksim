@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (4.8.1)
-  - AlamofireImage (3.5.0):
-    - Alamofire (~> 4.8)
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
   - CorePublic (0.0.1):
     - Alamofire
     - AlamofireImage
@@ -11,27 +11,25 @@ PODS:
     - ReactiveObjCBridge
     - ReactiveSwift
     - SwiftyJSON
-  - GoogleMaps (3.0.3):
-    - GoogleMaps/Maps (= 3.0.3)
-  - GoogleMaps/Base (3.0.3)
-  - GoogleMaps/Maps (3.0.3):
+  - GoogleMaps (3.6.0):
+    - GoogleMaps/Maps (= 3.6.0)
+  - GoogleMaps/Base (3.6.0)
+  - GoogleMaps/Maps (3.6.0):
     - GoogleMaps/Base
-  - GooglePlaces (3.0.3):
-    - GoogleMaps/Base (= 3.0.3)
-  - ReactiveObjC (3.1.0)
-  - ReactiveObjCBridge (4.0.0):
+  - GooglePlaces (3.6.0):
+    - GoogleMaps/Base (= 3.6.0)
+  - ReactiveObjC (3.1.1)
+  - ReactiveObjCBridge (6.0.0):
     - ReactiveObjC (~> 3.1)
-    - ReactiveSwift (~> 4.0)
-  - ReactiveSwift (4.0.0):
-    - Result (~> 4.0)
-  - Result (4.1.0)
-  - SwiftyJSON (4.2.0)
+    - ReactiveSwift (~> 6.1)
+  - ReactiveSwift (6.1.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - CorePublic (from `https://github.com/CanOzcan93/CorePublic.git`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - AlamofireImage
     - GoogleMaps
@@ -39,7 +37,6 @@ SPEC REPOS:
     - ReactiveObjC
     - ReactiveObjCBridge
     - ReactiveSwift
-    - Result
     - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -48,21 +45,20 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CorePublic:
-    :commit: 28489f512c50f8da471ead35cfc94e92b20fc49b
+    :commit: c51d4624dcd760ce8557a5ef915abd8e6efee1ba
     :git: https://github.com/CanOzcan93/CorePublic.git
 
 SPEC CHECKSUMS:
-  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
-  CorePublic: f3aa8e0d5e6b9fdfbbb7a79fc009a322c33025f3
-  GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
-  GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
-  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
-  ReactiveObjCBridge: c2e4c6a8c1f960902f48ce2ee4ff2b24b8ae172d
-  ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  CorePublic: 2192b5dfa6a334f19922e53a093c0b04062874ab
+  GoogleMaps: 82f8fe307193bb4de6ef6bf9e88f1d624b718f9d
+  GooglePlaces: 1b9d29cf3e164903d873600f511f42acdfe85294
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  ReactiveObjCBridge: 5502e3da1f092d39953ac27816f3441e01eb875a
+  ReactiveSwift: b78c7259f8ca46368238c895ae33a6a3bf9f811c
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
 PODFILE CHECKSUM: 863ed4ed9c1c83ebae3c982a319672241bf561a8
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

@@ -15,10 +15,10 @@ extension Profile {
         public override func onLayoutReady(layout: Profile.MainLayout) {
             
             if let currentUser = self.dataStorage.grabCurrentUser() {
-                if let picture = currentUser.profilePicture {
-                    let scaledImage = picture.scaleImageToFitSize(size: CGSize(width: 100, height: 100))
-                    layout.iv_avatar.image = scaledImage.roundedImage
-                }
+//                if let picture = currentUser.profilePicture {
+//                    let scaledImage = picture.scaleImageToFitSize(size: CGSize(width: 100, height: 100))
+//                    layout.iv_avatar.image = scaledImage.roundedImage
+//                }
                 var nameAndSurnameArray = currentUser.nickname.components(separatedBy: " ")
                 if nameAndSurnameArray.count < 2 {
                     layout.ti_name.text = nameAndSurnameArray.first
@@ -56,30 +56,34 @@ extension Profile {
                 self.demonstrator.goBack()
             }
             
-            layout.iv_plus.onTap {
-                self.demonstrator.toPhotoShootSheet()
-            }
+//            layout.iv_plus.onTap {
+//                self.demonstrator.toPhotoShootSheet()
+//            }
             
         }
      
-        public override func onLayoutReappear(layout: Profile.MainLayout) {
+//        public override func onLayoutReappear(layout: Profile.MainLayout) {
             
-            if let changedPhoto = self.exchangeFlow.grabProfilePhotoChanged() {
-                let scaledImage = changedPhoto.scaleImageToFitSize(size: CGSize(width: 100, height: 100))
-                layout.iv_avatar.image = scaledImage.roundedImage
-            }
-            else {
-                if let curUser = self.dataStorage.grabCurrentUser()
-                {
-                    if let picture = curUser.profilePicture {
-                        let scaledImage = picture.scaleImageToFitSize(size: CGSize(width: 100, height: 100))
-                        layout.iv_avatar.image = scaledImage.roundedImage
-                    }
-                }
-            }
-            
-            
-        }
+//            print("Cacaca")
+
+//            if let changedPhoto = self.exchangeFlow.grabProfilePhotoChanged() {
+//                let scaledImage = changedPhoto.scaleImageToFitSize(size: CGSize(width: 100, height: 100))
+//                layout.iv_avatar.image = scaledImage.roundedImage
+//            }
+//            else {
+//                if let curUser = self.dataStorage.grabCurrentUser()
+//                {
+//                    if let picture = curUser.profilePicture {
+//                        let scaledImage = picture.scaleImageToFitSize(size: CGSize(width: 100, height: 100))
+//                        layout.iv_avatar.image = scaledImage.roundedImage
+//                    }
+//                }
+//            }
+
+
+//        }
+        
+        
         
     }
 }

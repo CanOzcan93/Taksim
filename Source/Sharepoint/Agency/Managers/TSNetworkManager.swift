@@ -277,6 +277,55 @@ public class TSNetworkManager: CoreNetworkManager, SRWebSocketDelegate {
         
     }
     
+    public static func upload( url : String ,
+                        parameter : [String : Any] = [:],
+                        headers:[String:String],
+                        arrayImage : [String : UIImage],
+                        shouldShowHud : Bool = true,
+                        completionHandler : @escaping (_ result : NSDictionary , _ status : Bool) -> Void )
+    {
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            for (key, value) in parameter{
+                if JSONSerialization.isValidJSONObject(value) {
+                    let data = try! JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        multipartFormData.append(jsonString.data(using: .utf8)!, withName: key)
+                    }
+                } else {
+                    multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+                }
+            }
+            
+            for (key, value) in arrayImage {
+                if let imageData = value.jpegData(compressionQuality: 0.2)  {
+                    multipartFormData.append(imageData , withName: key, fileName: "\(key).jpeg", mimeType: "image/*")
+                }
+            }
+        }, to: url, method: .post, headers : headers, encodingCompletion: { encodingResult in
+            
+            switch encodingResult{
+            case .success(let upload, _, _):
+                print("Upload Progress \(upload.uploadProgress.completedUnitCount) '\' \(upload.uploadProgress.totalUnitCount)")
+                
+                upload.responseJSON {  response in
+                    if let JSON = response.result.value {
+//                        let status = (JSON as! NSDictionary)["status"] as? Bool
+                        completionHandler(JSON as! NSDictionary , true)
+                    } else  {
+                        let result : NSDictionary = ["message" : "Request Time out, please refresh again." as Any]
+                        completionHandler( result as NSDictionary , false)
+                    }
+                }
+                break
+            case .failure:
+                let result : NSDictionary = ["message" : "Request Time out, please refresh again." ]
+                completionHandler( result as NSDictionary , false)
+                break
+            }
+        }
+        )
+    }
+    
 }
 
 

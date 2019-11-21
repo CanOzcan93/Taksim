@@ -19,16 +19,19 @@ extension PostLogin {
         
         private var tv_heading: TSTextView!
         private var btn_back: TSImageView!
+        private var btn_plus: TSImageView!
         
         
         // API
         
         public var onBackButtonClicked: Action!
+        public var onPlusButtonClicked: Action!
         
         
         // Virtuals
         
         open func onHeading() -> String { return "" }
+        open func addButton() -> Bool { return false }
         
         public override func onConstruct() {
             
@@ -55,6 +58,16 @@ extension PostLogin {
             
             self.addSubview(self.tv_heading)
             
+            if addButton() {
+                self.btn_plus = TSImageView()
+                self.btn_plus.image = imageProvider.getPlusSimple().withRenderingMode(.alwaysTemplate)
+                self.btn_plus.tintColor = colorProvider.getDarkGray()
+                self.btn_plus.onTap {
+                    self.onPlusButtonClicked?()
+                }
+                self.addSubview(self.btn_plus)
+            }
+            
         }
         
 //        open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -77,6 +90,13 @@ extension PostLogin {
             set.append(NSLayoutConstraint(item: tv_heading, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
             set.append(NSLayoutConstraint(item: tv_heading, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 150))
             set.append(NSLayoutConstraint(item: tv_heading, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 30))
+            
+            if addButton() {
+                set.append(NSLayoutConstraint(item: btn_plus, attribute: .centerY, relatedBy: .equal, toItem: btn_back, attribute: .centerY, multiplier: 1, constant: 0))
+                set.append(NSLayoutConstraint(item: btn_plus, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -15))
+                set.append(NSLayoutConstraint(item: btn_plus, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 25))
+                set.append(NSLayoutConstraint(item: btn_plus, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 25))
+            }
 
         }
         

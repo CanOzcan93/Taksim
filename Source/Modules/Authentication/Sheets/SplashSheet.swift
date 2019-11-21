@@ -16,19 +16,6 @@ extension Authentication {
         
         public override func onLayoutReady(layout: Authentication.SplashLayout) {
             
-            apiManager.getFaq { (json) in
-                if json["status"].exists() && json["status"].stringValue == "success" {
-                    let data = json["data"].arrayValue
-                    for datum in data {
-                        var dict = Dictionary<String,String>()
-                        dict["caption"] = datum["caption"].stringValue
-                        dict["content"] = datum["content"].stringValue
-                        self.dict_FaqList.append(dict)
-                    }
-                    self.lexiconProvider.faqDict = self.dict_FaqList
-                }
-            }
-            
             apiManager.version { (json) in
                 print("Version\n\(json)")
             }
@@ -65,6 +52,7 @@ extension Authentication {
         }
         
         public override func onLayoutReappear(layout: Authentication.SplashLayout) {
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 if let phoneNumber = self.persistentStorage.recall(key: self.persistentStorage.phoneNumberKey) {
                     if let token = self.persistentStorage.recall(key: self.persistentStorage.tokenKey) {
@@ -91,7 +79,21 @@ extension Authentication {
             }
         }
         
-
+        public override func onLayoutAppear(layout: Authentication.SplashLayout) {
+            
+            apiManager.getFaq { (json) in
+                if json["status"].exists() && json["status"].stringValue == "success" {
+                    let data = json["data"].arrayValue
+                    for datum in data {
+                        var dict = Dictionary<String,String>()
+                        dict["caption"] = datum["caption"].stringValue
+                        dict["content"] = datum["content"].stringValue
+                        self.dict_FaqList.append(dict)
+                    }
+                    self.lexiconProvider.faqDict = self.dict_FaqList
+                }
+            }
+        }
         
     }
     

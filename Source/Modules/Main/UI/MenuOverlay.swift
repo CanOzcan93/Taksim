@@ -259,6 +259,7 @@ extension Main {
 //            set.append(NSLayoutConstraint(item: mi_profile.v_ghost, attribute: .top, relatedBy: .equal, toItem: iv_avatar, attribute: .bottom, multiplier: 1, constant: 20))
 //            set.append(NSLayoutConstraint(item: mi_cards.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_profile.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
 //            set.append(NSLayoutConstraint(item: mi_addresses.v_ghost, attribute: .top, relatedBy: .equal, toItem: mi_cards.v_ghost, attribute: .bottom, multiplier: 1, constant: 0))
+//
             
             set.append(NSLayoutConstraint(item: mi_profile.v_ghost, attribute: .top, relatedBy: .equal, toItem: iv_avatar, attribute: .bottom, multiplier: 1, constant: 20))
             

@@ -66,7 +66,9 @@ extension Authentication {
             }
             
             titleTextView.font = fontProvider.getSemiboldMid()
+            titleTextView.textColor = colorProvider.getBlackFull()
             bodyTextView.font = fontProvider.getRegularMedium()
+            bodyTextView.textColor = colorProvider.getBlackFull()
             
             self.addSubview(imageView)
             self.addSubview(titleTextView)

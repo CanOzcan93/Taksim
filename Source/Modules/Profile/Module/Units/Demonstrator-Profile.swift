@@ -47,6 +47,20 @@ extension Profile {
             
         }
         
+        public func toAddCardSheet() {
+            sheet = sheetFactory.getAddCardSheet()
+            transition = transitionFactory.getFromRightToLeft()
+            
+            present()
+        }
+        
+        public func toWebCardSheet() {
+            sheet = sheetFactory.getWebCardSheet()
+            transition = transitionFactory.getFromRightToLeft()
+            
+            present()
+        }
+        
         public func goBack() {
             
             transition = transitionFactory.getFromLeftToRight()

@@ -18,6 +18,22 @@ extension Profile {
                 self.demonstrator.goBack()
             }
             
+            layout.onPlusButtonClicked = {
+                self.demonstrator.toAddCardSheet()
+            }
+            
+            if let uToken = self.dataStorage.grabCurrentUser()!.uToken {
+                
+                if uToken != "" {
+                    self.apiManager.creditCardList(uToken: self.dataStorage.grabCurrentUser()!.uToken!) { (json) in
+                        print(json)
+                    }
+                }
+                
+            }
+            
+            
+            
         }
         
     }

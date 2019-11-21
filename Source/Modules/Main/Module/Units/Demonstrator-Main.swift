@@ -165,6 +165,10 @@ extension Main {
             autoCompleteController = GMSAutocompleteViewController()
             autoCompleteController!.autocompleteFilter = locationFilter
             autoCompleteController!.delegate = self.autoDelegate
+            autoCompleteController!.primaryTextHighlightColor = .black
+            autoCompleteController!.primaryTextColor = .darkGray
+            autoCompleteController!.secondaryTextColor = .lightGray
+//            autoCompleteController!.tableCellBackgroundColor = .darkGray
             
             sheet = autoCompleteController!
             transition = transitionFactory.getFromRightToLeft()
@@ -208,9 +212,13 @@ extension Main {
         }
         
         public func goBackFromCoordinateSelectionToAutoComplete() {
-            transition = transitionFactory.getFromLeftToRight()
-            dismiss()
-            setCurrent(vc: autoCompleteController!)
+            
+            if let acControl = autoCompleteController {
+                transition = transitionFactory.getFromLeftToRight()
+                dismiss()
+                setCurrent(vc: acControl)
+            }
+            
         }
         
         public func toTripToPickUpPoint(completion: Action?) {

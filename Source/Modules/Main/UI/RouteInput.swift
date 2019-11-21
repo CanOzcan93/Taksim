@@ -93,6 +93,7 @@ extension Main {
             
             self.ti_pickUp = TextInput()
             self.ti_pickUp.tag = 0
+            self.ti_pickUp.textColor = colorProvider.getBlackFull()
             self.ti_pickUp.setPlaceholder(text: lexiconProvider.get("current_location"))
             self.ti_pickUp.onTap {
                 self.ti_pickUp.endEditing(true)
@@ -115,6 +116,7 @@ extension Main {
             
             self.ti_destination = TextInput()
             self.ti_destination.tag = 1
+            self.ti_destination.textColor = colorProvider.getBlackFull()
             self.ti_destination.setPlaceholder(text: lexiconProvider.get("destination_location"))
             self.ti_destination.onTap {
                 self.ti_destination.endEditing(true)

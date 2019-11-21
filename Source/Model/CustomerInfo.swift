@@ -30,6 +30,7 @@ open class CustomerInfo: CustomStringConvertible {
     var photo: String = ""
     var userId: UInt = 0
     var profilePicture: UIImage?
+    var uToken: String?
     
     public var description: String {
         var description = ""

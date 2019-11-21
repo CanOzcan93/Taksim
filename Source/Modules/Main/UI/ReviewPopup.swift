@@ -154,6 +154,8 @@ extension Main {
             
             self.mti = TSMultilineTextInput()
             self.mti.font = fontProvider.getRegularSmaller()
+            self.mti.backgroundColor = .clear
+            self.mti.isOpaque = false
             self.mti.textColor = colorProvider.getGrayLight()
             self.mti.text = lexiconProvider.get("comment_phase")
             self.mti.layer.borderColor = colorProvider.getGrayLighter().cgColor

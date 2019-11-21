@@ -22,6 +22,7 @@ extension Main {
         private var destinationMarker: CoreMapMarker!
         
         private var initialAddressFilled: Bool!
+        private var dict_FaqList = [Dictionary<String,String>]()
         
         public override func onInit() {
             
@@ -92,14 +93,48 @@ extension Main {
                 stateMachine.shouldMainSheetShowReview(state: false)
             }
             
-            if let profilePicture = self.dataStorage.grabCurrentUser()!.profilePicture {
-                let scaledImage = profilePicture.scaleImageToFitSize(size: CGSize(width: 60, height: 60))
-                layout.o_menu.iv_avatar.image = scaledImage.roundedImage
-            }
+//            if let profilePicture = self.dataStorage.grabCurrentUser()!.profilePicture {
+//                let scaledImage = profilePicture.scaleImageToFitSize(size: CGSize(width: 60, height: 60))
+//                layout.o_menu.iv_avatar.image = scaledImage.roundedImage
+//            }
             
         }
         
         public override func onLayoutReady(layout: Main.MainLayout) {
+            
+            if let user = self.dataStorage.grabCurrentUser() {
+                
+            }
+            else {
+                if let token = self.persistentStorage.recall(key: self.persistentStorage.tokenKey) {
+                    self.apiManager.checkToken(token: token as! String) { (json, token) in
+                        if json["errCode"].uIntValue == 0 && json["errCode"].exists(){
+                            self.stateMachine.isLoggedInApp(state: true)
+                            self.persistentStorage.store(key: self.persistentStorage.tokenKey, value: token)
+                            print("Token: \(token as! String)")
+                            self.dataStorage.letCurrentUser(json: json, completion: nil)
+                            if json["currentOrder"]["orderId"].exists() {
+                                self.dataStorage.storeOrderId(id: json["currentOrder"]["orderId"].uIntValue)
+                            }
+                        }
+                        else {
+                            print("Sıkıntı VAR")
+                        }
+                    }
+                }
+            }
+            apiManager.getFaq { (json) in
+                if json["status"].exists() && json["status"].stringValue == "success" {
+                    let data = json["data"].arrayValue
+                    for datum in data {
+                        var dict = Dictionary<String,String>()
+                        dict["caption"] = datum["caption"].stringValue
+                        dict["content"] = datum["content"].stringValue
+                        self.dict_FaqList.append(dict)
+                    }
+                    self.lexiconProvider.faqDict = self.dict_FaqList
+                }
+            }
 
             self.locationManager.activateCurrentLocationMarker(image: imageProvider.getLocationMarkerIcon(), map: layout.mv)
             
@@ -145,10 +180,10 @@ extension Main {
             })
             layout.iv_menu.onTap {
                 layout.o_menu.show()
-                if let profilePicture = self.dataStorage.grabCurrentUser()!.profilePicture {
-                    let scaledImage = profilePicture.scaleImageToFitSize(size: CGSize(width: 60, height: 60))
-                    layout.o_menu.iv_avatar.image = scaledImage.roundedImage
-                }
+//                if let profilePicture = self.dataStorage.grabCurrentUser()!.profilePicture {
+//                    let scaledImage = profilePicture.scaleImageToFitSize(size: CGSize(width: 60, height: 60))
+//                    layout.o_menu.iv_avatar.image = scaledImage.roundedImage
+//                }
             }
             
             locationManager.onLocationUpdated = {

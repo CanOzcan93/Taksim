@@ -45,7 +45,7 @@ extension Authentication {
             self.addSubview(iv_logo)
             
             let items = [
-                TutorialSliderItem(image: imageProvider.getIzmirTutorial(), title: "Taksim İzmir'e Hoşgeldiniz!", body: "Güvenilir yolculuğun sırrını keşfedin. Bir tık ile Taksim'i nasıl çağırırım?"),
+                TutorialSliderItem(image: imageProvider.getIzmirTutorial(), title: "En Taksi'ye Hoşgeldiniz!", body: "Güvenilir yolculuğun sırrını keşfedin. Bir tık ile Taksim'i nasıl çağırırım?"),
                 TutorialSliderItem(image: imageProvider.getMapTutorial(), title: "Konum seçimi", body: "Gitmek istediğiniz adresi ilgili alana yazarak kolayca belirleyebilirsiniz."),
                 TutorialSliderItem(image: imageProvider.getWalletTutorial(), title: "Ödeme yöntemi", body: "Sistemimizde birden çok ödeme yöntemi ile güvenle ödemenizi yapabilirsiniz."),
                 TutorialSliderItem(image: imageProvider.getSafetyTutorial(), title: "Güvenli yolculuğun tadını çıkarın!", body: "Taksinizi çağırın, ailecek güvenli ve kaliteli yolculuğun tadını çıkarın.")

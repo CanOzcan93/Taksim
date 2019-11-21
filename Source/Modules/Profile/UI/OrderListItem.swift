@@ -207,9 +207,6 @@ extension Profile {
             set.append(NSLayoutConstraint(item: tv_km_price, attribute: .height, relatedBy: .equal, toItem: item, attribute: .height, multiplier: 0.2, constant: 0))
             
         }
-
-        
-
         
     }
     

@@ -63,14 +63,15 @@ public class TSDataStorage: CoreDataStorage {
             user.photo = customJson["photo"].stringValue
             user.trade = customJson["trade"].stringValue
             user.userId = customJson["userId"].uIntValue
-            if user.photo != "" {
-                Alamofire.request("https://portal.taksimizmir.com\(user.photo)").responseImage { (response) in
-                    if let image = response.result.value {
-                        user.profilePicture = image
-                        completion?(image)
-                    }
-                }
-            }
+            user.uToken = customJson["utoken"].string
+//            if user.photo != "" {
+//                Alamofire.request("https://portal.taksimizmir.com\(user.photo)").responseImage { (response) in
+//                    if let image = response.result.value {
+//                        user.profilePicture = image
+//                        completion?(image)
+//                    }
+//                }
+//            }
             self.currentUser = user
         }
     }

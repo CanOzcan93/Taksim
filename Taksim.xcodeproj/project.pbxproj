@@ -3,11 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF4A6DB72EC4B4ED80B801C3 /* Pods_Taksim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CA94A248D267C585314876 /* Pods_Taksim.framework */; };
+		0FA277DFE0674164A9FD6282 /* Pods_Taksim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11616DFE3DC62D6EF148F59A /* Pods_Taksim.framework */; };
+		E601DA262384398200114E07 /* CardWebSheet-Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601DA242384398200114E07 /* CardWebSheet-Profile.swift */; };
+		E601DA272384398200114E07 /* AddCardSheet-Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601DA252384398200114E07 /* AddCardSheet-Profile.swift */; };
+		E601DA2A2384399000114E07 /* CardWebLayout-Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601DA282384398F00114E07 /* CardWebLayout-Profile.swift */; };
+		E601DA2B2384399000114E07 /* AddCardLayout-Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601DA292384398F00114E07 /* AddCardLayout-Profile.swift */; };
+		E601DA2E238439A700114E07 /* CreditCardListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601DA2C238439A600114E07 /* CreditCardListItem.swift */; };
+		E601DA2F238439A700114E07 /* CreditCardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601DA2D238439A600114E07 /* CreditCardList.swift */; };
+		E601DA31238439B900114E07 /* TSMonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601DA30238439B900114E07 /* TSMonthYearPicker.swift */; };
+		E601DA34238439DF00114E07 /* GeneralInput-PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601DA32238439DF00114E07 /* GeneralInput-PostLogin.swift */; };
+		E601DA35238439DF00114E07 /* GeneralYearPicker-PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601DA33238439DF00114E07 /* GeneralYearPicker-PostLogin.swift */; };
 		E60EC53422378B4A00D79221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60EC53322378B4A00D79221 /* Assets.xcassets */; };
 		E60EC60D22378C6100D79221 /* TSPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EC54022378C6100D79221 /* TSPage.swift */; };
 		E60EC60E22378C6100D79221 /* TSSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EC54122378C6100D79221 /* TSSheet.swift */; };
@@ -371,10 +380,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		90CA94A248D267C585314876 /* Pods_Taksim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taksim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D1C136C00F7E069C6D09EEE /* Pods-Taksim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.release.xcconfig"; sourceTree = "<group>"; };
-		D106A42C07A6A863F803B097 /* Pods-Taksim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taksim/Pods-Taksim.debug.xcconfig"; sourceTree = "<group>"; };
-		E60EC52922378B4900D79221 /* Taksim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taksim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11616DFE3DC62D6EF148F59A /* Pods_Taksim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taksim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3F7527D0767B8325294A283 /* Pods-Taksim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.debug.xcconfig"; path = "Target Support Files/Pods-Taksim/Pods-Taksim.debug.xcconfig"; sourceTree = "<group>"; };
+		AD8BB027BFEDFC33F52BEF86 /* Pods-Taksim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taksim.release.xcconfig"; path = "Target Support Files/Pods-Taksim/Pods-Taksim.release.xcconfig"; sourceTree = "<group>"; };
+		E601DA242384398200114E07 /* CardWebSheet-Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardWebSheet-Profile.swift"; sourceTree = "<group>"; };
+		E601DA252384398200114E07 /* AddCardSheet-Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddCardSheet-Profile.swift"; sourceTree = "<group>"; };
+		E601DA282384398F00114E07 /* CardWebLayout-Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardWebLayout-Profile.swift"; sourceTree = "<group>"; };
+		E601DA292384398F00114E07 /* AddCardLayout-Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddCardLayout-Profile.swift"; sourceTree = "<group>"; };
+		E601DA2C238439A600114E07 /* CreditCardListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardListItem.swift; sourceTree = "<group>"; };
+		E601DA2D238439A600114E07 /* CreditCardList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardList.swift; sourceTree = "<group>"; };
+		E601DA30238439B900114E07 /* TSMonthYearPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSMonthYearPicker.swift; sourceTree = "<group>"; };
+		E601DA32238439DF00114E07 /* GeneralInput-PostLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GeneralInput-PostLogin.swift"; sourceTree = "<group>"; };
+		E601DA33238439DF00114E07 /* GeneralYearPicker-PostLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GeneralYearPicker-PostLogin.swift"; sourceTree = "<group>"; };
+		E60EC52922378B4900D79221 /* EnTaksi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnTaksi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60EC53322378B4A00D79221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60EC53822378B4A00D79221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E60EC54022378C6100D79221 /* TSPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPage.swift; sourceTree = "<group>"; };
@@ -744,28 +762,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF4A6DB72EC4B4ED80B801C3 /* Pods_Taksim.framework in Frameworks */,
+				0FA277DFE0674164A9FD6282 /* Pods_Taksim.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		053DAE5FA2DC7996A836192F /* Pods */ = {
+		552B389D863E50755215DF93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D106A42C07A6A863F803B097 /* Pods-Taksim.debug.xcconfig */,
-				9D1C136C00F7E069C6D09EEE /* Pods-Taksim.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		83D8548D26136DA58DCBB4B4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				90CA94A248D267C585314876 /* Pods_Taksim.framework */,
+				11616DFE3DC62D6EF148F59A /* Pods_Taksim.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E60B15904DC68520068B39D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3F7527D0767B8325294A283 /* Pods-Taksim.debug.xcconfig */,
+				AD8BB027BFEDFC33F52BEF86 /* Pods-Taksim.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		E60EC52022378B4900D79221 = {
@@ -776,15 +794,15 @@
 				E60EC53E22378B5500D79221 /* Source */,
 				E60EC52B22378B4900D79221 /* Meta */,
 				E60EC52A22378B4900D79221 /* Products */,
-				053DAE5FA2DC7996A836192F /* Pods */,
-				83D8548D26136DA58DCBB4B4 /* Frameworks */,
+				E60B15904DC68520068B39D9 /* Pods */,
+				552B389D863E50755215DF93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E60EC52A22378B4900D79221 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E60EC52922378B4900D79221 /* Taksim.app */,
+				E60EC52922378B4900D79221 /* EnTaksi.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -953,6 +971,8 @@
 		E60EC56022378C6100D79221 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E601DA2D238439A600114E07 /* CreditCardList.swift */,
+				E601DA2C238439A600114E07 /* CreditCardListItem.swift */,
 				E60EC56122378C6100D79221 /* NotificationListItem.swift */,
 				E60EC56222378C6100D79221 /* NotificationList.swift */,
 				E6C7E4642268BE4400168D7C /* OrderList.swift */,
@@ -964,6 +984,8 @@
 		E60EC56322378C6100D79221 /* Sheets */ = {
 			isa = PBXGroup;
 			children = (
+				E601DA252384398200114E07 /* AddCardSheet-Profile.swift */,
+				E601DA242384398200114E07 /* CardWebSheet-Profile.swift */,
 				E6B1AAD3229ED693001F5024 /* AddressSheet-Profile.swift */,
 				E6B1AAD4229ED694001F5024 /* CreditCardsSheet-Profile.swift */,
 				E60EC56422378C6100D79221 /* MainSheet-Profile.swift */,
@@ -1016,6 +1038,8 @@
 		E60EC57322378C6100D79221 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
+				E601DA292384398F00114E07 /* AddCardLayout-Profile.swift */,
+				E601DA282384398F00114E07 /* CardWebLayout-Profile.swift */,
 				E6B1AAD8229ED69E001F5024 /* AddressLayout-Profile.swift */,
 				E6B1AAD7229ED69E001F5024 /* CreditCardsLayout-Profile.swift */,
 				E60EC57422378C6100D79221 /* MainLayout-Profile.swift */,
@@ -1142,6 +1166,8 @@
 		E60EC59A22378C6100D79221 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E601DA32238439DF00114E07 /* GeneralInput-PostLogin.swift */,
+				E601DA33238439DF00114E07 /* GeneralYearPicker-PostLogin.swift */,
 				E60EC59B22378C6100D79221 /* OutlinedButton-PostLogin.swift */,
 				E60EC59C22378C6100D79221 /* Button-PostLogin.swift */,
 				E60EC59D22378C6100D79221 /* TallButton.swift */,
@@ -1318,6 +1344,7 @@
 		E60EC5DF22378C6100D79221 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E601DA30238439B900114E07 /* TSMonthYearPicker.swift */,
 				E60EC5E022378C6100D79221 /* TSSliderItem.swift */,
 				E60EC5E122378C6100D79221 /* TSPageControl.swift */,
 				E60EC5E222378C6100D79221 /* TSMultilineTextInput.swift */,
@@ -1642,12 +1669,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E60EC53B22378B4A00D79221 /* Build configuration list for PBXNativeTarget "Taksim" */;
 			buildPhases = (
-				31854B292BE44DF656C4C2D6 /* [CP] Check Pods Manifest.lock */,
+				29E03CB0B36EB86A642A2739 /* [CP] Check Pods Manifest.lock */,
 				E60EC52522378B4900D79221 /* Sources */,
 				E60EC52622378B4900D79221 /* Frameworks */,
 				E60EC52722378B4900D79221 /* Resources */,
-				26F19B758E60DB4CC719A7C5 /* [CP] Embed Pods Frameworks */,
-				4B8CD9D27A2205FA88FE2697 /* [CP] Copy Pods Resources */,
+				5DDB4DFC7DA53D3E9EF1EC27 /* [CP] Embed Pods Frameworks */,
+				0C1720F38104C2DA5D3DA745 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1655,7 +1682,7 @@
 			);
 			name = Taksim;
 			productName = Taksim;
-			productReference = E60EC52922378B4900D79221 /* Taksim.app */;
+			productReference = E60EC52922378B4900D79221 /* EnTaksi.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1877,43 +1904,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26F19B758E60DB4CC719A7C5 /* [CP] Embed Pods Frameworks */ = {
+		0C1720F38104C2DA5D3DA745 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Taksim/Pods-Taksim-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${PODS_ROOT}/CorePublic/Output/Core.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveObjCBridge/ReactiveObjCBridge.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Core.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjCBridge.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Taksim/Pods-Taksim-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31854B292BE44DF656C4C2D6 /* [CP] Check Pods Manifest.lock */ = {
+		29E03CB0B36EB86A642A2739 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1935,28 +1943,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4B8CD9D27A2205FA88FE2697 /* [CP] Copy Pods Resources */ = {
+		5DDB4DFC7DA53D3E9EF1EC27 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taksim/Pods-Taksim-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Taksim/Pods-Taksim-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1971,6 +1972,7 @@
 				E60EC62F22378C6100D79221 /* NotificationsLayout.swift in Sources */,
 				E60EC68A22378C6100D79221 /* TSButton.swift in Sources */,
 				E60EC65122378C6100D79221 /* PromotionSheet.swift in Sources */,
+				E601DA272384398200114E07 /* AddCardSheet-Profile.swift in Sources */,
 				E60EC64E22378C6100D79221 /* WavyLayout.swift in Sources */,
 				E60EC68B22378C6100D79221 /* TSListView.swift in Sources */,
 				E60EC63F22378C6100D79221 /* Page-Main.swift in Sources */,
@@ -1979,8 +1981,10 @@
 				E60EC61E22378C6100D79221 /* FaqLayout.swift in Sources */,
 				E60EC65B22378C6100D79221 /* TutorialSliderItem-Authentication.swift in Sources */,
 				E60EC62722378C6100D79221 /* Factory-Profile.swift in Sources */,
+				E601DA31238439B900114E07 /* TSMonthYearPicker.swift in Sources */,
 				E60EC64622378C6100D79221 /* Navigator-Main.swift in Sources */,
 				E6C7E46B2269B49D00168D7C /* PhotoShootSheet.swift in Sources */,
+				E601DA2B2384399000114E07 /* AddCardLayout-Profile.swift in Sources */,
 				E60EC62022378C6100D79221 /* Modules.swift in Sources */,
 				E60EC66E22378C6100D79221 /* Navigator-Authentication.swift in Sources */,
 				E60EC63522378C6100D79221 /* EstimationOverlay.swift in Sources */,
@@ -2074,6 +2078,7 @@
 				E60EC68C22378C6100D79221 /* TSMapView.swift in Sources */,
 				E6792361231803D100E47301 /* SearchLocationSheet-Main.swift in Sources */,
 				E61B8B1522D61E540020A25F /* TermOfUseLayout-About.swift in Sources */,
+				E601DA35238439DF00114E07 /* GeneralYearPicker-PostLogin.swift in Sources */,
 				E60EC66F22378C6100D79221 /* TransitionFactory-Authentication.swift in Sources */,
 				E60EC66122378C6100D79221 /* TutorialPageControl.swift in Sources */,
 				E6C7E4632268AF2F00168D7C /* OrderHistoryLayout.swift in Sources */,
@@ -2083,6 +2088,7 @@
 				E60EC65222378C6100D79221 /* Demonstrator-PostLogin.swift in Sources */,
 				E60EC67E22378C6100D79221 /* TSWord.swift in Sources */,
 				E6D1BF992257B16800586767 /* LoadingOverlay.swift in Sources */,
+				E601DA2A2384399000114E07 /* CardWebLayout-Profile.swift in Sources */,
 				E60EC69722378C6100D79221 /* TSImageProvider.swift in Sources */,
 				E60EC67522378C6100D79221 /* SignUpLayout.swift in Sources */,
 				E60EC62622378C6100D79221 /* Navigator-Profile.swift in Sources */,
@@ -2098,6 +2104,7 @@
 				E60EC68822378C6100D79221 /* TSImageView.swift in Sources */,
 				E67923792318042D00E47301 /* SearchLocationListItem.swift in Sources */,
 				E60EC63E22378C6100D79221 /* Sheet-Main.swift in Sources */,
+				E601DA262384398200114E07 /* CardWebSheet-Profile.swift in Sources */,
 				E6D1BF952257A05500586767 /* QuickOrderOverlay.swift in Sources */,
 				E60EC64A22378C6100D79221 /* TransitionFactory-Main.swift in Sources */,
 				E60EC62B22378C6100D79221 /* SheetFactory-Profile.swift in Sources */,
@@ -2131,6 +2138,7 @@
 				E60EC65822378C6100D79221 /* Module-PostLogin.swift in Sources */,
 				E60EC65722378C6100D79221 /* TransitionFactory-PostLogin.swift in Sources */,
 				E60EC64C22378C6100D79221 /* Button-PostLogin.swift in Sources */,
+				E601DA2E238439A700114E07 /* CreditCardListItem.swift in Sources */,
 				E60EC69022378C6100D79221 /* TSDataStorage.swift in Sources */,
 				E60EC6A322378C6100D79221 /* Order.swift in Sources */,
 				E60EC63B22378C6100D79221 /* CoordinateSelectionSheet-Main.swift in Sources */,
@@ -2139,6 +2147,7 @@
 				E61B8B0F22D61E450020A25F /* TermOfUseSheet-About.swift in Sources */,
 				E61B8B1022D61E450020A25F /* AboutUsSheet-About.swift in Sources */,
 				E679237A2318042D00E47301 /* AddressInput.swift in Sources */,
+				E601DA2F238439A700114E07 /* CreditCardList.swift in Sources */,
 				E60EC66D22378C6100D79221 /* Demonstrator-Authentication.swift in Sources */,
 				E60EC62A22378C6100D79221 /* TransitionFactory-Profile.swift in Sources */,
 				E62E7AB4228DAAC800C644A4 /* CallPopup.swift in Sources */,
@@ -2146,6 +2155,7 @@
 				E6D1BF9322579DAF00586767 /* TripToDestinationPointLayout-Main.swift in Sources */,
 				E60EC66422378C6100D79221 /* SignUpSheet.swift in Sources */,
 				E60EC63122378C6100D79221 /* RouteInput.swift in Sources */,
+				E601DA34238439DF00114E07 /* GeneralInput-PostLogin.swift in Sources */,
 				E60EC68922378C6100D79221 /* TSLayout.swift in Sources */,
 				E60EC62922378C6100D79221 /* PageFactory-Profile.swift in Sources */,
 				E60EC69122378C6100D79221 /* TSPersistentStorage.swift in Sources */,
@@ -2277,11 +2287,12 @@
 		};
 		E60EC53C22378B4A00D79221 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D106A42C07A6A863F803B097 /* Pods-Taksim.debug.xcconfig */;
+			baseConfigurationReference = A3F7527D0767B8325294A283 /* Pods-Taksim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = MGY3VJ2J45;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2296,7 +2307,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.taksimizmir.taksim.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EnTaksi;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2306,11 +2317,12 @@
 		};
 		E60EC53D22378B4A00D79221 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D1C136C00F7E069C6D09EEE /* Pods-Taksim.release.xcconfig */;
+			baseConfigurationReference = AD8BB027BFEDFC33F52BEF86 /* Pods-Taksim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = MGY3VJ2J45;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2325,7 +2337,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.taksimizmir.taksim.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EnTaksi;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
